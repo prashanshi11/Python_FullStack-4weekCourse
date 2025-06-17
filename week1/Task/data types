@@ -1,0 +1,144 @@
+Sure! Here's a detailed explanation of **Data Types in Python** (Theory) 📚
+
+---
+
+## 🧠 **Python Data Types – Complete Theory**
+
+### ✅ **What Are Data Types?**
+
+Data types define the **type of data** a variable can store — like numbers, text, or a list of items.
+Python is **dynamically typed**, so you don’t need to declare the data type — Python figures it out.
+
+```python
+x = 10      # int
+name = "Hi" # str
+```
+
+---
+
+## 🧩 **Python’s Built-in Data Types**
+
+### 🔷 1. **Numeric Types**
+
+| Type      | Description              | Example      |
+| --------- | ------------------------ | ------------ |
+| `int`     | Integer values           | `x = 5`      |
+| `float`   | Decimal (floating point) | `y = 5.75`   |
+| `complex` | Complex numbers          | `z = 1 + 2j` |
+
+---
+
+### 🔷 2. **Text Type**
+
+| Type  | Description    | Example          |
+| ----- | -------------- | ---------------- |
+| `str` | String of text | `name = "Alice"` |
+
+---
+
+### 🔷 3. **Sequence Types**
+
+| Type    | Description                                  | Example                        |
+| ------- | -------------------------------------------- | ------------------------------ |
+| `list`  | Ordered, changeable, allows duplicates       | `fruits = ["apple", "banana"]` |
+| `tuple` | Ordered, **unchangeable**, allows duplicates | `colors = ("red", "blue")`     |
+| `range` | Sequence of numbers                          | `range(5)` produces `0 to 4`   |
+
+---
+
+### 🔷 4. **Mapping Type**
+
+| Type   | Description                | Example                               |
+| ------ | -------------------------- | ------------------------------------- |
+| `dict` | Key-value pairs, unordered | `info = {"name": "Alice", "age": 25}` |
+
+---
+
+### 🔷 5. **Set Types**
+
+| Type        | Description                | Example                 |
+| ----------- | -------------------------- | ----------------------- |
+| `set`       | Unordered, unique elements | `s = {1, 2, 3}`         |
+| `frozenset` | Immutable version of a set | `fs = frozenset([1,2])` |
+
+---
+
+### 🔷 6. **Boolean Type**
+
+| Type   | Description       | Example    |
+| ------ | ----------------- | ---------- |
+| `bool` | `True` or `False` | `x = True` |
+
+---
+
+### 🔷 7. **Binary Types**
+
+| Type         | Description                 | Example                     |
+| ------------ | --------------------------- | --------------------------- |
+| `bytes`      | Immutable sequence of bytes | `b = b"Hello"`              |
+| `bytearray`  | Mutable sequence            | `ba = bytearray(5)`         |
+| `memoryview` | Memory view object          | `mv = memoryview(bytes(5))` |
+
+---
+
+## 🧪 **How to Check Data Type**
+
+```python
+x = 100
+print(type(x))  # <class 'int'>
+```
+
+---
+
+## 🛠️ **Type Conversion**
+
+Convert one data type to another:
+
+```python
+a = "10"
+b = int(a)  # '10' becomes 10
+```
+
+---
+
+## 🎯 **Why Understanding Data Types Is Important**
+
+- Helps with **memory efficiency**
+- Prevents **bugs and errors**
+- Crucial for **type casting** and **data validation**
+- Essential for understanding how functions behave with different data
+
+---
+
+Here’s a **quick reference chart (infographic-style table)** to help you remember all the important **Python Data Types** 🧠✅
+
+---
+
+## 🧾 **Python Data Types – Cheat Sheet**
+
+| 🧩 Category | 🏷️ Type      | 🔍 Description                           | 💡 Example                             |
+| ----------- | ------------ | ---------------------------------------- | -------------------------------------- |
+| 🔢 Numeric  | `int`        | Whole numbers                            | `x = 5`                                |
+|             | `float`      | Decimal numbers                          | `y = 5.75`                             |
+|             | `complex`    | Complex numbers                          | `z = 1 + 2j`                           |
+| 🔤 Text     | `str`        | Sequence of characters (text)            | `msg = "Hello"`                        |
+| 📚 Sequence | `list`       | Ordered, changeable, allows duplicates   | `nums = [1, 2, 3]`                     |
+|             | `tuple`      | Ordered, **unchangeable**, duplicates OK | `colors = ('red', 'blue')`             |
+|             | `range`      | Sequence of numbers                      | `r = range(5)`                         |
+| 🧭 Mapping  | `dict`       | Key-value pairs                          | `student = {'name': 'Ana', 'age': 20}` |
+| 🔀 Set      | `set`        | Unordered, no duplicates                 | `s = {1, 2, 3}`                        |
+|             | `frozenset`  | Immutable version of set                 | `fs = frozenset([4, 5, 6])`            |
+| ⚙️ Boolean  | `bool`       | Logical values                           | `is_valid = True`                      |
+| 🧬 Binary   | `bytes`      | Immutable binary sequence                | `b = b'abc'`                           |
+|             | `bytearray`  | Mutable binary sequence                  | `ba = bytearray(3)`                    |
+|             | `memoryview` | View over binary data                    | `mv = memoryview(b'abc')`              |
+
+---
+
+## 🧠 **Memory Tip:**
+
+> Think of `**SNiTCH BuBBy**` 🔑
+> S = str, N = numeric, i = int, T = tuple, C = complex, H = float
+> B = bool, u = set, B = bytes, y = bytearray, etc.
+
+---
