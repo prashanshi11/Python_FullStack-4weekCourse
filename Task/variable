@@ -1,0 +1,194 @@
+## 🧠 What’s a Variable?
+
+Imagine a **box with a label** on it.
+
+- The label is the **variable name** (like `name` or `age`).
+- The stuff inside the box is the **value** (like `"Prashanshi"` or `21`).
+
+You can:
+
+- Open the box
+- See what’s inside
+- Replace the contents
+
+That's how variables work!
+
+```python
+name = "Prashanshi"
+age = 21
+```
+
+Here, `name` is your box with `"Prashanshi"` inside.
+
+---
+
+## 🧊 Real-Life Analogy
+
+| Real Life                  | In Programming                  |
+| -------------------------- | ------------------------------- |
+| Your contact name in phone | Variable (e.g., `contact_name`) |
+| The actual number          | Value (e.g., `"9876543210"`)    |
+| Changing contact name      | Reassigning a variable          |
+
+---
+
+## ✍️ How to Create a Variable?
+
+In Python:
+
+```python
+city = "Delhi"
+temperature = 39.5
+is_hot = True
+```
+
+No need to say "this is a string" or "this is a number" – Python understands it!
+
+---
+
+## 🔠 Variable Naming
+
+Rules:
+
+- Start with a letter or `_` (never a number first)
+- No special characters like `@`, `#`, `!`
+- Use readable names (`height` not `h`)
+
+**Bad:**
+
+```python
+2name = "John"  # ❌
+```
+
+**Good:**
+
+```python
+user_name = "John"  # ✅
+```
+
+---
+
+## 🔁 Can I Change the Value?
+
+Yes! Variables can change their minds.
+
+```python
+mood = "happy"
+mood = "sleepy"  # Now it's different
+```
+
+Just like you change clothes — same person, new outfit.
+
+---
+
+## 📦 Multiple Variables, One Shot
+
+You can give multiple boxes values in one line:
+
+```python
+a, b, c = 10, 20, 30
+```
+
+Or same value to all:
+
+```python
+x = y = z = 100
+```
+
+---
+
+## 🧪 Want to Know What’s Inside?
+
+Use:
+
+```python
+type(x)
+```
+
+It will say:
+
+- `<class 'str'>` for string
+- `<class 'int'>` for number
+- `<class 'bool'>` for True/False
+
+---
+
+## 🧙‍♂️ Convert Between Types (Magic Trick)
+
+Say you got a number as text:
+
+```python
+x = "123"
+```
+
+Want to do math? Convert it:
+
+```python
+y = int(x)
+print(y + 10)  # 133
+```
+
+---
+
+## 📏 Variable Types – Everyday Examples
+
+| Python Type | Real Life Example           |
+| ----------- | --------------------------- |
+| `int`       | Age: `21`                   |
+| `float`     | Price: `99.99`              |
+| `str`       | Name: `"Prashanshi"`        |
+| `bool`      | Is it raining? `True/False` |
+| `list`      | Shopping list               |
+| `dict`      | ID card with name, age, etc |
+
+---
+
+## 🚫 Reserved Words – Don't Touch
+
+Words like:
+
+- `if`, `else`, `class`, `def`, `for`, `while`, etc.
+
+They’re **special commands** in Python. You can’t use them as variable names.
+
+```python
+def = "wrong"  # ❌
+```
+
+---
+
+## 🔐 Constants: Set Once, No Change (Like Birth Year)
+
+In Python, we write constants in **all CAPS**:
+
+```python
+PI = 3.14159
+```
+
+It’s not enforced, but by convention, **don’t change it** later.
+
+---
+
+## 🧼 Best Practices for Variable Naming
+
+| Bad ❌      | Better ✅            |
+| ----------- | -------------------- |
+| `a = 50`    | `age = 50`           |
+| `t = 98.6`  | `temperature = 98.6` |
+| `n = "Ava"` | `name = "Ava"`       |
+
+---
+
+## 📚 Quick Recap Table
+
+| Feature         | Meaning / Example               |
+| --------------- | ------------------------------- |
+| Variable        | Box with a label storing value  |
+| Assign          | `x = 5`                         |
+| Reassign        | `x = 10`                        |
+| Type Check      | `type(x)`                       |
+| Type Convert    | `int("10")`, `str(100)`         |
+| Multiple Assign | `a, b = 1, 2`                   |
+| Naming Rule     | Letters, numbers, \_, no spaces |
+
+---

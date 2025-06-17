@@ -1,0 +1,61 @@
+### 🧠 **Comments in Python: Importance & Use**
+
+#### ✅ **What Are Comments?**
+
+Comments are lines in the Python code that are **not executed** by the interpreter. They are meant for **human readers** — to explain, describe, or organize the code.
+
+---
+
+### 🎯 **Why Comments Are Important in Python**
+
+| 🔍 Purpose                  | 💬 Explanation                                                                    |
+| --------------------------- | --------------------------------------------------------------------------------- |
+| **1. Code Documentation**   | Helps explain what specific blocks or lines of code are doing.                    |
+| **2. Improved Readability** | Makes complex code easier to understand for you or others.                        |
+| **3. Debugging Aid**        | You can "comment out" parts of code while testing or debugging.                   |
+| **4. Collaboration**        | In team projects, comments guide team members about logic or purpose.             |
+| **5. Maintenance**          | If you revisit your code after months, comments help recall your thought process. |
+
+---
+
+### ✍️ **Types of Comments in Python**
+
+#### 🔹 Single-line Comment:
+
+Use `#` for quick, short comments.
+
+```python
+# This line prints a greeting
+print("Hello, World!")
+```
+
+#### 🔹 Multi-line Comment:
+
+Use triple quotes `''' '''` or `""" """` (not officially comments, but used as such).
+
+```python
+'''
+This is a multi-line comment
+explaining the logic below
+'''
+x = 5
+y = 10
+print(x + y)
+```
+
+---
+
+### ⚠️ **Best Practices for Using Comments**
+
+- ✅ Be concise and clear.
+- ✅ Use comments to explain **why**, not **what** (what is often clear from code).
+- ❌ Don’t over-comment obvious code.
+- ✅ Update or remove outdated comments.
+
+---
+
+### 🔚 **Conclusion**
+
+> 📌 **Comments don’t affect how Python runs your code, but they greatly affect how easily you (or others) can understand, fix, and improve it.**
+
+Would you like a real-world code example with good comments?
