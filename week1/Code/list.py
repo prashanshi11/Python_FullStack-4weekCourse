@@ -117,3 +117,18 @@ sample = ['a', 'b', 'c', 'd']
 print(sample[0])         # Output: a
 print(sample[-1])        # Output: d
 print(sample[1:3])       # Output: ['b', 'c']
+
+
+""" **Task 1: To-Do List Manager(simple)**
+
+
+
+"""
+"""
+Task 2: StudentScores
+list of student names and their scores, calculate average score, find highest and lowest scores.
+"""
+"""
+Task 3: Guest list for a party
+create a list of guests, add new guests, remove guests, and print the final list.
+"""
