@@ -130,7 +130,7 @@ for f in sorted_flights:
 
 # -------------------------------------------
 # 3. Find the flight with the longest duration
-longest_flight = max(flight, key=lambda x: x[3])
+longest_flight = max(flight, key=lambda x: x[4:])
 print("\nFlight with the longest duration:")
 print(longest_flight)
 # Output:
