@@ -1,0 +1,194 @@
+Here’s a **detailed explanation of Conditions and Statements in Python**, with **theory in points**, tables, charts\*\*, and code examples **with output in comments** — all in one go for clarity and exam preparation.
+
+---
+
+## ✅ **Python Conditional Statements – Complete Theory Guide**
+
+---
+
+### 🧠 **What are Conditional Statements?**
+
+Conditional statements are used to perform **different actions based on different conditions**. They allow your program to **make decisions**.
+
+---
+
+## 🔹 **Types of Conditional Statements**
+
+| Statement      | Description                                            |
+| -------------- | ------------------------------------------------------ |
+| `if`           | Executes a block if the condition is `True`            |
+| `if-else`      | Executes one block if `True`, another if `False`       |
+| `if-elif-else` | Multiple conditions, executes the first that is `True` |
+| `nested if`    | `if` inside another `if`                               |
+
+---
+
+### ✅ **1. if Statement**
+
+#### 🔹 Syntax:
+
+```python
+if condition:
+    # code block
+```
+
+#### 🔹 Example:
+
+```python
+x = 10
+if x > 5:
+    print("x is greater than 5")  # Output: x is greater than 5
+```
+
+---
+
+### ✅ **2. if-else Statement**
+
+#### 🔹 Syntax:
+
+```python
+if condition:
+    # code if true
+else:
+    # code if false
+```
+
+#### 🔹 Example:
+
+```python
+x = 3
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is less than or equal to 5")  # Output: x is less than or equal to 5
+```
+
+---
+
+### ✅ **3. if-elif-else Statement**
+
+#### 🔹 Syntax:
+
+```python
+if condition1:
+    # code block 1
+elif condition2:
+    # code block 2
+else:
+    # default code
+```
+
+#### 🔹 Example:
+
+```python
+x = 5
+if x > 10:
+    print("Greater than 10")
+elif x == 5:
+    print("Equal to 5")  # Output: Equal to 5
+else:
+    print("Less than 5")
+```
+
+---
+
+### ✅ **4. Nested if Statement**
+
+#### 🔹 Example:
+
+```python
+x = 10
+if x > 0:
+    if x % 2 == 0:
+        print("Positive even number")  # Output: Positive even number
+```
+
+---
+
+## 🔁 **Comparison Operators**
+
+| Operator | Description              | Example (`x = 5`) |
+| -------- | ------------------------ | ----------------- |
+| `==`     | Equal to                 | `x == 5` → True   |
+| `!=`     | Not equal to             | `x != 3` → True   |
+| `>`      | Greater than             | `x > 3` → True    |
+| `<`      | Less than                | `x < 10` → True   |
+| `>=`     | Greater than or equal to | `x >= 5` → True   |
+| `<=`     | Less than or equal to    | `x <= 4` → False  |
+
+---
+
+## 🔗 **Logical Operators**
+
+| Operator | Description                  | Example            |
+| -------- | ---------------------------- | ------------------ |
+| `and`    | True if both are True        | `x > 2 and x < 10` |
+| `or`     | True if at least one is True | `x < 3 or x > 7`   |
+| `not`    | Reverses the condition       | `not(x > 5)`       |
+
+---
+
+### 🧮 **Flowchart for if-elif-else**
+
+```
+Start
+  ↓
+Check condition 1 → True? → Execute block 1 → End
+  ↓
+Check condition 2 → True? → Execute block 2 → End
+  ↓
+Else → Execute default block → End
+```
+
+---
+
+## 🧪 **Python Code with Output in Comments (All at Once)**
+
+```python
+# 1. Simple if
+x = 10
+if x > 5:
+    print("x is greater than 5")  # Output: x is greater than 5
+
+# 2. if-else
+y = 2
+if y >= 5:
+    print("y is greater or equal to 5")
+else:
+    print("y is less than 5")  # Output: y is less than 5
+
+# 3. if-elif-else
+z = 7
+if z > 10:
+    print("z > 10")
+elif z == 7:
+    print("z is 7")  # Output: z is 7
+else:
+    print("z < 7")
+
+# 4. Nested if
+a = 8
+if a > 0:
+    if a % 2 == 0:
+        print("Positive even")  # Output: Positive even
+
+# 5. Using logical operators
+b = 6
+if b > 3 and b < 10:
+    print("b is between 3 and 10")  # Output: b is between 3 and 10
+
+# 6. Using not
+c = 3
+if not (c > 5):
+    print("c is NOT greater than 5")  # Output: c is NOT greater than 5
+```
+
+---
+
+## 📝 **Best Practices**
+
+- Use parentheses `()` for complex conditions to avoid confusion.
+- Keep indentation clean (Python uses **indentation instead of `{}`**).
+- Combine conditions using `and`, `or`, `not` for powerful decision-making.
+
+---
