@@ -160,3 +160,208 @@ call()      Lambda      global     Testing
 ```
 
 ---
+
+---
+
+## ✅ **Practice Exercises on Python Functions (with Solutions)**
+
+---
+
+### 🔧 **Exercise 1: Simple Function**
+
+```python
+# Write a function that prints "Hello, World!"
+def greet():
+    print("Hello, World!")
+
+greet()
+# Output: Hello, World!
+```
+
+---
+
+### 🔧 **Exercise 2: Function with Parameters**
+
+```python
+# Write a function that takes a name and prints a greeting
+def greet_name(name):
+    print(f"Hello, {name}!")
+
+greet_name("Prashanshi")
+# Output: Hello, Prashanshi!
+```
+
+---
+
+### 🔧 **Exercise 3: Function with Return Value**
+
+```python
+# Write a function that returns the square of a number
+def square(num):
+    return num ** 2
+
+print(square(5))
+# Output: 25
+```
+
+---
+
+### 🔧 **Exercise 4: Function with Default Argument**
+
+```python
+# Write a function to calculate power with default exponent 2
+def power(base, exponent=2):
+    return base ** exponent
+
+print(power(3))      # Output: 9
+print(power(3, 3))   # Output: 27
+```
+
+---
+
+### 🔧 **Exercise 5: Variable Length Arguments**
+
+```python
+# Write a function that returns the sum of any number of arguments
+def total_sum(*args):
+    return sum(args)
+
+print(total_sum(1, 2, 3, 4))
+# Output: 10
+```
+
+---
+
+### 🔧 **Exercise 6: Keyword Arguments**
+
+```python
+# Print person details using **kwargs
+def print_details(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key} : {value}")
+
+print_details(name="Alice", age=22, city="Delhi")
+# Output:
+# name : Alice
+# age : 22
+# city : Delhi
+```
+
+---
+
+### 🔧 **Exercise 7: Recursive Function**
+
+```python
+# Write a recursive function to find factorial of a number
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+# Output: 120
+```
+
+---
+
+## 🎯 **MCQs and Interview Questions on Python Functions**
+
+---
+
+### 📝 **Multiple Choice Questions (MCQs)**
+
+**Q1. What is the output of the following code?**
+
+```python
+def func(a, b=2):
+    return a + b
+
+print(func(3))
+```
+
+**a)** 2
+**b)** 3
+**c)** 5 ✅
+**d)** Error
+
+---
+
+**Q2. What does the `*args` allow in a function?**
+**a)** Accepts keyword arguments
+**b)** Accepts a fixed number of arguments
+**c)** Accepts variable number of positional arguments ✅
+**d)** Accepts no arguments
+
+---
+
+**Q3. Which of the following is correct about a function in Python?**
+**a)** A function must always return a value
+**b)** A function can return multiple values ✅
+**c)** A function cannot take parameters
+**d)** Functions are not supported in Python
+
+---
+
+**Q4. What is the correct syntax for defining a function in Python?**
+**a)** function myfunc():
+**b)** def myfunc\[]:
+**c)** define myfunc():
+**d)** def myfunc(): ✅
+
+---
+
+**Q5. What will be the output?**
+
+```python
+def calc(x, y):
+    return x * y
+
+print(calc(y=3, x=2))
+```
+
+**a)** 6 ✅
+**b)** 5
+**c)** Error
+**d)** 1
+
+---
+
+### 💬 **Interview-style Conceptual Questions**
+
+---
+
+**Q1. What is the difference between `*args` and `**kwargs`?**
+**Ans:** `\*args`collects extra **positional arguments** as a tuple, while`**kwargs` collects extra **keyword arguments\*\* as a dictionary.
+
+---
+
+**Q2. What are default arguments in Python functions?**
+**Ans:** These are parameters that assume a default value if no argument is passed during the function call.
+
+---
+
+**Q3. Can Python functions return multiple values?**
+**Ans:** Yes. Functions can return multiple values as tuples.
+
+```python
+def info():
+    return "Alice", 22
+
+name, age = info()
+```
+
+---
+
+**Q4. What is recursion? Give an example.**
+**Ans:** A function calling itself is recursion. Common example: factorial calculation.
+
+---
+
+**Q5. Explain the concept of scope in functions.**
+**Ans:**
+
+- **Local scope**: Inside the function.
+- **Global scope**: Outside all functions.
+- Variables defined inside a function cannot be accessed outside unless declared `global`.
+
+---

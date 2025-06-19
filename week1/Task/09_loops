@@ -197,3 +197,180 @@ Start → i=0 → print → i=1 → print → i=2 → print → i=3 → loop end
 - Be cautious of infinite loops.
 
 ---
+
+## 🔁 **Python Loops Practice Exercises (with Solutions)**
+
+### ✅ **Exercise 1: Print Numbers from 1 to 10**
+
+```python
+for i in range(1, 11):
+    print(i)
+# Output: 1 2 3 4 5 6 7 8 9 10
+```
+
+---
+
+### ✅ **Exercise 2: Print Even Numbers from 1 to 20**
+
+```python
+for i in range(2, 21, 2):
+    print(i, end=" ")
+# Output: 2 4 6 8 10 12 14 16 18 20
+```
+
+---
+
+### ✅ **Exercise 3: Calculate the Sum of Numbers from 1 to 100**
+
+```python
+total = 0
+for i in range(1, 101):
+    total += i
+print("Sum:", total)
+# Output: Sum: 5050
+```
+
+---
+
+### ✅ **Exercise 4: Print Multiplication Table of a Number**
+
+```python
+n = 5
+for i in range(1, 11):
+    print(f"{n} x {i} = {n*i}")
+# Output:
+# 5 x 1 = 5
+# 5 x 2 = 10 ...
+```
+
+---
+
+### ✅ **Exercise 5: Print a Pyramid Pattern**
+
+```python
+rows = 5
+for i in range(1, rows + 1):
+    print(" " * (rows - i) + "*" * (2*i - 1))
+# Output: Pyramid of 5 rows
+```
+
+---
+
+### ✅ **Exercise 6: Reverse a String using Loop**
+
+```python
+s = "python"
+reversed_str = ""
+for ch in s:
+    reversed_str = ch + reversed_str
+print(reversed_str)
+# Output: nohtyp
+```
+
+---
+
+### ✅ **Exercise 7: Print Prime Numbers between 1 and 50**
+
+```python
+for num in range(2, 51):
+    for i in range(2, num):
+        if num % i == 0:
+            break
+    else:
+        print(num, end=" ")
+# Output: 2 3 5 7 11 13 17 19 23 ...
+```
+
+---
+
+## ❓ **Python Loops: MCQs (with Answers)**
+
+1. **Which loop is used when the number of iterations is known?**
+   a) while
+   b) for
+   ✅ **Answer: b) for**
+
+2. **What is the output of `for i in range(2, 10, 2): print(i)`?**
+   a) 2 3 4 5 6 7 8 9
+   b) 2 4 6 8
+   ✅ **Answer: b) 2 4 6 8**
+
+3. **What will `while False:` do?**
+   a) Infinite loop
+   b) Nothing
+   ✅ **Answer: b) Nothing**
+
+4. **Which statement is used to skip the current iteration in a loop?**
+   a) break
+   b) continue
+   ✅ **Answer: b) continue**
+
+5. **What is the output of:**
+
+```python
+count = 0
+while count < 3:
+    print(count)
+    count += 1
+```
+
+a) 1 2 3
+b) 0 1 2
+✅ **Answer: b) 0 1 2**
+
+---
+
+## 🎯 **Interview-Style Questions (with Answers)**
+
+1. **Q: What’s the difference between `break` and `continue`?**
+   A: `break` exits the entire loop, while `continue` skips the current iteration.
+
+2. **Q: When would you prefer a `while` loop over a `for` loop?**
+   A: Use `while` when the number of iterations is unknown or based on a condition.
+
+3. **Q: How can you use a loop to find the factorial of a number?**
+   A:
+
+```python
+n = 5
+fact = 1
+for i in range(1, n+1):
+    fact *= i
+print(fact)
+# Output: 120
+```
+
+4. **Q: How do nested loops work? Provide an example.**
+   A: Nested loops mean a loop inside another loop.
+
+```python
+for i in range(3):
+    for j in range(2):
+        print(i, j)
+```
+
+---
+
+## 📝 **Loops Quiz (5 Marks)**
+
+**Question 1:**
+Write a loop to print the square of numbers from 1 to 5.
+✔️ _Expected Output:_ 1 4 9 16 25
+
+**Question 2:**
+What is the difference between `for` and `while` loops?
+
+**Question 3:**
+Use a loop to reverse the list `[1, 2, 3, 4]`.
+✔️ _Expected Output:_ `[4, 3, 2, 1]`
+
+**Question 4 (MCQ):**
+Which loop runs until a condition is false?
+a) for
+b) while
+✅ **Correct Answer: b) while**
+
+**Question 5:**
+Write a loop to find if a number is prime.
+
+---

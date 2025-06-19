@@ -169,3 +169,180 @@ fs = frozenset([1, 2, 3])
 - Use `set()` to create a set and explore operations like union, intersection, etc.
 
 ---
+
+## ✅ 1. **Python Sets: Practice Exercises with Solutions**
+
+```python
+# ✅ Exercise 1: Create a set and print it
+my_set = {1, 2, 3, 4, 5}
+print(my_set)
+# Output: {1, 2, 3, 4, 5}
+
+# ✅ Exercise 2: Add an element to the set
+my_set.add(6)
+print(my_set)
+# Output: {1, 2, 3, 4, 5, 6}
+
+# ✅ Exercise 3: Add multiple elements using update()
+my_set.update([7, 8])
+print(my_set)
+# Output: {1, 2, 3, 4, 5, 6, 7, 8}
+
+# ✅ Exercise 4: Remove an element using remove()
+my_set.remove(3)
+print(my_set)
+# Output: {1, 2, 4, 5, 6, 7, 8}
+
+# ✅ Exercise 5: Try to remove an element that may not exist using discard()
+my_set.discard(10)
+print(my_set)
+# Output: No error; set unchanged
+
+# ✅ Exercise 6: Set union
+a = {1, 2, 3}
+b = {3, 4, 5}
+print(a.union(b))
+# Output: {1, 2, 3, 4, 5}
+
+# ✅ Exercise 7: Set intersection
+print(a.intersection(b))
+# Output: {3}
+
+# ✅ Exercise 8: Set difference
+print(a.difference(b))
+# Output: {1, 2}
+
+# ✅ Exercise 9: Set symmetric difference
+print(a.symmetric_difference(b))
+# Output: {1, 2, 4, 5}
+
+# ✅ Exercise 10: Check subset and superset
+print(a.issubset({1, 2, 3, 4, 5}))
+# Output: True
+print({1, 2, 3, 4, 5}.issuperset(a))
+# Output: True
+```
+
+---
+
+## ❓ 2. **MCQs and Interview-style Questions (Python Sets)**
+
+### 🧠 **MCQs:**
+
+**Q1.** Sets in Python are:
+A. Ordered and mutable
+B. Ordered and immutable
+C. Unordered and mutable
+D. Unordered and immutable
+✅ **Answer:** C
+
+---
+
+**Q2.** Which of the following methods adds elements from one set to another?
+A. `add()`
+B. `append()`
+C. `update()`
+D. `insert()`
+✅ **Answer:** C
+
+---
+
+**Q3.** What is the output of:
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+print(set1 & set2)
+```
+
+A. {1, 2, 3, 4, 5}
+B. {1, 2}
+C. {3}
+D. Error
+✅ **Answer:** C
+
+---
+
+**Q4.** What does `discard()` do that `remove()` doesn’t?
+A. It adds the element
+B. It throws an error
+C. It does nothing if the item is not present
+D. It removes duplicates
+✅ **Answer:** C
+
+---
+
+**Q5.** Which of the following is not a valid set method?
+A. `union()`
+B. `join()`
+C. `issubset()`
+D. `symmetric_difference()`
+✅ **Answer:** B
+
+---
+
+### 💬 **Interview-style Questions:**
+
+1. **What is a set in Python?**
+   ✅ A set is an unordered collection of unique elements.
+
+2. **Why are sets useful?**
+   ✅ Sets help eliminate duplicates, perform fast membership tests, and enable mathematical set operations.
+
+3. **Can a set contain a list? Why or why not?**
+   ❌ No. Sets can only contain immutable (hashable) types.
+
+4. **Explain the difference between `remove()` and `discard()` in sets.**
+   ✅ `remove()` raises an error if the element is not present, while `discard()` does not.
+
+5. **What are some real-world use cases of sets?**
+   ✅ Deduplication, common/frequent elements in data, and membership checks.
+
+---
+
+## 📝 3. **Set Quiz Format (Printable or Verbal Practice)**
+
+```
+📝 PYTHON SET QUIZ 🐍
+
+1. What is the output of:
+   s = {1, 2, 2, 3}
+   print(len(s))
+   a) 2
+   b) 3
+   c) 4
+   d) Error
+
+2. What method is used to find common items in two sets?
+   a) intersection()
+   b) difference()
+   c) add()
+   d) union()
+
+3. Which operation removes duplicates from a list?
+   a) list(set(my_list))
+   b) set(my_list)
+   c) remove(my_list)
+   d) clear(my_list)
+
+4. What happens if you `remove()` an element not in the set?
+   a) Returns None
+   b) Raises an error
+   c) Ignores
+   d) Adds the element
+
+5. Which of these creates an empty set?
+   a) s = {}
+   b) s = set()
+   c) s = []
+   d) s = tuple()
+
+🎯 Answers:
+1 → b
+2 → a
+3 → a
+4 → b
+5 → b
+```
+
+---

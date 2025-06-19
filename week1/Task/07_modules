@@ -194,3 +194,189 @@ print(dir(math))  # Lists all attributes/functions in math module
 ```
 
 ---
+
+---
+
+## ✅ 1. **Practice Exercises with Solutions**
+
+```python
+# ✅ Exercise 1: Import a built-in module (math)
+import math
+print(math.sqrt(25))
+# Output: 5.0
+
+# ✅ Exercise 2: Use math module to find factorial
+print(math.factorial(5))
+# Output: 120
+
+# ✅ Exercise 3: Use random module to generate random number
+import random
+print(random.randint(1, 10))
+# Output: (Random value between 1 and 10)
+
+# ✅ Exercise 4: Use datetime module to get today's date
+import datetime
+today = datetime.date.today()
+print(today)
+# Output: YYYY-MM-DD (Today's date)
+
+# ✅ Exercise 5: Rename a module during import
+import math as m
+print(m.pi)
+# Output: 3.141592653589793
+
+# ✅ Exercise 6: Import only specific functions
+from math import pow, ceil
+print(pow(2, 3))  # 2^3
+# Output: 8.0
+print(ceil(4.3))
+# Output: 5
+
+# ✅ Exercise 7: Create your own module and use it (see section 4 below)
+
+# ✅ Exercise 8: List all functions/attributes of a module
+print(dir(math))
+# Output: ['__doc__', '__loader__', ..., 'sqrt', 'tan', 'trunc']
+```
+
+---
+
+## ❓ 2. **MCQs and Interview-Style Questions**
+
+### 🧠 MCQs:
+
+**Q1.** Which of the following is the correct way to import a module?
+A. `import[math]`
+B. `import math`
+C. `math import`
+D. `include math`
+✅ **Answer:** B
+
+---
+
+**Q2.** What does the `random.randint(1, 10)` function do?
+A. Selects a float between 1 and 10
+B. Selects a random int from 1 to 9
+C. Selects a random int between 1 and 10 (inclusive)
+D. Throws an error
+✅ **Answer:** C
+
+---
+
+**Q3.** Which module is used to work with date and time in Python?
+A. `time`
+B. `datetime`
+C. `calendar`
+D. All of the above
+✅ **Answer:** D
+
+---
+
+**Q4.** What will `from math import *` do?
+A. Import only basic math functions
+B. Import everything from math
+C. Import nothing
+D. Cause an error
+✅ **Answer:** B
+
+---
+
+**Q5.** What is a module in Python?
+A. A file with variables only
+B. A file with class only
+C. A Python file containing functions, variables, or classes
+D. A built-in function
+✅ **Answer:** C
+
+---
+
+### 💬 Interview Questions:
+
+1. **What is a module in Python?**
+   ✅ A file containing Python code (functions, classes, variables) that can be reused in other programs.
+
+2. **What's the difference between module and package?**
+   ✅ A module is a single `.py` file, a package is a directory with `__init__.py` and sub-modules.
+
+3. **Why use modules?**
+   ✅ To organize code better, reuse logic, and separate concerns.
+
+4. **How can we import a custom module?**
+   ✅ Save a `.py` file (like `mymodule.py`) in the same directory and use `import mymodule`.
+
+5. **What is `__name__ == "__main__"` used for?**
+   ✅ To execute code only when the script is run directly, not when imported as a module.
+
+---
+
+## 📝 3. **Quiz Format (Python Modules)**
+
+```
+📝 PYTHON MODULES QUIZ 🧠
+
+1. Which of the following is NOT a Python module?
+   a) math
+   b) random
+   c) system
+   d) datetime
+
+2. What is the output of:
+   import math
+   print(math.ceil(4.1))
+   a) 4
+   b) 5
+   c) 4.1
+   d) Error
+
+3. What is the correct way to import only the sqrt function from math?
+   a) from math import sqrt
+   b) import sqrt from math
+   c) math.import(sqrt)
+   d) include math.sqrt
+
+4. Which method lists all the attributes of a module?
+   a) help()
+   b) list()
+   c) dir()
+   d) attr()
+
+5. How can you import a module under a new name?
+   a) import math as m
+   b) from math import *
+   c) import math
+   d) module(math)
+
+🎯 Answers:
+1 → c
+2 → b
+3 → a
+4 → c
+5 → a
+```
+
+---
+
+## 📘 4. **Custom Module Example**
+
+### ➕ Step 1: Create a file `mymath.py`
+
+```python
+# mymath.py
+def add(a, b):
+    return a + b
+
+def square(x):
+    return x * x
+```
+
+### ➕ Step 2: Use it in your main file
+
+```python
+# main.py
+import mymath
+
+print(mymath.add(2, 3))    # Output: 5
+print(mymath.square(4))    # Output: 16
+```
+
+---

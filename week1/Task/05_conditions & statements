@@ -192,3 +192,205 @@ if not (c > 5):
 - Combine conditions using `and`, `or`, `not` for powerful decision-making.
 
 ---
+
+---
+
+## ✅ 1. **Practice Exercises with Solutions**
+
+```python
+# ✅ Exercise 1: Simple if condition
+age = 18
+if age >= 18:
+    print("You are eligible to vote.")
+# Output: You are eligible to vote.
+
+# ✅ Exercise 2: if-else condition
+num = 7
+if num % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
+# Output: Odd number
+
+# ✅ Exercise 3: if-elif-else condition
+marks = 85
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+else:
+    print("Grade C")
+# Output: Grade B
+
+# ✅ Exercise 4: Nested if
+x = 20
+if x > 10:
+    if x < 30:
+        print("x is between 10 and 30")
+# Output: x is between 10 and 30
+
+# ✅ Exercise 5: Short-hand if
+a = 5
+b = 10
+if a < b: print("a is smaller")
+# Output: a is smaller
+
+# ✅ Exercise 6: Short-hand if-else (ternary)
+print("A" if a > b else "B")
+# Output: B
+
+# ✅ Exercise 7: Logical operators with if
+x = 12
+if x > 10 and x < 20:
+    print("x is in the range")
+# Output: x is in the range
+
+# ✅ Exercise 8: Membership test
+colors = ["red", "blue", "green"]
+if "blue" in colors:
+    print("Blue is present")
+# Output: Blue is present
+```
+
+---
+
+## ❓ 2. **MCQs and Interview-Style Questions**
+
+### 🧠 MCQs (Choose the correct answer):
+
+**Q1.** What will be the output of:
+
+```python
+x = 10
+if x == 10:
+    print("Ten")
+else:
+    print("Not Ten")
+```
+
+A. Ten
+B. Not Ten
+C. Error
+D. None
+✅ **Answer:** A
+
+---
+
+**Q2.** Which operator is used for _logical AND_ in Python?
+A. `&&`
+B. `&`
+C. `and`
+D. `+`
+✅ **Answer:** C
+
+---
+
+**Q3.** What does `if x in [1, 2, 3]` check?
+A. x is greater than 1
+B. x is in the list
+C. x is equal to 3
+D. x is not in the list
+✅ **Answer:** B
+
+---
+
+**Q4.** Which of the following is a correct way to write a ternary operator?
+A. `if x > 5: "yes" else: "no"`
+B. `"yes" if x > 5 else "no"`
+C. `x > 5 ? "yes" : "no"`
+D. `x > 5 => "yes"`
+✅ **Answer:** B
+
+---
+
+**Q5.** Which block must come last in an if-elif-else ladder?
+A. if
+B. elif
+C. else
+D. return
+✅ **Answer:** C
+
+---
+
+### 💬 Interview-Style Questions:
+
+1. **What is the use of if statements in Python?**
+   ✅ To control the flow of the program based on conditions.
+
+2. **Difference between = and == in conditions?**
+   ✅ `=` is assignment; `==` checks equality.
+
+3. **What are logical operators in Python?**
+   ✅ `and`, `or`, `not` — used to combine multiple conditions.
+
+4. **Can you nest if statements?**
+   ✅ Yes, one `if` can be placed inside another.
+
+5. **How do you write a one-line if-else in Python?**
+   ✅ `"Yes" if condition else "No"`
+
+---
+
+## 📝 3. **Quiz Format (Python Conditions & Statements)**
+
+```
+📝 PYTHON CONDITIONS QUIZ ⚖️
+
+1. What is the result of:
+   x = 5
+   if x > 3: print("High")
+   a) High
+   b) Error
+   c) Nothing
+   d) 3
+
+2. What is the output of:
+   a = 10
+   b = 20
+   print("A") if a > b else print("B")
+   a) A
+   b) B
+   c) Error
+   d) None
+
+3. Which keyword is optional in an if-elif-else ladder?
+   a) if
+   b) elif
+   c) else
+   d) print
+
+4. What does `not` do in a condition?
+   a) Inverts the condition
+   b) Adds two numbers
+   c) Ends the loop
+   d) Exits the program
+
+5. Can you use `in` with strings?
+   a) Yes
+   b) No
+   c) Only with lists
+   d) Only with sets
+
+🎯 Answers:
+1 → a
+2 → b
+3 → c
+4 → a
+5 → a
+```
+
+---
+
+## 📘 4. **Summary Chart – Conditional Statements in Python**
+
+| Type              | Syntax Example                           | Description                              |
+| ----------------- | ---------------------------------------- | ---------------------------------------- |
+| `if`              | `if a > b:`                              | Executes block if condition is true      |
+| `if-else`         | `if a > b: ... else:`                    | Runs one block if true, another if false |
+| `if-elif-else`    | `if... elif... else`                     | Chain of multiple conditions             |
+| Nested `if`       | `if a > 5: if b > 2:`                    | `if` inside another `if`                 |
+| Short-hand if     | `print("Yes") if a > b else print("No")` | One-liner if-else                        |
+| Logical operators | `and`, `or`, `not`                       | Combine multiple conditions              |
+| Membership test   | `if "x" in list:`                        | Checks if value exists in a sequence     |
+
+---

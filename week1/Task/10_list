@@ -167,3 +167,156 @@ Negative:    -4    -3    -2    -1
 5. Nested data (matrices, grids)
 
 ---
+
+---
+
+## ✅ **Practice Exercises with Solutions**
+
+### 🔸 Exercise 1: Create a list and print all elements
+
+```python
+# Create a list of 5 fruits and print them
+fruits = ["apple", "banana", "cherry", "mango", "orange"]
+print(fruits)
+```
+
+### 🔸 Exercise 2: Add and remove elements
+
+```python
+# Add "grape" to the list and remove "banana"
+fruits.append("grape")
+fruits.remove("banana")
+print(fruits)
+```
+
+### 🔸 Exercise 3: Slice the list
+
+```python
+# Print first 3 elements
+print(fruits[:3])
+```
+
+### 🔸 Exercise 4: Sort and reverse
+
+```python
+# Sort the list alphabetically and then reverse it
+fruits.sort()
+print(fruits)
+fruits.reverse()
+print(fruits)
+```
+
+### 🔸 Exercise 5: Nested List Access
+
+```python
+# Access element "dog" from nested list
+animals = ["cat", ["dog", "parrot"], "rabbit"]
+print(animals[1][0])  # Output: dog
+```
+
+---
+
+## 📘 **MCQs / Interview Questions**
+
+### 🧠 MCQs:
+
+1. What is the output of `len([1, 2, 3])`?
+   a) 2
+   b) 3
+   c) Error
+   d) None
+   ✅ **Answer: b) 3**
+
+2. Which method adds an element at the end of a list?
+   a) `add()`
+   b) `append()`
+   c) `insert()`
+   d) `extend()`
+   ✅ **Answer: b) append()**
+
+3. What does `list1 + list2` do?
+   a) Adds elements numerically
+   b) Concatenates both lists
+   c) Raises an error
+   d) Replaces list1 with list2
+   ✅ **Answer: b) Concatenates both lists**
+
+4. What is the correct syntax to slice the last 3 elements of a list `a`?
+   a) `a[3:]`
+   b) `a[-3:]`
+   c) `a[:3]`
+   d) `a[:-3]`
+   ✅ **Answer: b) a\[-3:]**
+
+---
+
+## 📝 **Interview-Style Questions**
+
+1. **What are lists in Python?**
+
+   - Lists are ordered, mutable sequences used to store multiple values of any type.
+
+2. **How are lists different from tuples?**
+
+   - Lists are mutable, whereas tuples are immutable.
+
+3. **How can you remove duplicates from a list?**
+
+   ```python
+   mylist = [1, 2, 2, 3, 4, 4]
+   unique = list(set(mylist))
+   ```
+
+4. **How do you loop through a list and print each index and item?**
+
+   ```python
+   for i, item in enumerate(mylist):
+       print(i, item)
+   ```
+
+5. **What happens when you multiply a list like `[1,2]*3`?**
+
+   - Output: `[1, 2, 1, 2, 1, 2]`
+
+---
+
+## 🎯 **Quiz Format Version**
+
+> 🔹**Instructions:** Choose the correct option. Each question carries 1 point.
+
+1. What is the default index of the first item in a list?
+   a) 0
+   b) 1
+   c) -1
+   d) None
+   ✅ **Answer: a**
+
+2. Which method removes all items from a list?
+   a) `remove()`
+   b) `clear()`
+   c) `del()`
+   d) `pop()`
+   ✅ **Answer: b**
+
+3. What is the output of: `["a", "b"] * 2`?
+   a) `["a", "b", "a", "b"]`
+   b) `["aa", "bb"]`
+   c) Error
+   d) `["ab", "ab"]`
+   ✅ **Answer: a**
+
+4. Which method is used to sort a list in place?
+   a) `sorted()`
+   b) `sort()`
+   c) `order()`
+   d) `arrange()`
+   ✅ **Answer: b**
+
+5. What does `list.insert(2, "x")` do?
+   a) Adds x at index 2
+   b) Replaces index 2 with x
+   c) Deletes element at index 2
+   d) Adds x at the end
+   ✅ **Answer: a**
+
+---

@@ -192,3 +192,195 @@ It’s not enforced, but by convention, **don’t change it** later.
 | Naming Rule     | Letters, numbers, \_, no spaces |
 
 ---
+
+---
+
+## ✅ 1. **Practice Exercises with Solutions**
+
+```python
+# ✅ Exercise 1: Declare and print variables
+name = "Alice"
+age = 25
+print(name, age)
+# Output: Alice 25
+
+# ✅ Exercise 2: Multiple assignments in one line
+x, y, z = 10, 20, 30
+print(x, y, z)
+# Output: 10 20 30
+
+# ✅ Exercise 3: Assign same value to multiple variables
+a = b = c = 5
+print(a, b, c)
+# Output: 5 5 5
+
+# ✅ Exercise 4: Check variable type
+price = 99.99
+print(type(price))
+# Output: <class 'float'>
+
+# ✅ Exercise 5: Concatenate strings
+first = "Hello"
+last = "World"
+print(first + " " + last)
+# Output: Hello World
+
+# ✅ Exercise 6: Add integer values stored in variables
+num1 = 100
+num2 = 200
+total = num1 + num2
+print(total)
+# Output: 300
+
+# ✅ Exercise 7: Swap two variables
+a = 5
+b = 10
+a, b = b, a
+print(a, b)
+# Output: 10 5
+
+# ✅ Exercise 8: Variable naming – valid vs invalid
+_myVar = "ok"
+# 2name = "no" ❌ (invalid - cannot start with number)
+# my-var = "no" ❌ (invalid - hyphen not allowed)
+```
+
+---
+
+## ❓ 2. **MCQs and Interview-Style Questions**
+
+### 🧠 **MCQs (Choose the correct answer):**
+
+**Q1.** Which of the following is a valid variable name?
+A. `2value`
+B. `my-value`
+C. `value_2`
+D. `@name`
+✅ **Answer:** C
+
+---
+
+**Q2.** What will be the output?
+
+```python
+x = "5"
+y = 3
+print(x * y)
+```
+
+A. 15
+B. 555
+C. Error
+D. 8
+✅ **Answer:** B
+
+---
+
+**Q3.** Which of the following is not allowed?
+A. `my_var = 5`
+B. `5var = 10`
+C. `var_5 = 10`
+D. `_var5 = 100`
+✅ **Answer:** B
+
+---
+
+**Q4.** What is the correct way to assign multiple values?
+A. `a = 10, b = 20`
+B. `a == 10 and b == 20`
+C. `a, b = 10, 20`
+D. `a = b = 10, 20`
+✅ **Answer:** C
+
+---
+
+**Q5.** Which keyword is used to declare a constant in Python?
+A. `const`
+B. `define`
+C. None
+D. `constant`
+✅ **Answer:** C (Python doesn’t have a keyword; use UPPERCASE naming)
+
+---
+
+### 💬 Interview-Style Questions:
+
+1. **What is a variable in Python?**
+   ✅ A variable is a named memory location to store a value that can be changed during program execution.
+
+2. **How are variables declared in Python?**
+   ✅ You don’t need `int`, `string`, etc. Just assign a value: `x = 10`
+
+3. **Can variable names start with a number?**
+   ❌ No. They must start with a letter or underscore.
+
+4. **What is dynamic typing in Python?**
+   ✅ Python automatically infers the data type at runtime, no need to declare explicitly.
+
+5. **How to write constants in Python?**
+   ✅ Use UPPERCASE conventionally, e.g., `PI = 3.14`, but Python doesn't enforce immutability.
+
+---
+
+## 📝 3. **Quiz Format (Python Variables)**
+
+```
+📝 PYTHON VARIABLES QUIZ 🧠
+
+1. Which of the following is a valid variable name?
+   a) my-var
+   b) 2name
+   c) _name
+   d) @value
+
+2. What is the type of variable x in:
+   x = 12.5
+   a) int
+   b) float
+   c) str
+   d) double
+
+3. What is the result of:
+   a = 10
+   b = 5
+   a, b = b, a
+   print(a, b)
+   a) 10 5
+   b) 5 10
+   c) Error
+   d) None
+
+4. How do you assign value `1` to both x and y?
+   a) x = 1 y = 1
+   b) x = y = 1
+   c) x == y == 1
+   d) x : y = 1
+
+5. Python variable names are:
+   a) Case-sensitive
+   b) Must start with a digit
+   c) Can include symbols
+   d) All of the above
+
+🎯 Answers:
+1 → c
+2 → b
+3 → b
+4 → b
+5 → a
+```
+
+---
+
+## 📘 4. **Variable Summary Chart**
+
+| Feature          | Description                              | Example              |
+| ---------------- | ---------------------------------------- | -------------------- |
+| Declare Variable | No keyword needed                        | `x = 10`             |
+| Dynamic Typing   | Python decides type automatically        | `name = "Alice"`     |
+| Reassignable     | Variables can change type                | `x = 5 → x = "five"` |
+| Multi Assignment | Assign many at once                      | `a, b = 1, 2`        |
+| Constants        | No true constants; use naming convention | `PI = 3.14`          |
+| Naming Rules     | Start with letter/\_, no special chars   | `_name`, `age_1`     |
+
+---
