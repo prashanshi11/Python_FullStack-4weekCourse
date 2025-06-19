@@ -142,3 +142,183 @@ Here’s a **quick reference chart (infographic-style table)** to help you remem
 > B = bool, u = set, B = bytes, y = bytearray, etc.
 
 ---
+
+---
+
+## ✅ 1. **Practice Exercises with Solutions**
+
+```python
+# ✅ Exercise 1: Check data type using type()
+x = 5
+print(type(x))  # Output: <class 'int'>
+
+# ✅ Exercise 2: String data type
+name = "Alice"
+print(type(name))  # Output: <class 'str'>
+
+# ✅ Exercise 3: Float data type
+price = 19.99
+print(type(price))  # Output: <class 'float'>
+
+# ✅ Exercise 4: Boolean data type
+is_valid = True
+print(type(is_valid))  # Output: <class 'bool'>
+
+# ✅ Exercise 5: List data type
+colors = ["red", "green", "blue"]
+print(type(colors))  # Output: <class 'list'>
+
+# ✅ Exercise 6: Tuple data type
+coords = (10, 20)
+print(type(coords))  # Output: <class 'tuple'>
+
+# ✅ Exercise 7: Set data type
+unique_items = {1, 2, 3}
+print(type(unique_items))  # Output: <class 'set'>
+
+# ✅ Exercise 8: Dictionary data type
+person = {"name": "John", "age": 30}
+print(type(person))  # Output: <class 'dict'>
+
+# ✅ Exercise 9: Convert int to float
+x = 10
+y = float(x)
+print(y, type(y))  # Output: 10.0 <class 'float'>
+
+# ✅ Exercise 10: Convert string to int
+num_str = "123"
+num = int(num_str)
+print(num, type(num))  # Output: 123 <class 'int'>
+```
+
+---
+
+## ❓ 2. **MCQs and Interview-Style Questions**
+
+### 🧠 MCQs:
+
+**Q1.** What data type is the result of `5 / 2` in Python 3?
+A. int
+B. float
+C. double
+D. str
+✅ **Answer:** B
+
+---
+
+**Q2.** What is the type of `True` in Python?
+A. str
+B. int
+C. bool
+D. logical
+✅ **Answer:** C
+
+---
+
+**Q3.** Which of the following is an immutable data type?
+A. list
+B. dict
+C. set
+D. tuple
+✅ **Answer:** D
+
+---
+
+**Q4.** What does `type({})` return?
+A. set
+B. list
+C. dict
+D. tuple
+✅ **Answer:** C
+
+---
+
+**Q5.** Which one of the following represents a set?
+A. `[1, 2, 3]`
+B. `(1, 2, 3)`
+C. `{"one": 1}`
+D. `{1, 2, 3}`
+✅ **Answer:** D
+
+---
+
+### 💬 Interview-Style Questions:
+
+1. **What are data types in Python?**
+   ✅ Categories that define the kind of data a variable can store (e.g., int, float, str).
+
+2. **What is the difference between a list and a tuple?**
+   ✅ List is mutable, tuple is immutable.
+
+3. **What is the difference between a set and a dictionary?**
+   ✅ Set contains unique values; dictionary contains key-value pairs.
+
+4. **How does dynamic typing work in Python?**
+   ✅ Python automatically assigns data type during execution based on value.
+
+5. **What is the default data type of `input()`?**
+   ✅ `str` (string)
+
+---
+
+## 📝 3. **Quiz Format (Python Data Types)**
+
+```
+📝 PYTHON DATA TYPES QUIZ 📚
+
+1. What is the output of type(10.5)?
+   a) <class 'int'>
+   b) <class 'float'>
+   c) <class 'double'>
+   d) <class 'decimal'>
+
+2. What is the type of []?
+   a) tuple
+   b) set
+   c) list
+   d) dict
+
+3. What is the result of:
+   type((1,))
+   a) tuple
+   b) list
+   c) int
+   d) str
+
+4. Which of these is mutable?
+   a) tuple
+   b) list
+   c) string
+   d) int
+
+5. Which of these is a correct dictionary?
+   a) {1, 2, 3}
+   b) {"name": "John"}
+   c) [1:2, 3:4]
+   d) ("name": "John")
+
+🎯 Answers:
+1 → b
+2 → c
+3 → a
+4 → b
+5 → b
+```
+
+---
+
+## 📘 4. **Summary Table of Python Data Types**
+
+| Data Type  | Example          | Mutable | Description                   |
+| ---------- | ---------------- | ------- | ----------------------------- |
+| `int`      | 10               | No      | Whole numbers                 |
+| `float`    | 10.5             | No      | Decimal numbers               |
+| `str`      | "hello"          | No      | Text/String                   |
+| `bool`     | True / False     | No      | Logical values                |
+| `list`     | \[1, 2, 3]       | Yes     | Ordered, mutable collection   |
+| `tuple`    | (1, 2, 3)        | No      | Ordered, immutable collection |
+| `set`      | {1, 2, 3}        | Yes     | Unordered, unique values      |
+| `dict`     | {"key": "value"} | Yes     | Key-value pairs               |
+| `NoneType` | None             | No      | Represents absence of a value |
+
+---

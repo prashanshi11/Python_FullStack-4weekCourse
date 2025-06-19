@@ -107,3 +107,196 @@ Python operators are the foundation for expressions and logic in any program. Ma
 
 ---
 
+## ✅ 1. **Practice Exercises with Solutions**
+
+```python
+# ✅ Arithmetic Operators
+a = 10
+b = 3
+
+print(a + b)   # Addition → 13
+print(a - b)   # Subtraction → 7
+print(a * b)   # Multiplication → 30
+print(a / b)   # Division → 3.333...
+print(a % b)   # Modulus → 1
+print(a ** b)  # Exponent → 1000
+print(a // b)  # Floor Division → 3
+
+# ✅ Assignment Operators
+x = 5
+x += 3
+print(x)  # 8
+x *= 2
+print(x)  # 16
+
+# ✅ Comparison Operators
+print(a == b)   # False
+print(a != b)   # True
+print(a > b)    # True
+print(a <= b)   # False
+
+# ✅ Logical Operators
+print(a > 5 and b < 5)   # True
+print(a < 5 or b == 3)   # True
+print(not(a == b))       # True
+
+# ✅ Identity Operators
+x = [1, 2]
+y = [1, 2]
+z = x
+print(x is y)   # False (different objects)
+print(x is z)   # True
+print(x is not y) # True
+
+# ✅ Membership Operators
+fruits = ['apple', 'banana']
+print('apple' in fruits)     # True
+print('grape' not in fruits) # True
+
+# ✅ Bitwise Operators
+a = 5   # 0101
+b = 3   # 0011
+
+print(a & b)  # AND → 1
+print(a | b)  # OR  → 7
+print(a ^ b)  # XOR → 6
+print(~a)     # NOT → -6
+print(a << 1) # Left Shift → 10
+print(a >> 1) # Right Shift → 2
+```
+
+---
+
+## ❓ 2. **MCQs and Interview Questions**
+
+### 🧠 MCQs:
+
+**Q1.** What is the output of `3 ** 2`?
+A. 5
+B. 6
+C. 9
+D. 8
+✅ **Answer:** C
+
+---
+
+**Q2.** Which of the following is a logical operator in Python?
+A. `&`
+B. `&&`
+C. `and`
+D. `add`
+✅ **Answer:** C
+
+---
+
+**Q3.** What will be the output?
+
+```python
+x = 10
+y = 20
+print(x is y)
+```
+
+A. True
+B. False
+C. Error
+D. 10
+✅ **Answer:** B
+
+---
+
+**Q4.** What is the output of `10 // 3`?
+A. 3.33
+B. 3
+C. 4
+D. 0
+✅ **Answer:** B
+
+---
+
+**Q5.** Which operator is used to test if a value is present in a list?
+A. `is`
+B. `==`
+C. `in`
+D. `with`
+✅ **Answer:** C
+
+---
+
+### 💬 Interview-Style Questions:
+
+1. **What is the difference between `==` and `is`?**
+   ✅ `==` checks value equality, `is` checks object identity.
+
+2. **What is the use of floor division (`//`)?**
+   ✅ Returns the largest integer less than or equal to the result.
+
+3. **Explain the `not` operator in Python.**
+   ✅ It inverts the Boolean value (`True` becomes `False`).
+
+4. **How does the `^` operator work?**
+   ✅ Performs bitwise XOR between two integers.
+
+5. **Give an example of a membership operator.**
+   ✅ `'a' in ['a', 'b']` returns `True`.
+
+---
+
+## 📝 3. **Quiz Format (Python Operators)**
+
+```
+📝 PYTHON OPERATORS QUIZ ⚙️
+
+1. What does `a += 5` mean?
+   a) a = a + 5
+   b) a = 5
+   c) a == 5
+   d) Error
+
+2. What is the result of `4 ** 2`?
+   a) 6
+   b) 8
+   c) 16
+   d) 4
+
+3. Which one is a comparison operator?
+   a) and
+   b) or
+   c) ==
+   d) not
+
+4. What is the result of `7 // 2`?
+   a) 3.5
+   b) 4
+   c) 3
+   d) 2
+
+5. Which of these checks whether two variables refer to the same object?
+   a) ==
+   b) is
+   c) equals
+   d) match
+
+🎯 Answers:
+1 → a
+2 → c
+3 → c
+4 → b
+5 → b
+```
+
+---
+
+## 📘 4. **Operator Summary Table**
+
+| Operator Type | Operators                | Example           | Result / Use Case    |                 |
+| ------------- | ------------------------ | ----------------- | -------------------- | --------------- |
+| Arithmetic    | +, -, \*, /, %, \*\*, // | `10 % 3`          | Remainder → 1        |                 |
+| Assignment    | =, +=, -=, \*=, /=       | `x += 2`          | Increment x by 2     |                 |
+| Comparison    | ==, !=, >, <, >=, <=     | `x > y`           | True/False           |                 |
+| Logical       | and, or, not             | `x > 2 and y < 5` | Logical decisions    |                 |
+| Identity      | is, is not               | `x is y`          | Same memory location |                 |
+| Membership    | in, not in               | `'a' in list`     | True if found        |                 |
+| Bitwise       | &,                       | , ^, \~, <<, >>   | `5 & 3`              | Bitwise AND = 1 |
+
+---

@@ -57,3 +57,169 @@ print(x + y)
 ### 🔚 **Conclusion**
 
 > 📌 **Comments don’t affect how Python runs your code, but they greatly affect how easily you (or others) can understand, fix, and improve it.**
+
+---
+
+## ✅ 1. **Practice Exercises with Solutions**
+
+```python
+# ✅ This is a single-line comment
+# It helps explain what the code does
+
+x = 10  # Inline comment after a statement
+print(x)  # Output: 10
+
+# ✅ Multi-line comment using multiple #
+# This is line 1
+# This is line 2
+# This is line 3
+
+"""
+✅ This is a multi-line string, often used as a comment
+It is not technically a comment, but used like one for documentation
+"""
+
+'''
+✅ This also works as a block of comment
+Used to describe functions, classes, or files
+'''
+
+# ✅ Commenting out code
+# print("This won't run")
+```
+
+---
+
+## ❓ 2. **MCQs and Interview-Style Questions**
+
+### 🧠 MCQs:
+
+**Q1.** Which symbol is used to write a single-line comment in Python?
+A. //
+B. #
+C. --
+D. \*
+✅ **Answer:** B
+
+---
+
+**Q2.** What happens to commented code during execution?
+A. It runs normally
+B. It throws an error
+C. It is ignored
+D. It is converted to output
+✅ **Answer:** C
+
+---
+
+**Q3.** Which of the following can be used as a docstring?
+A. #
+B. ""
+C. ''' '''
+D. None
+✅ **Answer:** C
+
+---
+
+**Q4.** What is the purpose of comments?
+A. To make code faster
+B. To increase memory
+C. To explain the code
+D. To compile code
+✅ **Answer:** C
+
+---
+
+**Q5.** Which of these is correct?
+
+```python
+# This is a comment
+print("Hi")  # This prints Hi
+"""
+Multi-line comment
+"""
+```
+
+A. All lines are valid
+B. Only line 2 is valid
+C. Line 3 throws error
+D. None are valid
+✅ **Answer:** A
+
+---
+
+### 💬 Interview Questions:
+
+1. **What is the purpose of comments in Python?**
+   ✅ To explain code logic, improve readability, and disable specific lines temporarily.
+
+2. **What is the difference between `#` and `'''` in Python?**
+   ✅ `#` is a true comment; `'''` is a string literal often used as a docstring or block comment.
+
+3. **Can you nest comments in Python?**
+   ❌ No, you cannot nest comments.
+
+4. **Do comments affect performance or output?**
+   ✅ No, they are ignored by the interpreter.
+
+5. **Where are docstrings commonly used?**
+   ✅ Inside functions, classes, and modules to document their purpose.
+
+---
+
+## 📝 3. **Quiz Format (Python Comments)**
+
+```
+📝 PYTHON COMMENTS QUIZ ✍️
+
+1. What is the output of:
+   # print("Hello")
+   a) Hello
+   b) Error
+   c) Nothing
+   d) "Hello"
+
+2. Which of the following is a valid comment?
+   a) ## This is a comment
+   b) // This is a comment
+   c) -- This is a comment
+   d) ** This is a comment
+
+3. Which of these can be used as a docstring?
+   a) #
+   b) ''' '''
+   c) //
+   d) None
+
+4. What is the purpose of `#` in Python?
+   a) Declare a variable
+   b) Define a function
+   c) Start a comment
+   d) End a loop
+
+5. Which statement is TRUE?
+   a) Comments slow down the code
+   b) Comments must be compiled
+   c) Comments are for documentation
+   d) Comments cause errors
+
+🎯 Answers:
+1 → c
+2 → a
+3 → b
+4 → c
+5 → c
+```
+
+---
+
+## 📘 4. **Summary Table – Python Comments**
+
+| Comment Type      | Syntax          | Purpose                           | Example                            |
+| ----------------- | --------------- | --------------------------------- | ---------------------------------- |
+| Single-line       | `# comment`     | Describe code briefly             | `# This adds two numbers`          |
+| Inline            | `x = 5  # note` | Add context beside a line         | `x = 10  # user input`             |
+| Multi-line string | `''' text '''`  | Block documentation / explanation | `'''This is a block comment'''`    |
+| Docstring         | Inside function | Explain usage of function/class   | `"""This function adds numbers"""` |
+
+---
