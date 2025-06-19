@@ -105,6 +105,16 @@ USe Case: Cleaning a contact list.
 
 contacts = ["Alice", "Bob", "Alice", "Charlie", "Bob"]
 
+Code: 
+contacts = ["Alice", "Bob", "Alice", "Charlie", "Bob"]
+unique_contacts = list(set(contacts))
+print(unique_contacts)
+
+# Output:
+# ['Charlie', 'Alice', 'Bob']
+# Note: Sets do not preserve order, so the order may vary.
+
+
 """
 
 """
@@ -112,6 +122,16 @@ Task 2: Finding Common Elements(Intersection)
 Use Case: Find users who are subscribed to both newsletters.
 newsletter_a = {"Alice", "Bob", "Charlie"}
 newsletter_b = {"Bob", "David", "Eve"}
+
+Code:
+newsletter_a = {"Alice", "Bob", "Charlie"}
+newsletter_b = {"Bob", "David", "Eve"}
+
+common_users = newsletter_a & newsletter_b
+print(common_users)
+
+# Output:
+# {'Bob'}
 """
 
 """
@@ -119,12 +139,33 @@ Task 3: Finding Difference
 Use Case: Find customer who bought last month but not this month.
 last_month = {"Alice", "Bob", "Charlie"}
 this_month = {"Bob", "David", "Eve"}
+
+Code:
+last_month = {"Alice", "Bob", "Charlie"}
+this_month = {"Bob", "David", "Eve"}
+
+lost_customers = last_month - this_month
+print(lost_customers)
+
+# Output:
+# {'Alice', 'Charlie'}
+
 """
 
 """
 Task 4: Checking Membership
 Use Case: Check if a user is part of a premium membership.
 registered_users = {"Alice", "Bob", "Charlie"}
+
+Code:
+registered_users = {"Alice", "Bob", "Charlie"}
+user_to_check = "Bob"
+
+is_premium = user_to_check in registered_users
+print(is_premium)
+
+# Output:
+# True
 """
 
 """
@@ -137,4 +178,49 @@ You are managing a web application where users can sign up with their email addr
 You want to ensure that each email address is unique in the system to prevent duplicate accounts.
 
 You receive a list of email addresses from the signup form, and you need to filter out duplicates before storing them in your database.
+
+Code:
+# Task 5: Tags or Labels in Apps
+# Use Case: Collect all unique tags used in blog posts.
+
+tags = ["python", "coding", "python", "data science", "coding"]
+unique_tags = list(set(tags))
+print(unique_tags)
+
+# Output:
+# ['python', 'data science', 'coding']
+# Note: Order may vary due to set behavior.
+
+# Problem: Detecting Duplicate Email Addresses in a Signup System
+# Scenario:
+# You are managing a web application where users can sign up with their email addresses.
+# You want to ensure that each email address is unique in the system to prevent duplicate accounts.
+
+emails = [
+    "user1@example.com", 
+    "user2@example.com", 
+    "user1@example.com", 
+    "user3@example.com"
+]
+
+unique_emails = list(set(emails))
+print(unique_emails)
+
+# Output:
+# ['user3@example.com', 'user2@example.com', 'user1@example.com']
+# Note: Duplicates are removed, order may vary.
+
 """
+tags = ["python", "coding", "python", "data science", "coding"]
+unique_tags = list(set(tags))
+print(unique_tags)
+emails = [
+    "user1@example.com", 
+    "user2@example.com", 
+    "user1@example.com", 
+    "user3@example.com",
+    "user4@example.com"
+]
+
+unique_emails = list(set(emails))
+print(unique_emails)

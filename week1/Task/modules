@@ -194,5 +194,3 @@ print(dir(math))  # Lists all attributes/functions in math module
 ```
 
 ---
-
-Would you like a **PDF or infographic** of this for easy revision or upload to GitHub?

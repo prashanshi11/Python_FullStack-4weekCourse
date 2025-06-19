@@ -57,5 +57,3 @@ print(x + y)
 ### 🔚 **Conclusion**
 
 > 📌 **Comments don’t affect how Python runs your code, but they greatly affect how easily you (or others) can understand, fix, and improve it.**
-
-Would you like a real-world code example with good comments?
