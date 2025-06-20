@@ -1,0 +1,713 @@
+## 📌 **1. What is OOPs in Python?**
+
+**Definition:**
+Object-Oriented Programming (OOPs) is a programming paradigm based on the concept of **"objects"**, which can contain **data** (attributes) and **code** (methods). Python supports OOPs fully.
+
+---
+
+## 📚 **2. Key Concepts of OOPs**
+
+| Concept           | Description                                                             |
+| ----------------- | ----------------------------------------------------------------------- |
+| **Class**         | A blueprint for creating objects                                        |
+| **Object**        | An instance of a class                                                  |
+| **Encapsulation** | Binding data and methods together & restricting access                  |
+| **Abstraction**   | Hiding internal details and showing only essentials                     |
+| **Inheritance**   | Acquiring properties of one class into another                          |
+| **Polymorphism**  | Ability to take multiple forms (same function name behaves differently) |
+
+---
+
+## 🧭 **3. Types of OOP Concepts in Python**
+
+### ✅ Encapsulation
+
+- Bundles data and methods
+- Uses **private/protected/public** variables
+
+### ✅ Inheritance
+
+- Allows a class to use methods/properties of another
+- Types:
+
+  - **Single Inheritance**
+  - **Multiple Inheritance**
+  - **Multilevel Inheritance**
+  - **Hierarchical Inheritance**
+  - **Hybrid Inheritance**
+
+### ✅ Polymorphism
+
+- Method overriding (runtime)
+- Method overloading (not directly supported in Python, but can be mimicked)
+
+### ✅ Abstraction
+
+- Hides complex implementation
+- Achieved using **abstract base classes** via `abc` module
+
+---
+
+## 📊 **4. OOP Chart Summary**
+
+```
+OOP in Python
+├── Class
+├── Object
+├── Inheritance
+│   ├── Single
+│   ├── Multiple
+│   ├── Multilevel
+│   ├── Hierarchical
+│   └── Hybrid
+├── Encapsulation
+├── Polymorphism
+└── Abstraction
+```
+
+---
+
+## 💡 **5. Code Examples**
+
+### ✅ Class & Object
+
+```python
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+    def show_details(self):
+        print(f"Brand: {self.brand}, Color: {self.color}")
+
+# Creating object
+car1 = Car("Toyota", "Red")
+car1.show_details()  # Output: Brand: Toyota, Color: Red
+```
+
+---
+
+### ✅ Encapsulation
+
+```python
+class Student:
+    def __init__(self, name, age):
+        self.__name = name  # private variable
+        self.age = age
+
+    def get_name(self):
+        return self.__name
+
+s = Student("John", 20)
+print(s.get_name())  # Output: John
+```
+
+---
+
+### ✅ Inheritance
+
+```python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):  # Single inheritance
+    def bark(self):
+        print("Dog barks")
+
+d = Dog()
+d.speak()
+d.bark()
+```
+
+---
+
+### ✅ Polymorphism
+
+```python
+class Cat:
+    def sound(self):
+        print("Meow")
+
+class Dog:
+    def sound(self):
+        print("Bark")
+
+# Polymorphism in action
+for animal in (Cat(), Dog()):
+    animal.sound()
+```
+
+---
+
+### ✅ Abstraction
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def area(self):
+        return 3.14 * 5 * 5
+
+c = Circle()
+print(c.area())  # Output: 78.5
+```
+
+---
+
+## 📌 **6. Key Points to Remember**
+
+- Python supports all OOP principles.
+- Classes use `__init__()` as a constructor.
+- Access modifiers: `_protected`, `__private`.
+- Python does not support method overloading directly.
+- Use `abc` module for abstraction.
+
+---
+
+## 📘 **7. OOPs in Python – Theory Summary**
+
+| Term              | Meaning                                          |
+| ----------------- | ------------------------------------------------ |
+| `__init__()`      | Constructor method                               |
+| `self`            | Refers to the current object instance            |
+| `@abstractmethod` | Declares an abstract method (must be overridden) |
+| `super()`         | Calls parent class constructor or method         |
+| Inheritance       | Promotes code reusability                        |
+| Polymorphism      | One interface, multiple functions                |
+| Encapsulation     | Data hiding using access specifiers              |
+
+---
+
+## 🧠 **8. MCQs & Interview-Style Questions**
+
+**Q1. What is a class in Python?**
+A) Object instance
+B) Blueprint of object ✅
+C) Memory storage
+D) Loop structure
+
+**Q2. Which method is called when an object is created?**
+A) `__call__()`
+B) `__main__()`
+C) `__init__()` ✅
+D) `__del__()`
+
+**Q3. What is the main purpose of inheritance?**
+A) Encapsulation
+B) Polymorphism
+C) Code reuse ✅
+D) Hiding complexity
+
+**Q4. Which module is used for abstraction?**
+A) `abc` ✅
+B) `os`
+C) `sys`
+D) `re`
+
+**Q5. Can Python support multiple inheritance?**
+A) No
+B) Yes ✅
+C) Only via interfaces
+D) Only via mixins
+
+---
+
+# 🎓 Object-Oriented Programming Concepts in Python
+
+---
+
+## 📌 1. **Class**
+
+### 🔍 Concept:
+
+A **class** is a **blueprint or template** for creating objects. It defines attributes (data) and methods (functions) that describe the behavior of the object.
+
+### 📦 Use:
+
+To define the structure and behavior of objects in a reusable way.
+
+### 💡 Importance:
+
+- Promotes code reusability
+- Helps in creating multiple objects from the same structure
+
+### 🧪 Example:
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, I’m {self.name} and I’m {self.age} years old.")
+```
+
+### 📈 Chart:
+
+```
+Class: Person
+├── Attributes: name, age
+└── Method: greet()
+```
+
+### ✅ Tip:
+
+Always start class names with uppercase (e.g., `Student`, `Car`).
+
+---
+
+## 📌 2. **Object**
+
+### 🔍 Concept:
+
+An **object** is an **instance of a class**. It holds actual values for the class blueprint and can use its methods.
+
+### 📦 Use:
+
+To perform actions or store data defined in the class.
+
+### 💡 Importance:
+
+- Brings data and methods together
+- Real-world representation in code
+
+### 🧪 Example:
+
+```python
+p1 = Person("Alice", 25)
+p1.greet()  # Output: Hello, I’m Alice and I’m 25 years old.
+```
+
+### 🧭 Chart:
+
+```
+Object p1:
+├── name = "Alice"
+├── age = 25
+└── greet() method
+```
+
+### ✅ Tip:
+
+You can create multiple objects from a single class.
+
+---
+
+## 📌 3. **Encapsulation**
+
+### 🔍 Concept:
+
+**Encapsulation** means **wrapping data (variables) and methods** into a single unit and **restricting direct access** using access modifiers (`public`, `protected`, `private`).
+
+### 🔐 Types:
+
+- **Public (`var`)**: Accessible everywhere.
+- **Protected (`_var`)**: Accessible in class and subclasses.
+- **Private (`__var`)**: Accessible only within the class.
+
+### 📦 Use:
+
+To protect data from being modified directly.
+
+### 💡 Importance:
+
+- Increases security and integrity of the data.
+- Hides internal object details.
+
+### 🧪 Example:
+
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private
+
+    def get_balance(self):
+        return self.__balance
+
+    def deposit(self, amount):
+        self.__balance += amount
+```
+
+### 📈 Diagram:
+
+```
++----------------+
+| BankAccount    |
+|----------------|
+| __balance      |
+| get_balance()  |
+| deposit()      |
++----------------+
+```
+
+### ✅ Tip:
+
+Use getter/setter methods to access private attributes.
+
+---
+
+## 📌 4. **Abstraction**
+
+### 🔍 Concept:
+
+**Abstraction** hides the complex implementation and shows only **essential features** of an object.
+
+### 🧰 Achieved via:
+
+- **Abstract Classes** (`abc` module)
+- **Interfaces** (not formally in Python, but via abstract base classes)
+
+### 📦 Use:
+
+To define _what_ a class should do, not _how_ it does it.
+
+### 💡 Importance:
+
+- Reduces code complexity
+- Focuses on essential operations
+
+### 🧪 Example:
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def area(self):
+        return 3.14 * 5 * 5
+```
+
+### 📈 Chart:
+
+```
+Abstract Class: Shape
+└── area() [abstract]
+
+Concrete Class: Circle
+└── area() [implemented]
+```
+
+### ✅ Tip:
+
+You can't instantiate abstract classes directly.
+
+---
+
+## 📌 5. **Inheritance**
+
+### 🔍 Concept:
+
+**Inheritance** is the mechanism of acquiring the **properties and methods** of one class into another.
+
+### 🧬 Types of Inheritance:
+
+| Type         | Description                       |
+| ------------ | --------------------------------- |
+| Single       | One child from one parent         |
+| Multiple     | One child from multiple parents   |
+| Multilevel   | Derived class from derived class  |
+| Hierarchical | Multiple children from one parent |
+| Hybrid       | Combination of two or more types  |
+
+### 📦 Use:
+
+- Reusability of code
+- Hierarchical classification
+
+### 💡 Importance:
+
+- Avoids redundancy
+- Promotes a cleaner design
+
+### 🧪 Example:
+
+```python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):  # Single inheritance
+    def bark(self):
+        print("Dog barks")
+```
+
+### 📈 Inheritance Diagram:
+
+```
+Animal (Parent)
+└── Dog (Child)
+    ├── speak()
+    └── bark()
+```
+
+### ✅ Tip:
+
+Use `super()` to access parent class methods.
+
+---
+
+## 📌 6. **Polymorphism**
+
+### 🔍 Concept:
+
+**Polymorphism** means “many forms.” The same method can behave differently on different classes or objects.
+
+### 🧪 Types:
+
+| Type        | Description                          | Python Support                |
+| ----------- | ------------------------------------ | ----------------------------- |
+| Overriding  | Same method name in child class      | ✅ Yes                        |
+| Overloading | Same method with different arguments | ❌ Not directly (use `*args`) |
+
+### 📦 Use:
+
+To simplify code logic when working with multiple related classes.
+
+### 💡 Importance:
+
+- Allows flexibility
+- Enables code reuse in new contexts
+
+### 🧪 Example (Overriding):
+
+```python
+class Bird:
+    def fly(self):
+        print("Bird can fly")
+
+class Penguin(Bird):
+    def fly(self):
+        print("Penguin can’t fly")
+```
+
+### 📈 Diagram:
+
+```
+Bird -> fly() → "Bird can fly"
+Penguin -> fly() → "Penguin can’t fly"
+```
+
+### ✅ Tip:
+
+Polymorphism works well with inheritance.
+
+---
+
+## 📊 Final OOPs Summary Table
+
+| Concept       | Use                       | Feature          | Example Method    |
+| ------------- | ------------------------- | ---------------- | ----------------- |
+| Class         | Blueprint of object       | Code structure   | `__init__`        |
+| Object        | Instance of class         | Data & behavior  | `obj.method()`    |
+| Encapsulation | Protect data              | Access control   | `__privateVar`    |
+| Abstraction   | Hide complexity           | Interface design | `@abstractmethod` |
+| Inheritance   | Reuse code                | Code hierarchy   | `super()`         |
+| Polymorphism  | One interface, many forms | Dynamic behavior | Method overriding |
+
+---
+
+---
+
+### ✅ 1. **Single Inheritance**
+
+One child class inherits from one parent class.
+
+```python
+# Parent class
+class Animal:
+    def __init__(self):
+        print("Animal constructor")
+
+# Child class
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()  # Calls the constructor of Animal
+        print("Dog constructor")
+
+d = Dog()
+```
+
+**Output:**
+
+```
+Animal constructor
+Dog constructor
+```
+
+---
+
+### ✅ 2. **Multilevel Inheritance**
+
+A child inherits from a class, which itself inherits from another class.
+
+```python
+# Base class
+class Animal:
+    def __init__(self):
+        print("Animal constructor")
+
+# Intermediate class
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()
+        print("Dog constructor")
+
+# Derived class
+class Puppy(Dog):
+    def __init__(self):
+        super().__init__()
+        print("Puppy constructor")
+
+p = Puppy()
+```
+
+**Output:**
+
+```
+Animal constructor
+Dog constructor
+Puppy constructor
+```
+
+---
+
+### ✅ 3. **Hierarchical Inheritance**
+
+Multiple child classes inherit from the same parent class.
+
+```python
+class Animal:
+    def __init__(self):
+        print("Animal constructor")
+
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()
+        print("Dog constructor")
+
+class Cat(Animal):
+    def __init__(self):
+        super().__init__()
+        print("Cat constructor")
+
+d = Dog()
+c = Cat()
+```
+
+**Output:**
+
+```
+Animal constructor
+Dog constructor
+Animal constructor
+Cat constructor
+```
+
+---
+
+### ✅ 4. **Multiple Inheritance**
+
+A class inherits from more than one parent class.
+
+```python
+class A:
+    def __init__(self):
+        print("Constructor of A")
+
+class B:
+    def __init__(self):
+        print("Constructor of B")
+
+class C(A, B):
+    def __init__(self):
+        super().__init__()  # Uses MRO (Method Resolution Order), will call A.__init__()
+        print("Constructor of C")
+
+c = C()
+```
+
+**Output:**
+
+```
+Constructor of A
+Constructor of C
+```
+
+🔹 **Note:** Only `A.__init__()` is called because `super()` follows **MRO** (left to right).
+
+To call both, you can do:
+
+```python
+class B:
+    def __init__(self):
+        print("Constructor of B")
+
+class A:
+    def __init__(self):
+        super().__init__()  # Calls B.__init__() if B comes next
+        print("Constructor of A")
+
+class C(A, B):
+    def __init__(self):
+        super().__init__()
+        print("Constructor of C")
+
+c = C()
+```
+
+**Output:**
+
+```
+Constructor of B
+Constructor of A
+Constructor of C
+```
+
+---
+
+### ✅ 5. **Hybrid Inheritance**
+
+Combination of multiple types (multilevel + multiple + hierarchical)
+
+```python
+class A:
+    def __init__(self):
+        print("A constructor")
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("B constructor")
+
+class C(A):
+    def __init__(self):
+        super().__init__()
+        print("C constructor")
+
+class D(B, C):  # D inherits from B and C (MRO: D -> B -> C -> A)
+    def __init__(self):
+        super().__init__()
+        print("D constructor")
+
+d = D()
+```
+
+**Output:**
+
+```
+A constructor
+C constructor
+B constructor
+D constructor
+```

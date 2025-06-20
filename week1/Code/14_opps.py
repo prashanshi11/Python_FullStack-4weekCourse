@@ -1,3 +1,238 @@
+# -----------------------------------------------------------
+# 🧠 Python OOPs Concepts with Detailed Examples and Comments
+# Covers:
+# 1. Class & Object
+# 2. Encapsulation
+# 3. Inheritance (All types)
+# 4. Polymorphism (Overriding & Duck Typing)
+# 5. Abstraction (abc module)
+# -----------------------------------------------------------
+
+# -----------------------------------------------------------
+# 1️⃣ CLASS AND OBJECT EXAMPLE
+# -----------------------------------------------------------
+
+# Define a class called Person
+class Person:
+    # Constructor (__init__) with parameters
+    def __init__(self, name, age):
+        self.name = name      # Instance variable
+        self.age = age
+
+    # Method to display person details
+    def display(self):
+        print(f"Name: {self.name}, Age: {self.age}")
+
+# Creating objects (instances) of the class
+p1 = Person("Alice", 30)
+p2 = Person("Bob", 25)
+
+# Calling methods on the objects
+p1.display()   # Output: Name: Alice, Age: 30
+p2.display()   # Output: Name: Bob, Age: 25
+
+
+# -----------------------------------------------------------
+# 2️⃣ ENCAPSULATION EXAMPLE
+# -----------------------------------------------------------
+
+# Define a class with private attributes
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance   # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient balance!")
+
+    def get_balance(self):
+        return self.__balance
+
+acc = BankAccount(1000)
+acc.deposit(500)
+print(acc.get_balance())  # Output: 1500
+acc.withdraw(300)
+print(acc.get_balance())  # Output: 1200
+# Trying to access private variable directly: will fail
+# print(acc.__balance)    # ❌ AttributeError
+
+
+# -----------------------------------------------------------
+# 3️⃣ INHERITANCE EXAMPLES (Single, Multiple, Multilevel, Hierarchical, Hybrid)
+# -----------------------------------------------------------
+
+# 🔹 SINGLE INHERITANCE
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):  # Inherits from Animal
+    def bark(self):
+        print("Dog barks")
+
+d = Dog()
+d.speak()  # Output: Animal speaks
+d.bark()   # Output: Dog barks
+
+
+# 🔹 MULTILEVEL INHERITANCE
+class Grandparent:
+    def house(self):
+        print("Grandparent’s house")
+
+class Parent(Grandparent):
+    def car(self):
+        print("Parent’s car")
+
+class Child(Parent):
+    def bike(self):
+        print("Child’s bike")
+
+c = Child()
+c.house()  # Output: Grandparent’s house
+c.car()    # Output: Parent’s car
+c.bike()   # Output: Child’s bike
+
+
+# 🔹 MULTIPLE INHERITANCE
+class Father:
+    def profession(self):
+        print("Engineer")
+
+class Mother:
+    def hobby(self):
+        print("Painting")
+
+class Son(Father, Mother):
+    def activity(self):
+        print("Playing football")
+
+s = Son()
+s.profession()  # Output: Engineer
+s.hobby()       # Output: Painting
+s.activity()    # Output: Playing football
+
+
+# 🔹 HIERARCHICAL INHERITANCE
+class Base:
+    def base_method(self):
+        print("Method of Base class")
+
+class Derived1(Base):
+    def feature1(self):
+        print("Feature of Derived1")
+
+class Derived2(Base):
+    def feature2(self):
+        print("Feature of Derived2")
+
+obj1 = Derived1()
+obj2 = Derived2()
+obj1.base_method()  # Output: Method of Base class
+obj1.feature1()     # Output: Feature of Derived1
+obj2.feature2()     # Output: Feature of Derived2
+
+
+# 🔹 HYBRID INHERITANCE (Combination)
+class A:
+    def method_A(self):
+        print("A")
+
+class B(A):
+    def method_B(self):
+        print("B")
+
+class C:
+    def method_C(self):
+        print("C")
+
+class D(B, C):  # Hybrid of B (which inherits A) and C
+    def method_D(self):
+        print("D")
+
+obj = D()
+obj.method_A()  # Output: A
+obj.method_B()  # Output: B
+obj.method_C()  # Output: C
+obj.method_D()  # Output: D
+
+
+# -----------------------------------------------------------
+# 4️⃣ POLYMORPHISM EXAMPLES
+# -----------------------------------------------------------
+
+# 🔹 METHOD OVERRIDING
+class Bird:
+    def fly(self):
+        print("Bird can fly")
+
+class Penguin(Bird):
+    def fly(self):  # Overrides parent method
+        print("Penguins cannot fly")
+
+b = Bird()
+p = Penguin()
+b.fly()  # Output: Bird can fly
+p.fly()  # Output: Penguins cannot fly
+
+
+# 🔹 DUCK TYPING (Different classes, same method names)
+class Laptop:
+    def code(self):
+        print("Coding in VS Code")
+
+class Mobile:
+    def code(self):
+        print("Coding in Pydroid")
+
+def editor(device):
+    device.code()
+
+editor(Laptop())  # Output: Coding in VS Code
+editor(Mobile())  # Output: Coding in Pydroid
+
+
+# -----------------------------------------------------------
+# 5️⃣ ABSTRACTION EXAMPLE USING abc MODULE
+# -----------------------------------------------------------
+
+# Import Abstract Base Class module
+from abc import ABC, abstractmethod
+
+# Define abstract class
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+# Concrete subclass
+class Bike(Vehicle):
+    def start(self):
+        print("Bike started")
+
+    def stop(self):
+        print("Bike stopped")
+
+b = Bike()
+b.start()  # Output: Bike started
+b.stop()   # Output: Bike stopped
+
+# Cannot create object of abstract class
+# v = Vehicle()  # ❌ Error: Can't instantiate abstract class
+
+# -----------------------------------------------------------
+# ✅ End of OOPs Python Concepts with Examples
+# -----------------------------------------------------------
+
 # -----------------------------------------
 # ✅ Example 1: Basic Class and Object
 # -----------------------------------------
