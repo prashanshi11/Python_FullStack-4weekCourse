@@ -1,0 +1,196 @@
+## 📘 **Class in Python**
+
+### ✅ **Definition**
+
+A **class** in Python is a blueprint or template for creating objects (instances). It defines a set of attributes and methods that the created objects will have.
+
+```python
+class ClassName:
+    # attributes and methods
+```
+
+---
+
+### 🔢 **Types of Classes in Python**
+
+| Type of Class                         | Description                                                                    |
+| ------------------------------------- | ------------------------------------------------------------------------------ |
+| Regular Class                         | A standard class with data and behavior.                                       |
+| Abstract Class                        | A class with abstract methods (must be inherited).                             |
+| Inherited Class                       | A class that inherits from a base/parent class.                                |
+| Multiple Inheritance                  | Class that inherits from multiple base classes.                                |
+| Inner (Nested) Class                  | Class defined inside another class.                                            |
+| Static Class                          | A class using static methods and properties.                                   |
+| Dataclass (from `dataclasses` module) | Used to automatically generate special methods like `__init__()`, `__repr__()` |
+
+---
+
+### 📊 **Chart: Class vs Object**
+
+| Concept       | Class                          | Object               |
+| ------------- | ------------------------------ | -------------------- |
+| Meaning       | Blueprint for objects          | Instance of a class  |
+| Created using | `class` keyword                | By calling the class |
+| Memory        | Doesn't occupy memory directly | Occupies memory      |
+| Example       | `class Car:`                   | `my_car = Car()`     |
+
+---
+
+### 📌 **Key Points**
+
+- Classes group **data** (variables) and **functions** (methods) together.
+- Objects are **instances** of classes.
+- Use the `__init__()` method to initialize object attributes.
+- Use `self` to refer to the current instance.
+
+---
+
+### 🧠 **Theory & Concepts**
+
+#### ➤ **Class Syntax**
+
+```python
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print(f"Hello, {self.name}!")
+```
+
+#### ➤ **Object Creation**
+
+```python
+obj = MyClass("Prashanshi")
+obj.greet()  # Output: Hello, Prashanshi!
+```
+
+#### ➤ **Class Variables vs Instance Variables**
+
+```python
+class Student:
+    college = "LPU"  # Class variable
+
+    def __init__(self, name):
+        self.name = name  # Instance variable
+```
+
+---
+
+### 🧪 **Examples with Output**
+
+#### ✅ Basic Class
+
+```python
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+    def bark(self):
+        print(f"{self.name} says Woof!")
+
+dog1 = Dog("Tommy")
+dog1.bark()
+# Output: Tommy says Woof!
+```
+
+#### ✅ Inheritance
+
+```python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Cat(Animal):
+    def speak(self):
+        print("Cat meows")
+
+cat = Cat()
+cat.speak()
+# Output: Cat meows
+```
+
+#### ✅ Static Method
+
+```python
+class Math:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+print(Math.add(2, 3))  # Output: 5
+```
+
+#### ✅ Class Method
+
+```python
+class School:
+    name = "ABC School"
+
+    @classmethod
+    def get_school_name(cls):
+        return cls.name
+
+print(School.get_school_name())  # Output: ABC School
+```
+
+---
+
+### 📝 **Important Terminology**
+
+| Term          | Description                                        |
+| ------------- | -------------------------------------------------- |
+| `__init__()`  | Constructor method called when object is created   |
+| `self`        | Refers to current object instance                  |
+| Inheritance   | One class derives from another                     |
+| Encapsulation | Restricting direct access to variables             |
+| Polymorphism  | Ability to take multiple forms (method overriding) |
+
+---
+
+### 📚 **Interview-Style Questions**
+
+1. **What is a class in Python?**
+
+   - A class is a user-defined blueprint for creating objects.
+
+2. **What is the difference between class and object?**
+
+   - Class is a blueprint; object is an instance.
+
+3. **What is `self` in Python?**
+
+   - `self` represents the instance of the class and is used to access variables and methods.
+
+4. **Can Python have multiple inheritance?**
+
+   - Yes, Python supports multiple inheritance.
+
+---
+
+### 🧩 **Practice Exercise**
+
+```python
+class Calculator:
+    def __init__(self, num):
+        self.num = num
+
+    def square(self):
+        return self.num ** 2
+
+    def cube(self):
+        return self.num ** 3
+
+obj = Calculator(3)
+print(obj.square())  # Output: 9
+print(obj.cube())    # Output: 27
+```
+
+---
+
+"""
+Problem 3: Car class with default values
+Problem
+Create a class car that has attributes: make, model, and year.
+The constructor should allow default values
+if none are provided.Create a few car objects using different sets of arguments."""
