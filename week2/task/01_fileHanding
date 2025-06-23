@@ -1,0 +1,192 @@
+# 📘 File Handling in Python
+
+---
+
+## 🔹 What is File Handling?
+
+File handling in Python is the **process of creating, opening, reading, writing, appending, and closing files** from within a program.
+
+It helps you:
+
+- Permanently store data (beyond memory)
+- Process external data files (e.g., logs, text, JSON)
+- Log events and debug outputs
+
+---
+
+## 📂 File Operations
+
+| Operation   | Description                         | Syntax                           |
+| ----------- | ----------------------------------- | -------------------------------- |
+| Open a file | Create a file object                | `open('filename', 'mode')`       |
+| Read file   | Get content from file               | `file.read()`, `file.readline()` |
+| Write file  | Write/overwrite content             | `file.write("text")`             |
+| Append file | Add content at end of existing file | `open('file.txt', 'a')`          |
+| Close file  | Close file to free system resources | `file.close()`                   |
+
+---
+
+## 🔐 File Access Modes
+
+| Mode  | Meaning             | Description                            |
+| ----- | ------------------- | -------------------------------------- |
+| `'r'` | Read (default)      | File must exist                        |
+| `'w'` | Write               | Overwrites file or creates new one     |
+| `'a'` | Append              | Adds data to end of file               |
+| `'x'` | Create              | Creates file, error if exists          |
+| `'b'` | Binary mode         | For non-text files like images, videos |
+| `'t'` | Text mode (default) | Reads text file                        |
+| `'+'` | Read & Write        | For updating files                     |
+
+---
+
+## 🔄 Lifecycle of File Handling
+
+```plaintext
+Start
+ ↓
+open()
+ ↓
+(read/write/append)
+ ↓
+close()
+ ↓
+End
+```
+
+---
+
+## ✅ Using `with` Statement (Best Practice)
+
+```python
+with open("data.txt", "r") as f:
+    content = f.read()
+```
+
+Benefits:
+
+- No need to call `close()`
+- Cleaner & safer code
+
+---
+
+## 🧠 Points to Remember
+
+- Always close the file (or use `with`)
+- `read()` reads entire file at once; use carefully with large files
+- Use `readline()` to read line-by-line
+- `write()` and `writelines()` do not add newline by default
+- File paths can be **relative** or **absolute**
+
+---
+
+## 💡 Tips
+
+- Handle errors using `try...except`
+- Always check file existence before reading (`os.path.exists()`)
+- Use `seek(0)` to reset file pointer
+- Binary files must be handled using `'rb'` or `'wb'`
+
+---
+
+## ❓ Interview Questions (with answers)
+
+1. **Q:** What is the difference between `read()`, `readline()`, and `readlines()`?
+   **A:**
+
+   - `read()` → whole file
+   - `readline()` → one line
+   - `readlines()` → all lines in a list
+
+2. **Q:** How do you ensure a file is closed after use?
+   **A:** Use the `with open(...) as f:` statement.
+
+3. **Q:** What happens if you open a file in `'w'` mode and it already exists?
+   **A:** It will be **overwritten**.
+
+4. **Q:** What is the difference between `'w'` and `'a'` mode?
+   **A:** `'w'` overwrites, `'a'` appends.
+
+5. **Q:** How would you read a large file line by line?
+   **A:**
+
+   ```python
+   with open('file.txt') as f:
+       for line in f:
+           print(line)
+   ```
+
+---
+
+## ✅ MCQs (Multiple Choice Questions)
+
+1. What does `open("file.txt", "x")` do?
+   A. Opens file for writing
+   B. Opens file for reading
+   C. Creates file, fails if exists ✅
+   D. Appends to file
+
+---
+
+2. Which mode is used to read binary files?
+   A. `r`
+   B. `rb` ✅
+   C. `r+`
+   D. `wb`
+
+---
+
+3. Which of the following is **not** a valid file mode?
+   A. `r+`
+   B. `a+`
+   C. `x+`
+   D. `z` ✅
+
+---
+
+4. What does `file.seek(0)` do?
+   A. Deletes the file
+   B. Resets file pointer ✅
+   C. Appends to the file
+   D. Closes the file
+
+---
+
+## 🧪 Mini Coding Tasks
+
+1. **Write a program to create a file and write your name into it.**
+
+```python
+with open("myname.txt", "w") as file:
+    file.write("Prashanshi Yadav")
+```
+
+---
+
+2. **Read a file and count the number of lines.**
+
+```python
+with open("myfile.txt", "r") as file:
+    lines = file.readlines()
+    print("Total lines:", len(lines))
+```
+
+---
+
+3. **Append a new sentence to an existing file.**
+
+```python
+with open("notes.txt", "a") as file:
+    file.write("\nThis is an appended line.")
+```
+
+---
+
+4. **Copy content from one file to another.**
+
+```python
+with open("source.txt", "r") as src, open("dest.txt", "w") as dest:
+    dest.write(src.read())
+```
+
+---

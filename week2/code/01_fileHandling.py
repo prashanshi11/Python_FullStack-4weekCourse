@@ -223,3 +223,4 @@ print("Contents:", os.listdir("C:/Python FullStack/week1/Code"))  # List content
 os.chdir("C:/Python FullStack/week1/Code/file-handling")  # Change directory if it exists
 print(os.getcwd())  # Print current working directory after change
 
+
