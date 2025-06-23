@@ -1,0 +1,225 @@
+"""
+# ===============================
+# PYTHON FILE HANDLING COMPLETE GUIDE
+# ===============================
+
+# ✅ FILE MODES:
+# 'r'  -> read (default), error if file doesn't exist
+# 'w'  -> write, creates new or overwrites
+# 'a'  -> append, adds to end, creates file if not exists
+# 'r+' -> read + write (no truncation)
+# 'w+' -> write + read (truncates)
+# 'a+' -> append + read
+# Add 'b' to any for binary mode: 'rb', 'wb', etc.
+
+# --------------------------------
+# ✅ 1. WRITE TO A FILE
+# --------------------------------
+# This creates the file if it doesn't exist or overwrites it if it does.
+
+with open("example.txt", "w") as file:
+    file.write("Hello, this is a file handling tutorial.\n")
+    file.write("We are learning how to write to a file.\n")
+
+# --------------------------------
+# ✅ 2. READ FROM A FILE
+# --------------------------------
+# This reads the file content. File must exist.
+
+with open("example.txt", "r") as file:
+    content = file.read()
+    print("\n[Reading full content]:\n", content)
+
+# --------------------------------
+# ✅ 3. APPEND TO A FILE
+# --------------------------------
+# This adds new lines to the existing content.
+
+with open("example.txt", "a") as file:
+    file.write("This line is appended at the end.\n")
+
+# --------------------------------
+# ✅ 4. READ LINE BY LINE
+# --------------------------------
+# Memory-efficient way to read big files
+
+with open("example.txt", "r") as file:
+    print("\n[Reading line-by-line]:")
+    for line in file:
+        print(line.strip())  # strip removes newline at the end
+
+# --------------------------------
+# ✅ 5. READLINES() METHOD
+# --------------------------------
+# Reads all lines and returns a list
+
+with open("example.txt", "r") as file:
+    lines = file.readlines()
+    print("\n[Lines in a list]:", lines)
+
+# --------------------------------
+# ✅ 6. FILE CURSOR: tell() and seek()
+# --------------------------------
+
+with open("example.txt", "r") as file:
+    print("\nCursor position before reading:", file.tell())
+    data = file.read(10)  # read first 10 characters
+    print("First 10 characters:", data)
+    print("Cursor after reading 10 chars:", file.tell())
+    file.seek(0)  # move cursor back to beginning
+    print("Cursor reset. Reading again:", file.read(10))
+
+# --------------------------------
+# ✅ 7. USING 'r+' FOR READING & WRITING
+# --------------------------------
+
+with open("example.txt", "r+") as file:
+    file.seek(0, 2)  # move to end
+    file.write("Added using r+ mode.\n")
+    file.seek(0)
+    print("\n[Content after r+ mode write]:\n", file.read())
+
+# --------------------------------
+# ✅ 8. EXCEPTION HANDLING
+# --------------------------------
+
+try:
+    with open("notfound.txt", "r") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("\n[Error] File not found!")
+
+# --------------------------------
+# ✅ 9. CHECKING FILE EXISTENCE BEFORE OPENING
+# --------------------------------
+
+import os
+
+filename = "example.txt"
+
+if os.path.exists(filename):
+    print("\nFile exists:", filename)
+else:
+    print("\nFile does not exist:", filename)
+
+# --------------------------------
+# ✅ 10. BINARY FILE READ/WRITE
+# --------------------------------
+
+# Writing in binary
+with open("binary_file.bin", "wb") as f:
+    f.write(b"This is binary data")
+
+# Reading binary
+with open("binary_file.bin", "rb") as f:
+    binary_data = f.read()
+    print("\n[Binary data read]:", binary_data)
+
+# --------------------------------
+# ✅ 11. USING CONTEXT MANAGER IS BEST PRACTICE
+# --------------------------------
+# Automatically closes the file after use
+# Ensures no memory/resource leak
+
+with open("example.txt", "r") as file:
+    print("\nUsing context manager: First line:", file.readline())
+
+# --------------------------------
+# ✅ 12. WRITING LIST OF STRINGS
+# --------------------------------
+
+lines_to_write = ["Line A\n", "Line B\n", "Line C\n"]
+with open("list_lines.txt", "w") as file:
+    file.writelines(lines_to_write)
+
+# --------------------------------
+# ✅ 13. MINI PROJECT: COUNT LINES, WORDS, CHARACTERS IN A FILE
+# --------------------------------
+
+def analyze_file(filepath):
+    with open(filepath, "r") as f:
+        text = f.read()
+        lines = text.splitlines()
+        words = text.split()
+        chars = len(text)
+        print(f"\n[File Analysis: {filepath}]")
+        print("Lines:", len(lines))
+        print("Words:", len(words))
+        print("Characters:", chars)
+
+analyze_file("example.txt")
+
+# ===============================
+# ✅ INTERVIEW QUESTION PRACTICE (AS COMMENTS)
+# ===============================
+
+# Q1: What is the default mode in open()?
+# A1: 'r' (read mode)
+
+# Q2: What happens when you use 'w' on an existing file?
+# A2: The file is truncated (content erased)
+
+# Q3: How to append content without deleting previous data?
+# A3: Use 'a' or 'a+' mode
+
+# Q4: How to check if a file exists?
+# A4: Use os.path.exists("filename")
+
+# Q5: What does 'rb' or 'wb' mode do?
+# A5: Read/Write binary files
+
+# Q6: How to read a file line-by-line efficiently?
+# A6: Use a for loop like: for line in file:
+
+# Q7: What is the use of 'with open() as'?
+# A7: It auto-closes the file after use (context manager)
+
+# Q8: Difference between read(), readline(), readlines()
+# A8: 
+# - read(): whole file as string
+# - readline(): one line at a time
+# - readlines(): list of all lines
+
+# ===============================
+# ✅ MCQ QUIZ PREPARATION (Use as Flashcards or Quiz App)
+# ===============================
+
+# Q1: What will 'w+' do?
+# a) Read only
+# b) Append
+# c) Write & read, truncates file ✅
+
+# Q2: What does file.seek(0) mean?
+# a) Move to end
+# b) Move to beginning ✅
+# c) Close the file
+# d) None
+
+# Q3: What method returns the current file pointer position?
+# a) tell() ✅
+# b) seek()
+# c) read()
+# d) pointer()
+
+# Q4: Which mode is used to read binary files?
+# a) 'b'
+# b) 'rb' ✅
+# c) 'wb'
+# d) 'br'
+
+# Q5: What happens if you open a non-existent file in 'r'?
+# a) Creates new
+# b) Appends
+# c) Error ✅
+
+# ===============================
+# ✅ END OF FILE HANDLING GUIDE
+# ===============================
+"""
+
+import os
+print(os.getcwd())  # Print current working directory
+print("Contents:", os.listdir("C:/Python FullStack/week1/Code"))  # List contents before changing
+os.chdir("C:/Python FullStack/week1/Code/file-handling")  # Change directory if it exists
+print(os.getcwd())  # Print current working directory after change
+
