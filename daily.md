@@ -10,3 +10,10 @@
 | Thu (19) | Tuples, Sets, Dictionaries                      | 11\_tuples.py, 12\_sets.py, 13\_dictionaries.py                   |
 | Fri (20) | OOP Concepts (Class, Object, Inheritance, etc.) | 14\_oop\_basics.py, 15\_oop\_problems.py                          |
 
+#### 📅 Week 2: June 23, 2025
+
+| Day      | Topics Covered | Files Updated         |
+| -------- | -------------- | --------------------- |
+| Mon (23) | File Handling  | 16\_file\_handling.py |
+
+---
