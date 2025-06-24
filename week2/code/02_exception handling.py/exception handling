@@ -1,0 +1,27 @@
+# We start a try block where we put code that might cause an exception
+try:
+    # Ask the user to enter a number, and convert the input to an integer
+    num = int(input("Enter a number: "))
+    
+    # Perform division, which might raise a ZeroDivisionError if num is zero
+    result = 10 / num
+
+# Handle the specific case where the user enters zero, causing division by zero
+except ZeroDivisionError:
+    # Print an error message for division by zero
+    print("Error: Division by zero is not allowed.")
+
+# Handle the case where the user input is not a valid integer
+except ValueError:
+    # Print an error message for invalid input
+    print("Error: Invalid input. Please enter an integer.")
+
+# This block runs only if no exceptions were raised in the try block
+else:
+    # Print the result of the division
+    print(f"Result is {result}")
+
+# This block always runs no matter what happened before (exception or no exception)
+finally:
+    # Inform that the program execution has finished
+    print("Execution finished.")

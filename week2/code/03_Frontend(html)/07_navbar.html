@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navigation Bar (Links Right Aligned)</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar container using Flexbox */
+    .navbar {
+      background-color: #0A0E27;
+      display: flex;
+      justify-content: space-between; /* Space between logo and links */
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    /* Logo or brand text on the left */
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Nav links on the right */
+    .nav-links a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #575fcf;
+    }
+
+    .nav-links a.active {
+      background-color: #2f3542;
+    }
+
+    /* Responsive for small screens */
+    @media screen and (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <!-- Logo/Brand on left -->
+    <a href="#" class="logo">MyLogo</a>
+
+    <!-- Links on right -->
+    <div class="nav-links">
+      <a class="active" href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <div style="padding: 30px;">
+    <h2>Welcome to My Website</h2>
+    <p>The navigation links are now aligned to the right side of the navbar.</p>
+  </div>
+
+  <a href="https://www.google.com/">google</a>
+  <a href="https://www.flipkart.com/">flipkart</a>
+  <a href="https://www.amazon.in/">amazon</a>
+  <a href="mailto:prasahnshi674@gmail.com">mail me</a>
+  
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+"""
 # -----------------------------------------------------------
 # 🧠 Python OOPs Concepts with Detailed Examples and Comments
 # Covers:
@@ -665,3 +666,162 @@ student2.display_info()
 # Roll No: 102
 # Grade: B
 # -------------------------
+"""
+
+
+"""
+"Libray Managemnet System":
+
+design a simple Library management system using Object- Oriented Programming(oops ) concepts in python.
+classes: Book, member, library
+
+Features: Add booka, register member, borrow books, return books, view available books.
+extend the library system with these new features:
+Search book by title or author
+
+Limit th e number of books a member can borrow(max 3)
+Handle fines for late return (we'll assume a fixed fine per day)
+Track borrow dates and calculates fines on return
+"""
+from datetime import datetime, timedelta
+
+# Constants
+MAX_BORROW_LIMIT = 3
+FINE_PER_DAY = 5  # per day
+
+class Book:
+    def __init__(self, title, author, book_id):
+        self.title = title
+        self.author = author
+        self.book_id = book_id
+        self.is_borrowed = False
+
+    def __str__(self):
+        status = "Borrowed" if self.is_borrowed else "Available"
+        return f"[{self.book_id}] {self.title} by {self.author} - {status}"
+
+class Member:
+    def __init__(self, name, member_id):
+        self.name = name
+        self.member_id = member_id
+        self.borrowed_books = {}  # book_id -> borrow_date
+
+    def can_borrow(self):
+        return len(self.borrowed_books) < MAX_BORROW_LIMIT
+
+class Library:
+    def __init__(self):
+        self.books = {}
+        self.members = {}
+
+    def add_book(self):
+        book_id = input("Enter Book ID: ")
+        title = input("Enter Book Title: ")
+        author = input("Enter Author Name: ")
+        if book_id in self.books:
+            print("Book ID already exists.")
+            return
+        self.books[book_id] = Book(title, author, book_id)
+        print("Book added successfully.")
+
+    def register_member(self):
+        member_id = input("Enter Member ID: ")
+        name = input("Enter Member Name: ")
+        if member_id in self.members:
+            print("Member already registered.")
+            return
+        self.members[member_id] = Member(name, member_id)
+        print("Member registered successfully.")
+
+    def borrow_book(self):
+        member_id = input("Enter Member ID: ")
+        book_id = input("Enter Book ID: ")
+        if member_id not in self.members:
+            print("Member not found.")
+            return
+        if book_id not in self.books:
+            print("Book not found.")
+            return
+
+        member = self.members[member_id]
+        book = self.books[book_id]
+
+        if book.is_borrowed:
+            print("Book already borrowed.")
+        elif not member.can_borrow():
+            print("Borrow limit reached (Max 3 books).")
+        else:
+            book.is_borrowed = True
+            member.borrowed_books[book_id] = datetime.now()
+            print(f"Book '{book.title}' borrowed successfully.")
+
+    def return_book(self):
+        member_id = input("Enter Member ID: ")
+        book_id = input("Enter Book ID: ")
+        if member_id not in self.members or book_id not in self.books:
+            print("Invalid member or book ID.")
+            return
+
+        member = self.members[member_id]
+        book = self.books[book_id]
+
+        if book_id not in member.borrowed_books:
+            print("This book was not borrowed by this member.")
+            return
+
+        borrow_date = member.borrowed_books.pop(book_id)
+        book.is_borrowed = False
+
+        days_borrowed = (datetime.now() - borrow_date).days
+        fine = max(0, (days_borrowed - 14) * FINE_PER_DAY)  # 14-day free period
+        print(f"Book returned. Days borrowed: {days_borrowed}. Fine: ₹{fine}")
+
+    def view_books(self):
+        for book in self.books.values():
+            print(book)
+
+    def search_books(self):
+        keyword = input("Enter title or author to search: ").lower()
+        found = False
+        for book in self.books.values():
+            if keyword in book.title.lower() or keyword in book.author.lower():
+                print(book)
+                found = True
+        if not found:
+            print("No matching books found.")
+
+# --- Main Program ---
+def main():
+    library = Library()
+
+    while True:
+        print("\n===== Library Menu =====")
+        print("1. Add Book")
+        print("2. Register Member")
+        print("3. Borrow Book")
+        print("4. Return Book")
+        print("5. View All Books")
+        print("6. Search Book")
+        print("7. Exit")
+        choice = input("Enter your choice (1-7): ")
+
+        if choice == '1':
+            library.add_book()
+        elif choice == '2':
+            library.register_member()
+        elif choice == '3':
+            library.borrow_book()
+        elif choice == '4':
+            library.return_book()
+        elif choice == '5':
+            library.view_books()
+        elif choice == '6':
+            library.search_books()
+        elif choice == '7':
+            print("Exiting Library System.")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()

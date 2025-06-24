@@ -1,0 +1,529 @@
+## 🧠 **HTML THEORY (Complete Beginner to Advanced)**
+
+---
+
+## 🟢 **1. What is HTML?**
+
+**HTML (HyperText Markup Language)** is the standard language for creating web pages and web applications.
+
+- **HyperText**: Text with links (hyperlinks)
+- **Markup Language**: A way to describe the structure of a document
+
+---
+
+## 🟢 **2. Basic Structure of HTML**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <p>This is a paragraph.</p>
+  </body>
+</html>
+```
+
+### 🔍 Explanation:
+
+| Tag               | Purpose                         |
+| ----------------- | ------------------------------- |
+| `<!DOCTYPE html>` | Declares HTML5 version          |
+| `<html>`          | Root element                    |
+| `<head>`          | Metadata (not visible to users) |
+| `<title>`         | Title of the tab                |
+| `<body>`          | Visible page content            |
+
+---
+
+## 🟢 **3. Text Tags**
+
+- `<h1>` to `<h6>` → Headings (h1 is largest)
+- `<p>` → Paragraph
+- `<br>` → Line break
+- `<hr>` → Horizontal line
+
+---
+
+## 🟢 **4. Formatting Tags**
+
+| Tag       | Usage       | Example             |
+| --------- | ----------- | ------------------- |
+| `<b>`     | Bold        | **Text**            |
+| `<i>`     | Italic      | _Text_              |
+| `<u>`     | Underline   | <u>Text</u>         |
+| `<mark>`  | Highlight   | <mark>Text</mark>   |
+| `<small>` | Small font  | <small>Text</small> |
+| `<del>`   | Deleted     | <del>Text</del>     |
+| `<ins>`   | Inserted    | <ins>Text</ins>     |
+| `<sub>`   | Subscript   | H<sub>2</sub>O      |
+| `<sup>`   | Superscript | x<sup>2</sup>       |
+
+---
+
+## 🟢 **Quotation Tags**
+
+| Tag            | Use Case                                  |
+| -------------- | ----------------------------------------- |
+| `<blockquote>` | For long quotations (indented block)      |
+| `<q>`          | For short inline quotations               |
+| `<cite>`       | For citing the source (italic style)      |
+| `<abbr>`       | For abbreviations with tooltips           |
+| `<address>`    | For contact/address info (italic format)  |
+| `<bdo>`        | Bidirectional override for text direction |
+
+---
+
+## 🟢 **5. Lists**
+
+### Unordered List
+
+```html
+<ul>
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+```
+
+### Ordered List
+
+```html
+<ol>
+  <li>Install Editor</li>
+  <li>Write Code</li>
+</ol>
+```
+
+| List Type   | Tag    | Structure                                    |
+| ----------- | ------ | -------------------------------------------- |
+| Unordered   | `<ul>` | `<ul><li>Item</li></ul>`                     |
+| Ordered     | `<ol>` | `<ol><li>Item</li></ol>`                     |
+| Description | `<dl>` | `<dl><dt>Term</dt><dd>Description</dd></dl>` |
+
+| Concept         | Tag Used                 | Purpose                         |
+| --------------- | ------------------------ | ------------------------------- |
+| Bullet list     | `<ul>`                   | Unordered list                  |
+| Numbered list   | `<ol>`                   | Ordered list                    |
+| Term/Definition | `<dl>`, `<dt>`, `<dd>`   | Description list                |
+| Nesting         | `<ul>` inside `<li>`     | Grouping sublists               |
+| Custom style    | `list-style-type` in CSS | Customizing bullet/number style |
+
+---
+
+## 🟢 **6. Links**
+
+```html
+<a href="https://google.com" target="_blank">Visit Google</a>
+```
+
+- `target="_blank"` opens the link in a new tab.
+
+---
+
+## 🟢 **7. Images**
+
+```html
+<img src="image.jpg" alt="Description" width="300" />
+```
+
+- `alt` = alternative text if image fails to load.
+
+| Attribute | Description                                                        |
+| --------- | ------------------------------------------------------------------ |
+| `src`     | (Required) The path to your image file                             |
+| `alt`     | (Required) Text to show if image fails to load (for accessibility) |
+| `width`   | Sets the image width (px or %)                                     |
+| `height`  | Sets the image height (px or %)                                    |
+| `title`   | Shows a tooltip when hovered (optional)                            |
+
+| Feature           | Description                         |
+| ----------------- | ----------------------------------- |
+| `<fieldset>`      | Groups form sections                |
+| `<legend>`        | Gives a title to each group         |
+| Input `required`  | Ensures fields aren't empty         |
+| Input `minlength` | Requires password of minimum length |
+| `type="email"`    | Validates email format              |
+| `type="tel"`      | For phone numbers                   |
+| Stylish buttons   | With hover effect                   |
+
+---
+
+## 🟢 **8. Tables**
+
+```html
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Alice</td>
+    <td>25</td>
+  </tr>
+</table>
+```
+
+---
+
+## 🟢 **9. Forms**
+
+```html
+<form action="/submit">
+  Name: <input type="text" name="name" /><br />
+  Password: <input type="password" /><br />
+  Gender:
+  <input type="radio" name="gender" value="M" /> Male
+  <input type="radio" name="gender" value="F" /> Female<br />
+  <input type="submit" />
+</form>
+```
+
+---
+
+## 🟢 **10. Input Types**
+
+| Type       | Description            |
+| ---------- | ---------------------- |
+| `text`     | Single-line text input |
+| `password` | Hidden text input      |
+| `radio`    | One of many options    |
+| `checkbox` | Multiple selections    |
+| `submit`   | Button to submit form  |
+| `date`     | Date picker            |
+| `email`    | Email validation       |
+| `file`     | Upload file            |
+
+---
+
+## 🟢 **11. Semantic Tags (HTML5)**
+
+| Tag         | Purpose                |
+| ----------- | ---------------------- |
+| `<header>`  | Page or section header |
+| `<nav>`     | Navigation links       |
+| `<main>`    | Main content           |
+| `<article>` | Article or blog post   |
+| `<section>` | Section of content     |
+| `<aside>`   | Sidebar content        |
+| `<footer>`  | Footer of the page     |
+
+---
+
+## 🟢 **12. Media Tags**
+
+### Image:
+
+```html
+<img src="pic.jpg" alt="pic" />
+```
+
+### Video:
+
+```html
+<video controls width="300">
+  <source src="video.mp4" type="video/mp4" />
+</video>
+```
+
+### Audio:
+
+```html
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg" />
+</audio>
+```
+
+---
+
+## 🟢 **13. HTML Entities**
+
+Used to display reserved characters:
+
+```html
+&lt; = < &gt; = > &nbsp; = (non-breaking space) &copy; = ©
+```
+
+---
+
+## 🟢 **14. Inline vs Block Elements**
+
+- **Inline**: Doesn’t start on a new line (e.g., `<b>`, `<a>`, `<img>`)
+- **Block**: Starts on a new line (e.g., `<div>`, `<p>`, `<h1>`)
+
+---
+
+## 🟢 **15. IFrames (Embed Webpages)**
+
+```html
+<iframe src="https://example.com" width="300" height="200"></iframe>
+```
+
+---
+
+## 🟢 **16. HTML + CSS + JavaScript (Intro)**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #eee;
+      }
+      h1 {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello CSS</h1>
+    <button onclick="alert('Hello JavaScript!')">Click Me</button>
+  </body>
+</html>
+```
+
+---
+
+## 🟢 **17. Responsive HTML (Meta Viewport)**
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+---
+
+## 🟢 **18. Best Practices**
+
+- Use semantic tags (`<main>`, `<article>`)
+- Use `alt` with all images
+- Validate forms before submission
+- Keep code well-indented and clean
+
+---
+
+## 🟢 **19. navbar**
+
+| Part      | Description                            |
+| --------- | -------------------------------------- |
+| `.navbar` | Container holding all navigation links |
+| `<a>`     | Each link in the nav                   |
+| `.active` | Style for the current page             |
+| `:hover`  | Effect when mouse hovers               |
+| `@media`  | Makes nav responsive for mobile        |
+
+## 📘 What is a Navigation Bar?
+
+A **Navigation Bar** (or **Navbar**) is a **menu** that allows users to **navigate between pages or sections** of a website.
+
+It is typically placed at the **top** or **side** of a webpage and contains links like:
+
+- Home
+- About
+- Services
+- Contact, etc.
+
+---
+
+## 🧱 Structure of a Basic Navbar
+
+### 💡 HTML Tags Used:
+
+| Tag            | Description                                                                    |
+| -------------- | ------------------------------------------------------------------------------ |
+| `<nav>`        | Semantic container for navigation links (optional, more semantic than `<div>`) |
+| `<a>`          | Anchor tag — defines hyperlinks to other pages or sections                     |
+| `<ul>`, `<li>` | Sometimes used to structure nav links in a list                                |
+| `<div>`        | Often used with CSS for styling/layout                                         |
+| `class`, `id`  | Attributes used to style elements with CSS                                     |
+
+---
+
+## 🎨 CSS Styling in Navbar
+
+Common styles applied:
+
+| Property                   | Purpose                                  |
+| -------------------------- | ---------------------------------------- |
+| `background-color`         | Changes navbar background                |
+| `color`                    | Text color of links                      |
+| `padding`                  | Adds space inside links                  |
+| `text-decoration: none`    | Removes underline from links             |
+| `:hover`                   | Adds effect when user hovers over a link |
+| `float`, `flex`, or `grid` | Aligns links horizontally or vertically  |
+
+---
+
+## 🧑‍💻 Navbar Behavior Types:
+
+| Type                  | Description                                                             |
+| --------------------- | ----------------------------------------------------------------------- |
+| **Static Navbar**     | Always visible on top of the page                                       |
+| **Sticky Navbar**     | Stays at the top even while scrolling                                   |
+| **Responsive Navbar** | Adjusts layout for small screens (e.g. collapses into a hamburger menu) |
+| **Dropdown Navbar**   | Has menu items that expand/collapse                                     |
+
+---
+
+## 📱 Responsive Navbar
+
+To make navbars work on phones, we use:
+
+- **Media Queries (`@media`)** in CSS
+- **JavaScript toggle buttons** (for hamburger menus)
+
+---
+
+## ✅ Why is Navbar Important?
+
+- Provides **easy access** to important parts of the website
+- Enhances **user experience** and **site navigation**
+- Makes the site feel organized and professional
+- Helps **SEO** (Search Engine Optimization) through internal linking
+
+---
+
+## 📌 Example Layout Overview
+
+```html
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+```
+
+CSS:
+
+```css
+.navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 14px 20px;
+  background-color: navy;
+}
+```
+
+---
+
+## 🧠 Summary:
+
+| Topic          | Key Points                                      |
+| -------------- | ----------------------------------------------- |
+| Navbar Purpose | Lets users navigate your site                   |
+| HTML Tags      | `<nav>`, `<a>`, `<div>`, `<ul>`                 |
+| CSS Styles     | `background-color`, `hover`, `float`, `padding` |
+| Responsive     | Use `@media` or JS to handle small screens      |
+
+---
+
+## 🧠 HTML `<fieldset>` and `<legend>` — Complete Theory
+
+### ✅ 1. What is `<fieldset>`?
+
+- The `<fieldset>` tag is used to **group related form elements**.
+- It creates a **box around the grouped form fields**.
+- It improves **form structure**, **readability**, and **accessibility**.
+
+#### 📌 Syntax:
+
+```html
+<fieldset>
+  <!-- Form fields go here -->
+</fieldset>
+```
+
+---
+
+### ✅ 2. What is `<legend>`?
+
+- The `<legend>` tag is used **inside a `<fieldset>`** to provide a **caption or title** for the group.
+- It usually appears at the **top-left corner** of the fieldset box.
+
+#### 📌 Syntax:
+
+```html
+<fieldset>
+  <legend>Title for the group</legend>
+  <!-- Form elements -->
+</fieldset>
+```
+
+---
+
+### ✅ 3. Why use `<fieldset>` and `<legend>`?
+
+| Benefit               | Description                                                             |
+| --------------------- | ----------------------------------------------------------------------- |
+| 🗂️ Organization       | Groups form controls like Name, Email, Password under relevant sections |
+| ♿ Accessibility      | Helps screen readers identify the context of form fields                |
+| 🎨 Styling            | Allows separate styling for grouped sections                            |
+| ✅ Validation clarity | Grouped fields make form validation easier to understand                |
+
+---
+
+### ✅ 4. Example Without Styling
+
+```html
+<form>
+  <fieldset>
+    <legend>Login Info</legend>
+    Username: <input type="text" /><br />
+    Password: <input type="password" />
+  </fieldset>
+</form>
+```
+
+This will produce a bordered box with the title “Login Info” above it.
+
+---
+
+### ✅ 5. Common CSS Styling for `<fieldset>` and `<legend>`
+
+You can style them using CSS for better appearance:
+
+#### Example:
+
+```css
+fieldset {
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+  padding: 20px;
+}
+
+legend {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+```
+
+---
+
+### ✅ 6. Attributes (HTML)
+
+| Tag          | Attribute                  | Description                          |
+| ------------ | -------------------------- | ------------------------------------ |
+| `<fieldset>` | `disabled`                 | Disables all form elements inside it |
+| `<legend>`   | _(no specific attributes)_ | You can use `style` for CSS styling  |
+
+#### Example of `disabled`:
+
+```html
+<fieldset disabled>
+  <legend>Disabled Section</legend>
+  <input type="text" value="Can't edit" />
+</fieldset>
+```
+
+---
+
+### ✅ 7. Notes
+
+- `<legend>` must be the **first child** of `<fieldset>`.
+- Both tags are **optional**, but recommended for better UX.
+- You can nest multiple `<fieldset>` sections inside a form.
+
+---

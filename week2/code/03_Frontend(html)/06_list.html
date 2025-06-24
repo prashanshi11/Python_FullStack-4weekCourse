@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML List Types with Comments</title>
+    <style>
+        /* Styling for unordered list bullets */
+        ul {
+            list-style-type: square; /* changes bullet style to square */
+        }
+
+        /* Styling for ordered list numbers */
+        ol {
+            list-style-type: upper-roman; /* changes numbering to Roman numerals */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h2 {
+            color: #004080;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unordered List: used for items where order does not matter -->
+    <h2>1. Unordered List</h2>
+    <ul>
+        <li>HTML</li>         <!-- Bullet point item -->
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <!-- Ordered List: used for step-by-step instructions or rankings -->
+    <h2>2. Ordered List</h2>
+    <ol>
+        <li>Wake up</li>       <!-- Step 1 -->
+        <li>Brush your teeth</li>  <!-- Step 2 -->
+        <li>Go to class</li>   <!-- Step 3 -->
+    </ol>
+
+    <!-- Description List: used for terms and their meanings or explanations -->
+    <h2>3. Description List</h2>
+    <dl>
+        <dt>HTML</dt>            <!-- Term -->
+        <dd>HyperText Markup Language</dd>  <!-- Description -->
+
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+
+        <dt>JavaScript</dt>
+        <dd>Language used to add interactivity to web pages</dd>
+    </dl>
+
+    <!-- Nested List: one list inside another list item -->
+    <h2>4. Nested List</h2>
+    <ul>
+        <li>Frontend         <!-- Parent item -->
+            <ul>
+                <li>HTML</li>   <!-- Nested item -->
+                <li>CSS</li>
+            </ul>
+        </li>
+        <li>Backend          <!-- Parent item -->
+            <ul>
+                <li>Node.js</li>  <!-- Nested item -->
+                <li>Python</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Styled lists with custom bullets and numbering using CSS -->
+    <h2>5. Custom Styled Lists</h2>
+    <ul>
+        <li>Apple</li>     <!-- Square bullet from CSS -->
+        <li>Banana</li>
+    </ul>
+
+    <ol>
+        <li>First</li>     <!-- Roman numeral from CSS -->
+        <li>Second</li>
+    </ol>
+
+</body>
+</html>

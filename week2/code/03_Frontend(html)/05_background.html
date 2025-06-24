@@ -1,0 +1,170 @@
+## ✅ 1. Set Background Color for the Whole Page
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Color</title>
+</head>
+<body style="background-color: lightblue;">
+
+    <h1>Hello, World!</h1>
+    <p>This page has a light blue background.</p>
+
+</body>
+</html>
+```
+
+🟦 `style="background-color: lightblue;"` sets the page's background.
+
+---
+
+## ✅ 2. Set Background Color Using CSS (Cleaner Method)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background with CSS</title>
+    <style>
+        body {
+            background-color: #f0e68c; /* Khaki */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Styled with CSS</h1>
+    <p>This uses internal CSS to set the background.</p>
+
+</body>
+</html>
+```
+
+---
+
+## ✅ 3. Set Background Image
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Image</title>
+    <style>
+        body {
+            background-image: url('bg.jpg');  /* 🔁 Make sure bg.jpg is in the same folder */
+            background-size: cover;           /* 🧩 Fit entire screen */
+            background-repeat: no-repeat;     /* ❌ Don't repeat image */
+            background-position: center;      /* 🎯 Center the image */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Background Image Example</h1>
+    <p>This page uses a background image.</p>
+
+</body>
+</html>
+```
+
+📝 Make sure you have a file called `bg.jpg` in the same folder.
+
+---
+
+## ✅ 4. Background Color or Image for a Section Only
+
+```html
+<div style="background-color: #d1ffd1; padding: 20px;">
+    <h2>Only this section has a green background.</h2>
+</div>
+```
+
+---
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background with eye3.jpg</title>
+    <style>
+        body {
+            /* 🖼 Set background image */
+            background-image: url('eye3.jpg');
+            background-size: cover;            /* 📐 Make it cover the full screen */
+            background-repeat: no-repeat;      /* ❌ Don't repeat */
+            background-position: center;       /* 🎯 Center the image */
+            height: 100vh;                     /* 🔻 Full screen height */
+            margin: 0;
+            padding: 0;
+            color: white;                      /* 🧾 Make text readable on dark image */
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            background-color: rgba(0, 0, 0, 0.5); /* 🕶 Transparent black box */
+            padding: 50px;
+            margin: 100px auto;
+            width: 60%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <h1>Welcome to My Page</h1>
+        <p>This is using <strong>eye3.jpg</strong> as a full background.</p>
+        <p>The text is overlayed with a semi-transparent box.</p>
+    </div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fieldset and Legend Background</title>
+    <style>
+        fieldset {
+            background-color: #f0f8ff;  /* Light blue background */
+            border: 2px solid #4CAF50;  /* Green border */
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        legend {
+            background-color: #4CAF50;  /* Green background */
+            color: white;               /* White text */
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+
+    <fieldset>
+        <legend>Personal Info</legend>
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" placeholder="Enter your name"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="Enter your email"><br>
+
+    </fieldset>
+
+</body>
+</html>

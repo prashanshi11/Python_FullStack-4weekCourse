@@ -1,0 +1,142 @@
+# Exception Handling: Detailed Explanation
+
+## What is an Exception?
+
+- An **exception** is an error that occurs during the execution of a program.
+- When an exception occurs, the normal flow of the program is interrupted.
+- Examples of exceptions:
+
+  - Dividing by zero
+  - Trying to access a file that doesn’t exist
+  - Trying to convert a non-numeric string to a number
+  - Indexing a list with an out-of-range index
+
+---
+
+## Why Exception Handling?
+
+- To **prevent the program from crashing abruptly** when an error occurs.
+- To **gracefully handle errors** and continue program execution or terminate cleanly.
+- To provide meaningful error messages to users or logs.
+- To separate error-handling code from regular code, improving readability and maintainability.
+
+---
+
+## How Exception Handling Works (Conceptual)
+
+- You **try** a block of code that might cause an error.
+- If no error occurs, the program continues normally.
+- If an error **occurs**, the program looks for a handler to manage that error.
+- If an appropriate handler is found, that handler runs.
+- If no handler is found, the program crashes with an error message.
+
+---
+
+## Exception Handling in Python
+
+Python uses the `try`, `except`, `else`, and `finally` blocks.
+
+### 1. `try` block
+
+- Contains code that might throw an exception.
+
+```python
+try:
+    x = 10 / 0  # This will cause ZeroDivisionError
+```
+
+### 2. `except` block
+
+- Handles the exception.
+
+```python
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+```
+
+### 3. `else` block (optional)
+
+- Runs if no exceptions occur in the `try` block.
+
+```python
+else:
+    print("Division successful!")
+```
+
+### 4. `finally` block (optional)
+
+- Always runs, whether an exception occurs or not.
+- Usually used for cleanup like closing files or releasing resources.
+
+```python
+finally:
+    print("This will always run")
+```
+
+---
+
+### Complete Example
+
+```python
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+except ValueError:
+    print("Error: Invalid input. Please enter an integer.")
+else:
+    print(f"Result is {result}")
+finally:
+    print("Execution finished.")
+```
+
+---
+
+## Types of Exceptions in Python
+
+- `ZeroDivisionError`
+- `ValueError`
+- `TypeError`
+- `FileNotFoundError`
+- `IndexError`
+- `KeyError`
+- And many more…
+
+You can also create your **custom exceptions** by inheriting from `Exception`.
+
+---
+
+## Best Practices in Exception Handling
+
+- **Catch specific exceptions**, not just a generic `except:` — to avoid hiding bugs.
+- Use `finally` to ensure important cleanup.
+- Log exceptions for debugging.
+- Don’t use exceptions for normal control flow.
+- Raise exceptions when your function encounters unexpected conditions (`raise` keyword).
+
+---
+
+## Raising Exceptions
+
+You can raise exceptions manually using `raise`.
+
+```python
+def check_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative!")
+```
+
+---
+
+## Summary
+
+| Keyword   | Purpose                               |
+| --------- | ------------------------------------- |
+| `try`     | Code that might cause an exception    |
+| `except`  | Code to handle specific exceptions    |
+| `else`    | Code to run if no exception occurred  |
+| `finally` | Code that always runs (cleanup, etc.) |
+| `raise`   | Manually raise an exception           |
+
+---

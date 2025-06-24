@@ -216,11 +216,92 @@ analyze_file("example.txt")
 # ✅ END OF FILE HANDLING GUIDE
 # ===============================
 """
+"""
 
 import os
-print(os.getcwd())  # Print current working directory
-print("Contents:", os.listdir("C:/Python FullStack/week1/Code"))  # List contents before changing
-os.chdir("C:/Python FullStack/week1/Code/file-handling")  # Change directory if it exists
-print(os.getcwd())  # Print current working directory after change
 
+FILE_NAME = "expenses.txt"
+
+def add_expense():
+    date = input("Enter date (YYYY-MM-DD): ")
+    category = input("Enter category (e.g., Food, Travel): ")
+    amount = input("Enter amount: ")
+    note = input("Optional note: ")
+
+    with open(FILE_NAME, "a") as file:
+        file.write(f"{date},{category},{amount},{note}\n")
+
+    print("✅ Expense added!\n")
+
+def view_expenses():
+    if not os.path.exists(FILE_NAME):
+        print("No expenses recorded yet.\n")
+        return
+
+    print("\n📄 All Expenses:\n")
+    with open(FILE_NAME, "r") as file:
+        for line in file:
+            date, category, amount, note = line.strip().split(",", 3)
+            print(f"Date: {date}, Category: {category}, Amount: ₹{amount}, Note: {note}")
+    print()
+
+def search_expenses():
+    keyword = input("Enter category or date to search: ").lower()
+    found = False
+    
+
+    with open(FILE_NAME, "r") as file:
+        print("\n🔍 Search Results:\n")
+        for line in file:
+            if keyword in line.lower():
+                date, category, amount, note = line.strip().split(",", 3)
+                print(f"Date: {date}, Category: {category}, Amount: ₹{amount}, Note: {note}")
+                found = True
+    if not found:
+        print("❌ No matching expenses found.\n")
+    print()
+
+def main():
+    while True:
+        print("\n=== 💸 Expense Tracker ===")
+        print("1. Add Expense")
+        print("2. View Expenses")
+        print("3. Search Expenses")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            add_expense()
+        elif choice == '2':
+            view_expenses()
+        elif choice == '3':
+            search_expenses()
+        elif choice == '4':
+            print("👋 Exiting... Goodbye!")
+            break
+        else:
+            print("❗ Invalid choice. Try again.")
+
+if __name__ == "__main__":
+    main()
+add 
+"""
+
+import logging
+logging.basicConfig(filename="app.log",level=logging.ERROR,format='%(asctime)s-%(levelname)s-%(message)')
+
+def divide(a,b):
+    try:
+        result = a/b
+        logging.info(f"division successful{result}")
+        return result
+    except ZeroDivisionError:
+        logging.exception("number can't be devide by zero")
+    except TypeError as e:
+        logging.error(f"inavlid number {e}",exc_info=True)
+
+divide(12,4)
+divide(12,0)
+divide(12,"e")
 
