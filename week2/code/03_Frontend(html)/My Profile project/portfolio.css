@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #16579c;       /* Blue */
+  --accent: #003872;        /* Green */
+  --text: #0e0d0d;             /* Primary text */
+  --bg: #6e6a9d;            /* Background */
+  --nav-bg: #04012b;        /* Navbar background */
+  --dark-bg: #0f1b3c;       /* Dark mode background */
+  --dark-text: #e0f7fa;     /* Dark mode text */
+  --dark-primary: #3399ff;  /* Dark mode blue */
+  --dark-accent: #022d22;   /* Dark mode green */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Navbar ===== */
+header.navbar {
+  background-color: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  padding: 1rem 5%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  flex: 1;
+}
+
+/* ===== Hamburger (checkbox) ===== */
+#menu-toggle {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 2px;
+}
+
+/* ===== Navigation ===== */
+nav.nav-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+nav.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav.nav-menu ul li a {
+  font-weight: 500;
+  color: var(--text);
+}
+
+nav.nav-menu ul li a:hover {
+  color: var(--accent);
+}
+
+/* ===== CTA Button ===== */
+.cta-button {
+  background: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.cta-button:hover {
+  background-color: var(--accent);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 5%;
+  background: linear-gradient(120deg, #e6f4ff, #f0fff7);
+}
+
+.hero-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
+  color: var(--accent);
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.view-works {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.view-works:hover {
+  background-color: var(--accent);
+}
+
+.hero-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav.nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    background-color: var(--nav-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu-toggle:checked + .menu-toggle + nav.nav-menu {
+    display: flex;
+  }
+
+  nav.nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+  }
+}

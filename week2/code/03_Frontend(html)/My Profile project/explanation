@@ -1,0 +1,489 @@
+## ✅ `<!DOCTYPE html>`
+
+This declares that the document type is HTML5. It helps browsers render the page correctly.
+
+---
+
+## ✅ `<html lang="en">`
+
+This starts the HTML document and specifies that the page content is in English (`lang="en"`).
+
+---
+
+## ✅ `<head>...</head>`
+
+The `<head>` section contains metadata about the document. Let’s break down what’s inside:
+
+### ▶️ `<meta charset="UTF-8" />`
+
+Defines the character encoding as UTF-8, which supports most characters used worldwide.
+
+### ▶️ `<meta name="viewport" content="width=device-width, initial-scale=1.0" />`
+
+Makes the site responsive by ensuring it scales properly on mobile and tablet devices.
+
+### ▶️ `<title>Prashanshi Portfolio</title>`
+
+Sets the title of the webpage (appears on the browser tab).
+
+### ▶️ `<link rel="stylesheet" href="portfolio.css" />`
+
+Links to an external CSS file (`portfolio.css`) that contains all your styling rules.
+
+---
+
+## ✅ `<body>...</body>`
+
+Everything inside `<body>` is visible on the web page.
+
+---
+
+## ✅ `<header class="navbar">...</header>`
+
+Defines the top section of your website – the **navigation bar**.
+
+### ▶️ `<div class="logo">PRASHANSHI.</div>`
+
+This shows your logo or brand name.
+
+### ▶️ `<input type="checkbox" id="menu-toggle" />`
+
+A hidden checkbox used to control the mobile navigation menu (used for pure CSS toggle).
+
+### ▶️ `<label for="menu-toggle" class="menu-toggle">`
+
+This is the **hamburger icon** made of 3 spans.
+
+```html
+<span></span>
+<span></span>
+<span></span>
+```
+
+These represent the 3 bars of the hamburger menu. Clicking this label toggles the hidden checkbox.
+
+### ▶️ `<nav class="nav-menu">...</nav>`
+
+This is your navigation bar containing links to different sections of the page.
+
+```html
+<ul>
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Works</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Blog</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+```
+
+Each `<li>` is a menu item that links to sections or pages (right now they use `#`, which means no actual navigation yet).
+
+### ▶️ `<a href="#" class="cta-button">Let's Talk</a>`
+
+A **call-to-action button**, styled with the class `cta-button`, encouraging users to contact you.
+
+---
+
+## ✅ `<section class="hero">...</section>`
+
+The **Hero Section** is the first thing users see, typically a short intro.
+
+### ▶️ `<div class="hero-text">`
+
+Contains your main intro text:
+
+```html
+<h1>Hi There, I Am <span>Prashanshi</span></h1>
+```
+
+This is the main heading; the name is wrapped in `<span>` so you can style it separately (like change color).
+
+```html
+<h2>Machine Learning Specialist</h2>
+```
+
+A subtitle describing your role.
+
+```html
+<a href="#" class="view-works">View Works</a>
+```
+
+Another CTA button encouraging users to check your work.
+
+### ▶️ `<div class="hero-image">`
+
+This contains your profile image or artwork.
+
+```html
+<img src="portfolio pic.png" alt="Prashanshi" />
+```
+
+The image must exist in your folder with the correct filename. The `alt` attribute improves accessibility and SEO.
+
+---
+
+### ✅ Summary of Structure:
+
+| Section          | Purpose                                      |
+| ---------------- | -------------------------------------------- |
+| `<head>`         | Metadata, title, and stylesheet linking      |
+| `<header>`       | Navigation bar with brand, menu, and buttons |
+| `<section.hero>` | Main hero/intro section with text & image    |
+
+---
+
+** CSS Part**
+
+### 🔤 **Font Import**
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+```
+
+- Loads the **Poppins font** from Google Fonts in 3 weights (400 - regular, 600 - semi-bold, 700 - bold).
+- Ensures clean, modern typography throughout your site.
+
+---
+
+### 🌈 **CSS Variables (`:root`)**
+
+```css
+:root {
+  --primary: #16579c; /* Main blue used in buttons and accents */
+  --accent: #003872; /* Darker blue for hover or highlights */
+  --text: #0e0d0d; /* Main text color (near black) */
+  --bg: #6e6a9d; /* Body background (grayish violet) */
+  --nav-bg: #04012b; /* Navbar background (dark navy) */
+  --dark-bg: #0f1b3c; /* Entire background in dark mode */
+  --dark-text: #e0f7fa; /* Light text for dark mode */
+  --dark-primary: #3399ff; /* Bright blue for dark mode accent */
+  --dark-accent: #022d22; /* Greenish tint for dark mode hover */
+}
+```
+
+- These **custom properties** make theming your site easy — just change here, and it updates everywhere.
+
+---
+
+### 🧹 **Reset and Base Styling**
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+```
+
+- Removes default spacing and sets `box-sizing: border-box` for consistent layouts.
+- Adds smooth transitions when elements change (hover, toggle, etc.).
+
+---
+
+### 🖋 **Body and Text**
+
+```css
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+}
+```
+
+- Uses the imported Poppins font.
+- Sets the **background color** and **default text color** using variables.
+
+```css
+a {
+  text-decoration: none;
+  color: inherit;
+}
+```
+
+- Removes the default underline from all links and ensures they use the current text color.
+
+---
+
+### 🧭 **Navbar Styling**
+
+```css
+header.navbar {
+  background-color: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  padding: 1rem 5%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+```
+
+- A sticky nav bar that stays at the top as you scroll.
+- `box-shadow` adds a subtle depth effect.
+- `padding: 1rem 5%` gives breathing space inside.
+
+```css
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  flex: 1;
+}
+```
+
+- Styles the logo: bold, large, blue, and takes up space on the left using `flex: 1`.
+
+---
+
+### 🍔 **Hamburger Menu (Mobile)**
+
+```css
+#menu-toggle {
+  display: none;
+}
+```
+
+- Hidden checkbox used for toggling mobile menu (controlled by clicking the label).
+
+```css
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 2px;
+}
+```
+
+- This is the hamburger icon (3 stacked bars).
+- Only shown on small screens using media queries.
+
+---
+
+### 🧭 **Navigation Menu**
+
+```css
+nav.nav-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+```
+
+- Horizontal menu (desktop layout).
+
+```css
+nav.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+```
+
+- Inline navigation list with spacing between items.
+
+```css
+nav.nav-menu ul li a {
+  font-weight: 500;
+  color: var(--text);
+}
+
+nav.nav-menu ul li a:hover {
+  color: var(--accent);
+}
+```
+
+- Menu links are styled bold and dark.
+- On hover, the link color changes to the accent blue.
+
+---
+
+### 🟢 **Call-to-Action Button**
+
+```css
+.cta-button {
+  background: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.cta-button:hover {
+  background-color: var(--accent);
+}
+```
+
+- A pill-shaped button (`border-radius: 25px`) with padding and hover effect.
+
+---
+
+### 🦾 **Hero Section**
+
+```css
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 5%;
+  background: linear-gradient(120deg, #e6f4ff, #f0fff7);
+}
+```
+
+- Layout: Flexbox for side-by-side text and image.
+- Nice soft gradient background.
+
+```css
+.hero-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 span {
+  color: var(--accent);
+}
+
+.hero-text h2 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+```
+
+- Left-side text in the hero section. The name (`<span>`) is colored using the accent color.
+
+```css
+.view-works {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.view-works:hover {
+  background-color: var(--accent);
+}
+```
+
+- Secondary CTA button with hover effect, similar style to `.cta-button`.
+
+```css
+.hero-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+```
+
+- Right-side image with soft corners and subtle shadow.
+
+---
+
+### 📱 **Responsive Media Query (≤ 768px)**
+
+```css
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav.nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    background-color: var(--nav-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu-toggle:checked + .menu-toggle + nav.nav-menu {
+    display: flex;
+  }
+
+  nav.nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta-button {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-image {
+    flex: 1 1 100%;
+  }
+}
+```
+
+- On small screens:
+
+  - Shows the hamburger icon.
+  - Hides the nav menu until checkbox is checked.
+  - Nav becomes a vertical list.
+  - Hides `.cta-button`.
+  - Hero layout becomes vertical (`column`) and centered.
+
+---
+
+### 🌙 **Dark Mode Support**
+
+```css
+body.dark {
+  --bg: var(--dark-bg);
+  --text: var(--dark-text);
+  --nav-bg: #121a26;
+  --primary: var(--dark-primary);
+  --accent: var(--dark-accent);
+  background-color: var(--bg);
+  color: var(--text);
+}
+```
+
+- If you add `class="dark"` to `<body>`, this changes the color scheme to a dark mode.
+- Uses dark-friendly versions of background, text, primary, and accent colors.
+
+---
+
+## ✅ Conclusion
+
+This CSS:
+
+- Makes a professional, responsive personal site
+- Supports dark mode using a class
+- Uses CSS variables to make styling flexible and centralized
+- Enables mobile-friendly navigation **without JavaScript**
+
+---
