@@ -10,10 +10,12 @@
 | Thu (19) | Tuples, Sets, Dictionaries                      | 11\_tuples.py, 12\_sets.py, 13\_dictionaries.py                   |
 | Fri (20) | OOP Concepts (Class, Object, Inheritance, etc.) | 14\_oop\_basics.py, 15\_oop\_problems.py                          |
 
-#### 📅 Week 2: June 23, 2025
-
-| Day      | Topics Covered | Files Updated         |
-| -------- | -------------- | --------------------- |
-| Mon (23) | File Handling  | 16\_file\_handling.py |
-
 ---
+
+#### 📅 Week 2: June 23–June 24, 2025
+
+| Day      | Topics Covered                                                        | Files Updated                                                                                                                                                                              |
+| -------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Mon (23) | File Handling + Exception Handling                                    | `16_file_handling.py`, `02_exception handling.py`, `expense tracker.py`                                                                                                                    |
+| Tue (24) | HTML Basics (intro, formatting, image, list, navbar), Profile Project | `01_intro.html`, `02_formating tags.html`, `03_quotation tags.html`, `04_image.html`, `05_background.html`, `06_list.html`, `07_navbar.html`, `eye3.jpg`, `My Profile project`  |
+
