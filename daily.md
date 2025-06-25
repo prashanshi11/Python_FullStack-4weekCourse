@@ -12,10 +12,12 @@
 
 ---
 
-#### 📅 Week 2: June 23–June 24, 2025
+#### 📅 Week 2: June 23–June 25, 2025
 
-| Day      | Topics Covered                                                        | Files Updated                                                                                                                                                                              |
-| -------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Mon (23) | File Handling + Exception Handling                                    | `16_file_handling.py`, `02_exception handling.py`, `expense tracker.py`                                                                                                                    |
-| Tue (24) | HTML Basics (intro, formatting, image, list, navbar), Profile Project | `01_intro.html`, `02_formating tags.html`, `03_quotation tags.html`, `04_image.html`, `05_background.html`, `06_list.html`, `07_navbar.html`, `eye3.jpg`, `My Profile project`  |
+| Day      | Topics Covered                                                                                 | Files Updated                                                                                                                                                                  |
+| -------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Mon (23) | File Handling + Exception Handling                                                             | `01_fileHandling`, `02_exception handling.py`, `expense tracker.py`                                                                                                            |
+| Tue (24) | HTML Basics (intro, formatting, image, list, navbar), Profile Project                          | `01_intro.html`, `02_formating tags.html`, `03_quotation tags.html`, `04_image.html`, `05_background.html`, `06_list.html`, `07_navbar.html`, `My Profile project`, `eye3.jpg` |
+| Wed (25) | Semantic HTML5 and Forms, CSS Flexbox/Grid/Animations, Responsive Design, Landing Page Project | `08_semantic.html`, `09_form.html`, `10_css flexbox.html`, `My Profile project/index.html` (updated for responsiveness), notes on Flexbox/Grid/Media Queries                   |
 
+---
