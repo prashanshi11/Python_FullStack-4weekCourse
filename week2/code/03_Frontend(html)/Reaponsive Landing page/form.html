@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Student Registration Form</h1>
+    <form>
+      <section class="form-section">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" maxlength="50" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" maxlength="50" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email ID</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" maxlength="10" required>
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender"> Male</label>
+            <label><input type="radio" name="gender"> Female</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Date of Birth</label>
+          <div class="dob">
+            <select><option>Day</option></select>
+            <select><option>Month</option></select>
+            <select><option>Year</option></select>
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <label for="address">Address</label>
+          <textarea id="address" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" maxlength="50">
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pin Code</label>
+          <input type="text" id="pincode" maxlength="6">
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" id="state" maxlength="30">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" value="India">
+        </div>
+
+        <fieldset class="form-group full-width">
+          <legend>Hobbies</legend>
+          <label><input type="checkbox"> Drawing</label>
+          <label><input type="checkbox"> Singing</label>
+          <label><input type="checkbox"> Dancing</label>
+          <label><input type="checkbox"> Sketching</label>
+          <label><input type="checkbox"> Others</label>
+          <input type="text" placeholder="Specify">
+        </fieldset>
+
+        <fieldset class="form-group full-width">
+          <legend>Qualification</legend>
+          <label><input type="checkbox"> High School (10th)</label>
+          <label><input type="checkbox"> Higher School (12th)</label>
+          <label><input type="checkbox"> Graduation</label>
+          <label><input type="checkbox"> Post Graduation</label>
+          <label><input type="checkbox"> PhD</label>
+        </fieldset>
+
+        <fieldset class="form-group full-width">
+          <legend>Courses Applied For</legend>
+          <label><input type="checkbox"> BCA</label>
+          <label><input type="checkbox"> MCA</label>
+          <label><input type="checkbox"> M.Com</label>
+          <label><input type="checkbox"> M.Sc</label>
+          <label><input type="checkbox"> MA</label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </div>
+      </section>
+    </form>
+  </main>
+</body>
+</html>

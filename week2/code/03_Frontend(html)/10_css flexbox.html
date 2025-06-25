@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flexbox Complete Example</title>
+  <style>
+    /* Flex container: enables flexbox */
+    .flex-container {
+      display: flex; /* Activates Flexbox layout */
+
+      flex-direction: row; /* Main axis is horizontal: items in a row */
+      /* flex-direction: column; // Uncomment to make items stack vertically */
+
+      justify-content: space-between; /* Horizontal alignment of items (main axis) */
+      /* Options: flex-start, flex-end, center, space-around, space-evenly */
+
+      align-items: center; /* Vertical alignment of items (cross axis) */
+      /* Options: flex-start, flex-end, center, stretch, baseline */
+
+      flex-wrap: wrap; /* Allows items to wrap to the next line if needed */
+      gap: 20px; /* Adds space between items */
+      
+      padding: 20px;
+      background-color: #f2f2f2;
+      height: 400px; /* Defines height to see vertical alignment effects */
+      border: 2px solid #ccc;
+    }
+
+    /* Flex items */
+    .flex-item {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+
+      flex-grow: 1; /* Item can grow to fill space */
+      flex-shrink: 1; /* Item can shrink if space is limited */
+      flex-basis: 150px; /* Initial size before growing/shrinking */
+
+      /* Combined shorthand: flex: grow shrink basis */
+      /* flex: 1 1 150px; */
+    }
+
+    /* Individual item demo: no grow, no shrink */
+    .fixed-size {
+      flex: 0 0 150px; /* Fixed width: doesn't grow or shrink */
+      background-color: #2196F3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Flex container starts -->
+  <!-- It holds all the child flex items -->
+  <div class="flex-container">
+
+    <!-- Flex item 1 -->
+    <!-- Grows and shrinks, starts with 150px -->
+    <div class="flex-item">Item 1</div>
+
+    <!-- Flex item 2 -->
+    <!-- Same behavior, grows and shrinks -->
+    <div class="flex-item">Item 2</div>
+
+    <!-- Flex item 3 with fixed size -->
+    <!-- Won’t grow or shrink -->
+    <div class="flex-item fixed-size">Fixed</div>
+
+    <!-- Flex item 4 -->
+    <!-- Same as others: flexible -->
+    <div class="flex-item">Item 4</div>
+
+    <!-- Flex item 5 -->
+    <div class="flex-item">Item 5</div>
+
+  </div>
+  <!-- Flex container ends -->
+
+</body>
+</html>

@@ -4,10 +4,10 @@
   --primary: #16579c;       /* Blue */
   --accent: #003872;        /* Green */
   --text: #0e0d0d;             /* Primary text */
-  --bg: #6e6a9d;            /* Background */
+  --bg: #3f2dfd;            /* Background */
   --nav-bg: #04012b;        /* Navbar background */
   --dark-bg: #0f1b3c;       /* Dark mode background */
-  --dark-text: #e0f7fa;     /* Dark mode text */
+  --dark-text: #417b82;     /* Dark mode text */
   --dark-primary: #3399ff;  /* Dark mode blue */
   --dark-accent: #022d22;   /* Dark mode green */
 }

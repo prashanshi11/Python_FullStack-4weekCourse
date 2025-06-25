@@ -169,16 +169,192 @@
 
 ## 🟢 **9. Forms**
 
+## ✅ What is a `<form>` in HTML?
+
+An HTML `<form>` is used to collect **user input**. It can include fields like textboxes, checkboxes, radio buttons, submit buttons, etc., and sends the data to a server or processes it using JavaScript.
+
+---
+
+## 🧩 Basic Structure:
+
 ```html
-<form action="/submit">
-  Name: <input type="text" name="name" /><br />
-  Password: <input type="password" /><br />
-  Gender:
-  <input type="radio" name="gender" value="M" /> Male
-  <input type="radio" name="gender" value="F" /> Female<br />
-  <input type="submit" />
+<form action="/submit" method="post">
+  <!-- Form elements go here -->
 </form>
 ```
+
+---
+
+## 🧾 Important `<form>` Attributes:
+
+| Attribute      | Description                                                       |
+| -------------- | ----------------------------------------------------------------- |
+| `action`       | URL to send form data to (can be server script or same page)      |
+| `method`       | HTTP method: `GET` (appends data to URL), `POST` (sends securely) |
+| `target`       | Where to display the response (e.g., `_blank`, `_self`)           |
+| `autocomplete` | `on` or `off` – enables/disables auto-fill                        |
+| `novalidate`   | Skips HTML5 validation when submitting                            |
+
+---
+
+## 🧱 Common Input Elements:
+
+### 🔹 1. **Text Input**
+
+```html
+<input type="text" name="username" placeholder="Enter username" required />
+```
+
+### 🔹 2. **Password**
+
+```html
+<input type="password" name="pass" required />
+```
+
+### 🔹 3. **Email**
+
+```html
+<input type="email" name="email" />
+```
+
+### 🔹 4. **Number**
+
+```html
+<input type="number" name="age" min="18" max="100" />
+```
+
+### 🔹 5. **Date**
+
+```html
+<input type="date" name="dob" />
+```
+
+### 🔹 6. **Radio Buttons**
+
+```html
+<input type="radio" name="gender" value="male" /> Male
+<input type="radio" name="gender" value="female" /> Female
+```
+
+### 🔹 7. **Checkbox**
+
+```html
+<input type="checkbox" name="subscribe" checked /> Subscribe
+```
+
+### 🔹 8. **Textarea**
+
+```html
+<textarea name="message" rows="4" cols="30">Type your message here...</textarea>
+```
+
+### 🔹 9. **Select (Dropdown)**
+
+```html
+<select name="country">
+  <option value="IN">India</option>
+  <option value="US">USA</option>
+</select>
+```
+
+### 🔹 10. **File Upload**
+
+```html
+<input type="file" name="resume" />
+```
+
+### 🔹 11. **Submit Button**
+
+```html
+<input type="submit" value="Send" />
+```
+
+### 🔹 12. **Reset Button**
+
+```html
+<input type="reset" value="Clear" />
+```
+
+---
+
+## 🧪 Example Form:
+
+```html
+<form action="/submit" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required />
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required />
+
+  <label>Gender:</label>
+  <input type="radio" name="gender" value="male" /> Male
+  <input type="radio" name="gender" value="female" /> Female
+
+  <label for="country">Country:</label>
+  <select id="country" name="country">
+    <option value="IN">India</option>
+    <option value="US">USA</option>
+  </select>
+
+  <input type="submit" value="Submit" />
+</form>
+```
+
+---
+
+## 🛡️ HTML5 Validation Attributes:
+
+| Attribute     | Purpose                |
+| ------------- | ---------------------- |
+| `required`    | Field must be filled   |
+| `min`, `max`  | For number/date limits |
+| `maxlength`   | Max character limit    |
+| `pattern`     | Regex pattern          |
+| `placeholder` | Hint text              |
+| `readonly`    | User can’t modify it   |
+| `disabled`    | Field is disabled      |
+
+---
+
+## 🧠 Best Practices:
+
+- Always use `<label>` with inputs for accessibility.
+- Use `name` attribute – it's essential for submitting data.
+- Use `required`, `type`, and other attributes for form validation.
+- Use `fieldset` and `legend` to group related elements.
+
+---
+
+## 📦 Form Layout Example with `fieldset`:
+
+```html
+<form>
+  <fieldset>
+    <legend>Personal Info</legend>
+    <input type="text" name="first_name" placeholder="First Name" />
+    <input type="text" name="last_name" placeholder="Last Name" />
+  </fieldset>
+</form>
+```
+
+---
+
+## 📤 Form Submission Methods:
+
+### `GET` Method:
+
+- Appends data to URL
+- Visible in browser
+- Used for search
+
+### `POST` Method:
+
+- Sends data in body
+- More secure
+- Used for sensitive data
+
+---
 
 ---
 
@@ -208,6 +384,91 @@
 | `<section>` | Section of content     |
 | `<aside>`   | Sidebar content        |
 | `<footer>`  | Footer of the page     |
+
+### ✅ Semantic Tags in HTML
+
+**Semantic HTML** introduces tags that **clearly describe their meaning** in a human- and machine-readable way. Unlike non-semantic tags like `<div>` and `<span>`, semantic tags convey **structure and purpose**.
+
+---
+
+### 🔹 Why Semantic Tags Matter:
+
+| Benefit              | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| ✅ **Improves SEO**  | Search engines understand your content better    |
+| ✅ **Accessibility** | Helps screen readers for visually impaired users |
+| ✅ **Readability**   | Easier for developers to read and maintain code  |
+| ✅ **Consistency**   | Standard structure across web pages              |
+
+---
+
+### 🔸 Common Semantic Tags:
+
+| Tag            | Purpose                                                          |
+| -------------- | ---------------------------------------------------------------- |
+| `<header>`     | Represents introductory content (often includes nav, logo, etc.) |
+| `<nav>`        | Contains navigation links                                        |
+| `<main>`       | The main content of the document (only one per page)             |
+| `<section>`    | Defines a section in the document (e.g., chapters, tabs)         |
+| `<article>`    | Self-contained content (e.g., blog post, forum post)             |
+| `<aside>`      | Side content (e.g., ads, sidebars, related links)                |
+| `<footer>`     | Footer for a section or the whole page                           |
+| `<figure>`     | Wraps media (images, charts, etc.)                               |
+| `<figcaption>` | Caption for a `<figure>`                                         |
+| `<mark>`       | Highlights text                                                  |
+| `<time>`       | Specifies a time or date                                         |
+| `<details>`    | Can be used to create expandable content                         |
+| `<summary>`    | Provides a summary for the `<details>` content                   |
+
+---
+
+### 🔍 Example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Semantic HTML Example</title>
+  </head>
+  <body>
+    <header>
+      <h1>Prashanshi's Blog</h1>
+      <nav>
+        <a href="#">Home</a> |
+        <a href="#">Projects</a>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <header><h2>My First Blog Post</h2></header>
+        <p>This is the main content of my post.</p>
+      </article>
+
+      <aside>
+        <h3>Related Posts</h3>
+        <ul>
+          <li>Post 1</li>
+          <li>Post 2</li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Prashanshi Yadav</p>
+    </footer>
+  </body>
+</html>
+```
+
+---
+
+### 🎯 Tips to Remember:
+
+- Use **`<main>`** only once per page.
+- Use **`<section>`** to group related content.
+- Use **`<article>`** when content can stand on its own.
+- Avoid overusing **`<div>`** when a semantic tag is more appropriate.
 
 ---
 
@@ -525,5 +786,218 @@ legend {
 - `<legend>` must be the **first child** of `<fieldset>`.
 - Both tags are **optional**, but recommended for better UX.
 - You can nest multiple `<fieldset>` sections inside a form.
+
+---
+
+## 🟢 **20. css flexbox**
+
+## ✅ What is Flexbox?
+
+**Flexbox (Flexible Box Layout)** is a CSS module that provides a more efficient way to layout, align, and distribute space among items in a **container**, even when their sizes are unknown or dynamic.
+
+---
+
+## 🎯 Why Use Flexbox?
+
+| Feature            | Benefit                             |
+| ------------------ | ----------------------------------- |
+| 🔄 One-dimensional | Layout items **in a row or column** |
+| 📱 Responsive      | Works great on all screen sizes     |
+| 🧭 Alignment       | Easy vertical/horizontal centering  |
+| 🚀 Dynamic         | Items grow/shrink automatically     |
+
+---
+
+## 🧱 Basic Structure
+
+```html
+<div class="flex-container">
+  <div class="item">1</div>
+  <div class="item">2</div>
+  <div class="item">3</div>
+</div>
+```
+
+```css
+.flex-container {
+  display: flex; /* Enables flexbox */
+}
+```
+
+---
+
+## 🔑 Main Properties
+
+### 🔹 1. `display: flex;`
+
+> Enables Flexbox layout on the container.
+
+```css
+.container {
+  display: flex;
+}
+```
+
+---
+
+### 🔹 2. `flex-direction`
+
+> Defines the direction of flex items.
+
+| Value            | Direction     |
+| ---------------- | ------------- |
+| `row` (default)  | Left to right |
+| `row-reverse`    | Right to left |
+| `column`         | Top to bottom |
+| `column-reverse` | Bottom to top |
+
+```css
+.container {
+  flex-direction: row; /* or column */
+}
+```
+
+---
+
+### 🔹 3. `justify-content`
+
+> Aligns items **horizontally**.
+
+| Value           | Description            |
+| --------------- | ---------------------- |
+| `flex-start`    | Align left/start       |
+| `flex-end`      | Align right/end        |
+| `center`        | Center horizontally    |
+| `space-between` | Equal space between    |
+| `space-around`  | Equal space around     |
+| `space-evenly`  | Equal space everywhere |
+
+```css
+.container {
+  justify-content: center;
+}
+```
+
+---
+
+### 🔹 4. `align-items`
+
+> Aligns items **vertically** in a row.
+
+| Value               | Description               |
+| ------------------- | ------------------------- |
+| `stretch` (default) | Stretch to fill container |
+| `flex-start`        | Top-aligned               |
+| `flex-end`          | Bottom-aligned            |
+| `center`            | Vertically centered       |
+| `baseline`          | Aligned by text baseline  |
+
+```css
+.container {
+  align-items: center;
+}
+```
+
+---
+
+### 🔹 5. `flex-wrap`
+
+> Allows items to wrap if needed (default: no wrap).
+
+```css
+.container {
+  flex-wrap: wrap;
+}
+```
+
+---
+
+### 🔹 6. `gap`
+
+> Adds spacing between flex items (like margin but cleaner).
+
+```css
+.container {
+  gap: 20px;
+}
+```
+
+---
+
+## 🧠 Example: Responsive Flex Layout
+
+```html
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 300px;
+    background-color: #eee;
+    padding: 20px;
+  }
+
+  .item {
+    background-color: #4caf50;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+  }
+</style>
+
+<div class="container">
+  <div class="item">Box 1</div>
+  <div class="item">Box 2</div>
+  <div class="item">Box 3</div>
+  <div class="item">Box 4</div>
+</div>
+```
+
+---
+
+## 🔧 Extra Item-Level Properties
+
+| Property      | Purpose                                |
+| ------------- | -------------------------------------- |
+| `flex-grow`   | Defines how much an item should grow   |
+| `flex-shrink` | Defines how much an item should shrink |
+| `flex-basis`  | Initial size before growing/shrinking  |
+| `flex`        | Shorthand for all 3 above              |
+
+```css
+.item {
+  flex: 1; /* Grow equally */
+}
+```
+
+---
+
+## 📊 Flexbox Diagram (Simplified)
+
+```
+|-----------------------------|
+|        Main Axis →         |
+|  ↑                         |
+|  |  cross axis             |
+|  |                         |
+|-----------------------------|
+```
+
+---
+
+## 📝 Summary Checklist
+
+- ✅ Use `display: flex` to activate Flexbox.
+- ✅ Use `flex-direction` to set row/column.
+- ✅ Use `justify-content` and `align-items` to align.
+- ✅ Use `flex-wrap` for wrapping.
+- ✅ Use `gap` for spacing.
+- ✅ Use item-level properties for sizing control.
 
 ---

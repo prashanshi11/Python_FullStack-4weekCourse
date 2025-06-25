@@ -1,0 +1,76 @@
+<!-- Start of HTML Document -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Form Example</title>
+</head>
+<body>
+
+  <!-- Form begins here -->
+  <!-- 'action' defines where to send the form data -->
+  <!-- 'method' defines how the data is sent (GET or POST) -->
+  <form action="/submit-form" method="post">
+
+    <!-- Label and input for Name -->
+    <!-- 'label' improves accessibility -->
+    <!-- 'required' makes it compulsory to fill this field -->
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="fullname" placeholder="Enter your full name" required /><br><br>
+
+    <!-- Email field -->
+    <!-- 'type=email' ensures only valid emails are accepted -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="your@example.com" required /><br><br>
+
+    <!-- Password field -->
+    <!-- Password is hidden for privacy -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required /><br><br>
+
+    <!-- Gender selection using radio buttons -->
+    <!-- Only one option can be selected -->
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male" />
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female" />
+    <label for="female">Female</label><br><br>
+
+    <!-- Checkbox to agree to terms -->
+    <!-- Allows user to select/deselect option -->
+    <input type="checkbox" id="agree" name="agree" required />
+    <label for="agree">I agree to the terms and conditions</label><br><br>
+
+    <!-- Dropdown menu -->
+    <!-- 'select' groups options for a dropdown -->
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+      <option value="">--Select Country--</option>
+      <option value="IN">India</option>
+      <option value="US">United States</option>
+      <option value="UK">United Kingdom</option>
+    </select><br><br>
+
+    <!-- Text area for message input -->
+    <!-- Good for comments or longer text -->
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="40" placeholder="Write your message here..."></textarea><br><br>
+
+    <!-- File input -->
+    <!-- Allows users to upload files -->
+    <label for="resume">Upload Resume:</label><br>
+    <input type="file" id="resume" name="resume" /><br><br>
+
+    <!-- Submit and Reset buttons -->
+    <!-- Submit sends the form -->
+    <!-- Reset clears all fields -->
+    <input type="submit" value="Submit Form" />
+    <input type="reset" value="Clear All" />
+
+  </form>
+  <!-- Form ends here -->
+
+</body>
+</html>
+<!-- End of HTML Document -->
