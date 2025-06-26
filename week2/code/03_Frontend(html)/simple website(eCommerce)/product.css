@@ -1,0 +1,28 @@
+/* css/product.css */
+.product-grid {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.product-card {
+    background: white;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card a {
+    text-decoration: none;
+    color: #333;
+}

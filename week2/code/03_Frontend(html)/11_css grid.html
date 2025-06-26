@@ -1,0 +1,91 @@
+<!-- This is a complete HTML document that uses CSS Grid for layout -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Grid Layout Example</title>
+
+  <style>
+    /* Grid container styling */
+    .container {
+      /* Declares this element as a CSS Grid container */
+      display: grid;
+
+      /* Defines 3 equal-width columns using fraction unit (fr) */
+      grid-template-columns: repeat(3, 1fr);
+
+      /* Sets the gap (spacing) between columns and rows */
+      gap: 15px;
+
+      /* Adds some space around the grid */
+      padding: 20px;
+
+      /* Light gray background for the whole grid */
+      background-color: #f0f0f0;
+    }
+
+    /* Grid item styling */
+    .item {
+      /* Background color for visual separation */
+      background-color: #0A0E27;
+
+      /* Text color */
+      color: white;
+
+      /* Centers the text inside the grid item */
+      text-align: center;
+
+      /* Padding inside the box */
+      padding: 30px;
+
+      /* Font size of the text */
+      font-size: 1.2rem;
+
+      /* Rounded corners */
+      border-radius: 10px;
+
+      /* Soft shadow for depth effect */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Example of how to make one item span multiple columns */
+    .item1 {
+      /* Span across column 1 to column 3 (takes 2 columns) */
+      grid-column: 1 / 3;
+    }
+
+    /* Another example: spanning rows */
+    .item4 {
+      /* This item will span 2 rows */
+      grid-row: span 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Grid Container -->
+  <div class="container">
+
+    <!-- Each div below is a Grid Item -->
+
+    <!-- First item, styled to span two columns -->
+    <div class="item item1">Item 1 (spans 2 columns)</div>
+
+    <!-- Standard grid items -->
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+
+    <!-- Item 4 will span two rows vertically -->
+    <div class="item item4">Item 4 (spans 2 rows)</div>
+
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 7</div>
+    <div class="item">Item 8</div>
+    <div class="item">Item 9</div>
+
+  </div>
+
+</body>
+</html>

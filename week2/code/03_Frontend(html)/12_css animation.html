@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Animation Full Example</title>
+
+  <style>
+    /* -------------------------------
+       Basic styling for body and container
+    -------------------------------- */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .animation-box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      margin: 50px auto;
+      border-radius: 10px;
+    }
+
+    /* ------------------------------------------
+       1. CSS Animation using @keyframes
+          Creating a simple bounce animation
+    ------------------------------------------- */
+    @keyframes bounce {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-100px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* ------------------------------------------
+       Applying animation using animation properties
+       Properties:
+       - animation-name: name of @keyframes
+       - animation-duration: how long it takes
+       - animation-timing-function: speed curve
+       - animation-delay: when animation starts
+       - animation-iteration-count: how many times
+       - animation-direction: forward/reverse/alternate
+       - animation-fill-mode: retain styles before/after
+       - animation-play-state: running or paused
+    ------------------------------------------- */
+    .animated {
+      animation-name: bounce;              /* Name of the keyframes animation */
+      animation-duration: 2s;              /* Duration of 2 seconds */
+      animation-timing-function: ease-in-out; /* Smooth start and end */
+      animation-delay: 0s;                 /* No delay */
+      animation-iteration-count: infinite; /* Repeat forever */
+      animation-direction: alternate;      /* Reverse direction on each cycle */
+      animation-fill-mode: both;           /* Apply styles before and after */
+      animation-play-state: running;       /* Animation is playing */
+    }
+
+    /* ------------------------------------------
+       2. Multiple animations together (chaining)
+          Using comma to separate multiple animations
+    ------------------------------------------- */
+    @keyframes colorChange {
+      0%   { background-color: #3498db; }
+      50%  { background-color: #e74c3c; }
+      100% { background-color: #3498db; }
+    }
+
+    .multi-animate {
+      animation: bounce 2s ease-in-out infinite alternate,
+                 colorChange 3s linear infinite; /* Chaining animations */
+    }
+
+    /* ------------------------------------------
+       3. CSS Transition (different from animation)
+          Used for smooth change between states
+    ------------------------------------------- */
+    .transition-box {
+      width: 100px;
+      height: 100px;
+      background-color: #2ecc71;
+      margin: 50px auto;
+      transition: all 0.5s ease-in-out; /* transition on hover effect */
+    }
+
+    .transition-box:hover {
+      transform: scale(1.3);      /* Grow the box */
+      background-color: #8e44ad; /* Change color on hover */
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Single animation using animation properties -->
+  <div class="animation-box animated"></div>
+
+  <!-- Multiple animations chained -->
+  <div class="animation-box multi-animate"></div>
+
+  <!-- Transition-based animation (on hover) -->
+  <div class="transition-box"></div>
+
+</body>
+</html>

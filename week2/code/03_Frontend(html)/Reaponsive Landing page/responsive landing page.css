@@ -1,0 +1,148 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+  color: #e0aa9d;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: rgb(233, 192, 253);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to right, #f6b9fb, #eccdff);
+  flex-shrink: 0;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: rgb(126, 23, 85);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(35, 5, 49);
+}
+
+/* Cards Section */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 60px 20px;
+  flex-shrink: 0;
+}
+
+.card {
+  background: #df2b2b;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  text-align: center;
+}
+
+.footer-grid a {
+  color: #e0b3ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header.container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 60px 10px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}

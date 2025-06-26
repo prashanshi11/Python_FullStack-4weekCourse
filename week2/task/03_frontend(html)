@@ -1001,3 +1001,484 @@ legend {
 - ✅ Use item-level properties for sizing control.
 
 ---
+
+## 🟢 **21. css grid**
+
+CSS Grid is a powerful layout system in CSS that allows you to design web layouts in rows and columns. It gives you more control over your web design compared to older layout systems like floats or inline-blocks.
+
+---
+
+### 🔶 **What is CSS Grid?**
+
+**CSS Grid Layout** is a 2-dimensional layout system for the web. It means you can work with both **rows and columns**, unlike flexbox which is mostly one-dimensional (row _or_ column).
+
+---
+
+### 🔧 **Basic Terminology**
+
+| Term               | Meaning                                                  |
+| ------------------ | -------------------------------------------------------- |
+| **Grid Container** | The parent element where `display: grid` is applied.     |
+| **Grid Item**      | The direct children of the grid container.               |
+| **Grid Line**      | The lines that divide the grid structure.                |
+| **Grid Cell**      | The space between two horizontal and two vertical lines. |
+| **Grid Track**     | A row or column in the grid.                             |
+| **Grid Area**      | A rectangular space made of one or more grid cells.      |
+
+---
+
+### ✅ **How to Create a Grid Layout**
+
+#### 🧩 Step 1: Define Grid Container
+
+```css
+.container {
+  display: grid;
+}
+```
+
+#### 🧩 Step 2: Define Rows & Columns
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 200px 200px; /* 3 columns */
+  grid-template-rows: 100px 100px; /* 2 rows */
+}
+```
+
+You can also use:
+
+```css
+grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+grid-template-rows: auto auto; /* height adjusts automatically */
+```
+
+---
+
+### 🧱 **HTML + CSS Example**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+        gap: 10px; /* space between items */
+        padding: 20px;
+        background-color: #ddd;
+      }
+
+      .item {
+        background-color: #0a0e27;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+  </body>
+</html>
+```
+
+---
+
+### 🔄 **Positioning Grid Items**
+
+```css
+.item1 {
+  grid-column: 1 / 3; /* spans column 1 and 2 */
+  grid-row: 1 / 2; /* only in first row */
+}
+```
+
+### 🧮 **Units to Use**
+
+- `px`, `em`, `%` – Fixed units
+- `fr` – Fraction of remaining space (modern & powerful)
+
+---
+
+### 🧠 **Important Properties**
+
+| Property                           | Description                                 |
+| ---------------------------------- | ------------------------------------------- |
+| `grid-template-columns`            | Defines the number and width of columns     |
+| `grid-template-rows`               | Defines the number and height of rows       |
+| `grid-gap` / `gap`                 | Sets the space between rows and columns     |
+| `grid-column`, `grid-row`          | Position an item in specific rows/columns   |
+| `justify-items`, `align-items`     | Aligns items within their grid cells        |
+| `justify-content`, `align-content` | Aligns the entire grid inside the container |
+
+---
+
+### 🎯 **Tips**
+
+- Use `repeat()` to avoid repetitive code.
+- Use `fr` to make your layout responsive.
+- Combine with media queries for best results.
+- CSS Grid works well with Flexbox; use Flexbox for layout _inside_ a grid item.
+
+---
+
+### 📌 Use Case Examples
+
+- Website layouts
+- Dashboards
+- Image galleries
+- Product grids
+
+---
+
+## 🟢 **22. CSS Animation**
+
+## 🎞️ What is CSS Animation?
+
+**CSS Animation** allows you to animate HTML elements **without using JavaScript**. You can make elements **move, fade, grow, shrink, rotate**, and more with smooth transitions.
+
+---
+
+## 🎯 Why Use CSS Animation?
+
+| Benefits        | Description                              |
+| --------------- | ---------------------------------------- |
+| 🎨 Improve UX   | Makes websites interactive and appealing |
+| ⚡ Lightweight  | No need for JavaScript                   |
+| 🛠 Easy to use   | Just a few lines of CSS                  |
+| ⏱ Custom timing | Control speed, delay, and repetition     |
+
+---
+
+## 🧠 Two Main Ways to Animate in CSS
+
+### 1. **Transitions** – Used for smooth state changes (like hover)
+
+```css
+.button {
+  transition: background-color 0.3s ease-in-out;
+}
+```
+
+### 2. **Animations** – Used for more complex, keyframe-based animations
+
+```css
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.box {
+  animation: slideIn 1s ease-in-out;
+}
+```
+
+---
+
+## 🔑 Key Concepts of CSS Animation
+
+### 🔹 1. `@keyframes`
+
+- Defines what the animation does in **stages**
+- Uses `from` and `to` or `0%` to `100%`
+
+```css
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+```
+
+---
+
+### 🔹 2. Animation Properties
+
+| Property                    | Description                                                              |
+| --------------------------- | ------------------------------------------------------------------------ |
+| `animation-name`            | Name of the `@keyframes` animation                                       |
+| `animation-duration`        | How long the animation lasts (e.g., `2s`, `500ms`)                       |
+| `animation-delay`           | Wait before animation starts                                             |
+| `animation-iteration-count` | Number of times the animation repeats (`infinite`, `3`, etc.)            |
+| `animation-direction`       | Direction: `normal`, `reverse`, `alternate`, `alternate-reverse`         |
+| `animation-timing-function` | Speed curve (`ease`, `linear`, `ease-in`, `ease-out`, etc.)              |
+| `animation-fill-mode`       | What styles apply before/after (`none`, `forwards`, `backwards`, `both`) |
+
+---
+
+## 🧪 Simple Example of CSS Animation
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Define animation steps */
+      @keyframes fadeSlide {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Element that will be animated */
+      .animated-box {
+        width: 200px;
+        height: 100px;
+        background-color: teal;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        margin: 100px auto;
+
+        /* Apply animation */
+        animation-name: fadeSlide;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animated-box">Hello Animation</div>
+  </body>
+</html>
+```
+
+---
+
+## ⏰ Timing Functions (Speed Curve Chart)
+
+| Function       | Description                        |
+| -------------- | ---------------------------------- |
+| `linear`       | Constant speed                     |
+| `ease`         | Starts slow, speeds up, slows down |
+| `ease-in`      | Starts slow                        |
+| `ease-out`     | Ends slow                          |
+| `ease-in-out`  | Starts and ends slow               |
+| `cubic-bezier` | Custom timing curve (advanced use) |
+
+---
+
+## 📌 Tips to Remember
+
+- Use `animation-fill-mode: forwards;` to keep the end state visible.
+- Use `infinite` loop for loading spinners or backgrounds.
+- Combine with `:hover` or JavaScript for dynamic effects.
+- Keep animations short to avoid irritating users.
+
+---
+
+## 🛠 Common Use Cases
+
+- Loading animations (spinners, loaders)
+- Slide-in or fade-in elements
+- Button hover effects
+- Animating charts and graphs
+- Notification popups
+
+| Concept                     | Description                                                                              |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| `@keyframes`                | Defines the animation steps (e.g., move, change color)                                   |
+| `animation-name`            | Links an element to a keyframe animation                                                 |
+| `animation-duration`        | Time taken to complete one cycle                                                         |
+| `animation-timing-function` | Speed curve (`ease`, `linear`, `ease-in`, etc.)                                          |
+| `animation-delay`           | Delay before animation starts                                                            |
+| `animation-iteration-count` | Number of times the animation plays (`1`, `infinite`, etc.)                              |
+| `animation-direction`       | Direction of animation (`normal`, `reverse`, `alternate`)                                |
+| `animation-fill-mode`       | Applies styles from start/end when not playing (`none`, `forwards`, `backwards`, `both`) |
+| `animation-play-state`      | Controls if the animation is playing or paused                                           |
+| `transition`                | Smooth change between property values (usually on hover/focus)                           |
+
+---
+
+## 🟢 **23.Responsive web page**
+
+## 🌐 What is Responsive Web Design (RWD)?
+
+> **Responsive Web Design** is an approach to building web pages that **adjust their layout and content** dynamically based on the **screen size, orientation, and device type**.
+
+This ensures **optimal user experience** on all devices — mobile, tablet, laptop, desktop, and large screens.
+
+---
+
+## 📌 Why Responsive Design Matters?
+
+| Factor                | Responsive Design Benefit        |
+| --------------------- | -------------------------------- |
+| 📱 Device Flexibility | Works on all screen sizes        |
+| 🎯 UX/UI              | Provides better usability        |
+| 📈 SEO Ranking        | Google prioritizes RWD sites     |
+| 💰 Cost-Efficient     | No need for separate mobile site |
+| 🚀 Faster Development | One codebase fits all devices    |
+
+---
+
+## 🧠 Key Concepts of Responsive Design
+
+| Concept                    | Description                                         |
+| -------------------------- | --------------------------------------------------- |
+| ✅ **Fluid Grid Layouts**  | Uses percentages for width instead of fixed pixels  |
+| ✅ **Flexible Images**     | Images scale with screen using `max-width: 100%`    |
+| ✅ **Media Queries**       | CSS rules based on device width, orientation, etc.  |
+| ✅ **Mobile-First Design** | Design for small screens first, scale up for larger |
+| ✅ **Viewport Meta Tag**   | Controls layout on mobile devices                   |
+
+---
+
+## 🖼️ Responsive Layout Graph
+
+```plaintext
+| Screen Width (px) | Device Type  | Common Breakpoints |
+|-------------------|--------------|---------------------|
+| 320 – 480         | Mobile       | 360px, 480px        |
+| 481 – 768         | Tablet       | 600px, 768px        |
+| 769 – 1024        | Laptop       | 960px, 1024px       |
+| 1025 – 1200+      | Desktop/TV   | 1140px, 1200px+     |
+```
+
+### 📊 Breakpoint Diagram
+
+```plaintext
+Mobile       Tablet         Laptop        Desktop
+<480px  ──── 768px ──── 1024px ──── 1200px+
+     ↓          ↓           ↓            ↓
++--------+ +------------+ +----------+ +-----------+
+| Mobile | |   Tablet   | |  Laptop  | |  Desktop  |
++--------+ +------------+ +----------+ +-----------+
+```
+
+---
+
+## 🧾 Core Responsive Techniques
+
+### 1. ✅ Fluid Grids
+
+Instead of:
+
+```css
+width: 400px;
+```
+
+Use:
+
+```css
+width: 80%;
+```
+
+### 2. ✅ Flexible Media
+
+```css
+img {
+  max-width: 100%; /* Image scales with parent */
+  height: auto;
+}
+```
+
+### 3. ✅ Media Queries
+
+```css
+/* Small devices (phones) */
+@media (max-width: 600px) {
+  body {
+    background: yellow;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    background: orange;
+  }
+}
+
+/* Large devices (laptops/desktops) */
+@media (min-width: 1025px) {
+  body {
+    background: green;
+  }
+}
+```
+
+### 4. ✅ Viewport Meta Tag
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+```
+
+---
+
+## 📌 Best Practices for RWD
+
+| Practice                                 | Description                           |
+| ---------------------------------------- | ------------------------------------- |
+| 📏 Use relative units (`%`, `em`, `rem`) | Adapts better to screen size          |
+| 🔍 Always define the viewport            | Avoids zooming issues on mobile       |
+| 🧱 Use Flexbox & Grid                    | Better control over layouts           |
+| 📱 Start with mobile-first CSS           | Add features for bigger screens later |
+| 🧪 Test on real devices                  | Simulators can miss real issues       |
+| 📸 Use responsive images                 | Use `srcset`, `picture`, or WebP      |
+
+---
+
+## 📈 Responsive vs Adaptive vs Fluid (Chart)
+
+| Feature             | Responsive | Adaptive         | Fluid      |
+| ------------------- | ---------- | ---------------- | ---------- |
+| Layout Flexibility  | High       | Medium           | High       |
+| Uses Media Queries  | ✅ Yes     | ✅ Yes           | ❌ No      |
+| Based on % widths   | ✅ Yes     | ❌ No            | ✅ Yes     |
+| Screen Breakpoints  | ✅ Dynamic | ✅ Fixed         | ❌ N/A     |
+| Codebase Simplicity | One set    | Multiple layouts | One layout |
+
+---
+
+## 📋 Summary Points
+
+- ✅ Design for **all screen sizes**, not just desktop.
+- ✅ **Mobile-first** ensures fast, minimal experience.
+- ✅ Combine **flexible layouts**, **media queries**, and **scalable images**.
+- ✅ Use `CSS Grid` or `Flexbox` for robust layouts.
+- ✅ Add `<meta viewport>` tag in `<head>` of HTML.
+- ✅ Test on various real devices and browsers.
+
+---
+
+## 🎓 Bonus: Tools to Help with RWD
+
+| Tool Name        | Use Case                     |
+| ---------------- | ---------------------------- |
+| Chrome DevTools  | Simulate different devices   |
+| Bootstrap        | Prebuilt responsive grid     |
+| Tailwind CSS     | Utility-first responsive CSS |
+| Figma            | Design responsive UI mockups |
+| Responsively App | Preview site in all sizes    |
+
+---
