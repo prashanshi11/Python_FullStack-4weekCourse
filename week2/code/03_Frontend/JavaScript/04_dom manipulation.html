@@ -1,0 +1,243 @@
+## 📌 What is DOM Manipulation?
+
+DOM (Document Object Model) manipulation means **interacting with or changing HTML and CSS using JavaScript**. You can:
+
+* Access elements
+* Change content
+* Change styles
+* Create or delete elements
+* Handle user events (click, input, etc.)
+
+---
+
+## ✅ 1. **Accessing Elements**
+
+### ✅ Using `getElementById`
+
+
+<!-- HTML element with id -->
+<p id="demo">Hello!</p>
+
+<script>
+// Select element using its ID
+let element = document.getElementById("demo"); // Accessing the element with ID "demo"
+console.log(element.textContent); // Logs "Hello!"
+</script>
+```
+
+### ✅ Using `getElementsByClassName`
+
+```html
+<!-- HTML elements with class -->
+<p class="text">One</p>
+<p class="text">Two</p>
+
+<script>
+// Selects all elements with the class "text"
+let elements = document.getElementsByClassName("text");
+console.log(elements[0].textContent); // Logs "One"
+</script>
+```
+
+### ✅ Using `querySelector` and `querySelectorAll`
+
+```html
+<!-- HTML elements -->
+<p class="para">First</p>
+<p class="para">Second</p>
+
+<script>
+// Select the first element that matches
+let firstPara = document.querySelector(".para"); // Selects first .para
+console.log(firstPara.textContent); // Logs "First"
+
+let allParas = document.querySelectorAll(".para"); // Selects all .para
+console.log(allParas.length); // Logs 2
+</script>
+```
+
+---
+
+## ✅ 2. **Changing Content**
+
+### ✅ `textContent` and `innerHTML`
+
+```html
+<p id="text">Original Text</p>
+
+<script>
+let text = document.getElementById("text");
+
+// Change only text
+text.textContent = "Changed using textContent"; // Changes only text, not HTML
+
+// Change with HTML
+text.innerHTML = "<strong>Bold Text</strong>"; // Inserts HTML content
+</script>
+```
+
+---
+
+## ✅ 3. **Changing Styles (CSS)**
+
+```html
+<p id="styleMe">Style this text</p>
+
+<script>
+let styleText = document.getElementById("styleMe");
+
+// Change style using JS
+styleText.style.color = "blue"; // Sets text color to blue
+styleText.style.fontSize = "24px"; // Increases font size
+</script>
+```
+
+---
+
+## ✅ 4. **Creating New Elements**
+
+```html
+<div id="container"></div>
+
+<script>
+// Create a new element
+let newElement = document.createElement("p"); // Creates <p> element
+newElement.textContent = "This is new text"; // Adds content to it
+
+let container = document.getElementById("container");
+container.appendChild(newElement); // Adds the new element inside #container
+</script>
+```
+
+---
+
+## ✅ 5. **Removing Elements**
+
+```html
+<p id="removeMe">Delete me</p>
+
+<script>
+let toRemove = document.getElementById("removeMe");
+toRemove.remove(); // Deletes the element from the DOM
+</script>
+```
+
+---
+
+## ✅ 6. **Modifying Attributes**
+
+```html
+<img id="myImg" src="old.jpg">
+
+<script>
+let img = document.getElementById("myImg");
+
+// Change the src attribute
+img.setAttribute("src", "new.jpg"); // Updates the image source
+
+// Get attribute value
+let currentSrc = img.getAttribute("src"); // Gets the current src
+console.log(currentSrc);
+</script>
+```
+
+---
+
+## ✅ 7. **Class Manipulation**
+
+```html
+<p id="classTarget" class="red">Change my class</p>
+
+<script>
+let target = document.getElementById("classTarget");
+
+// Add a new class
+target.classList.add("highlight"); // Adds highlight class
+
+// Remove a class
+target.classList.remove("red"); // Removes red class
+
+// Toggle a class (add if not there, remove if present)
+target.classList.toggle("active"); // Toggles active class
+</script>
+```
+
+---
+
+## ✅ 8. **Event Handling**
+
+```html
+<button id="clickBtn">Click Me</button>
+
+<script>
+let btn = document.getElementById("clickBtn");
+
+// Add event listener
+btn.addEventListener("click", function() {
+    alert("Button Clicked!"); // Executes when button is clicked
+});
+</script>
+```
+
+---
+
+## ✅ 9. **Traversing the DOM**
+
+```html
+<ul id="list">
+  <li>Item 1</li>
+  <li id="item2">Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<script>
+let item = document.getElementById("item2");
+
+// Access parent
+let parent = item.parentNode; // Gets <ul>
+
+// Access previous sibling
+let prev = item.previousElementSibling; // Gets "Item 1"
+
+// Access next sibling
+let next = item.nextElementSibling; // Gets "Item 3"
+</script>
+```
+
+---
+
+## ✅ 10. **Form Input Handling**
+
+```html
+<input type="text" id="username" placeholder="Enter name">
+<button onclick="showName()">Submit</button>
+
+<script>
+function showName() {
+  let name = document.getElementById("username").value; // Get input value
+  alert("You entered: " + name); // Show value in alert
+}
+</script>
+```
+
+---
+
+## 📚 Summary Table
+
+| Task                    | Method / Property                                 |
+| ----------------------- | ------------------------------------------------- |
+| Access by ID            | `getElementById()`                                |
+| Access by class         | `getElementsByClassName()`                        |
+| Access via CSS selector | `querySelector()` / `querySelectorAll()`          |
+| Change content          | `textContent`, `innerHTML`                        |
+| Change style            | `.style.property`                                 |
+| Create element          | `document.createElement()`                        |
+| Append element          | `appendChild()`                                   |
+| Remove element          | `remove()`                                        |
+| Modify attributes       | `setAttribute()`, `getAttribute()`                |
+| Class control           | `classList.add/remove/toggle`                     |
+| Add events              | `addEventListener()`                              |
+| Traverse DOM            | `.parentNode`, `.children`, `.nextElementSibling` |
+| Handle inputs           | `.value`                                          |
+
+---

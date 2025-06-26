@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Basic Example</title>
+</head>
+<body>
+  <h2>Open Console (Right Click → Inspect → Console)</h2>
+
+  <script>
+    // 👉 1. Variable Declaration and Data Types
+    let name = "Prashanshi";       // Stores a string
+    const age = 21;                // Stores a number (const means it cannot be changed)
+    let isStudent = true;          // Stores a boolean (true/false)
+
+    // 👉 2. Output to Console
+    console.log("Name:", name);             // Print string and variable value
+    console.log("Age:", age);               // Print number
+    console.log("Is a Student:", isStudent); // Print boolean
+
+    // 👉 3. Simple Condition
+    if (age >= 18) {
+      console.log("You are an adult.");     // This block runs if age is 18 or more
+    } else {
+      console.log("You are a minor.");      // This block runs if age is less than 18
+    }
+
+    // 👉 4. Loop Example (Print numbers 1 to 5)
+    for (let i = 1; i <= 5; i++) {
+      console.log("Number:", i);            // Loop runs 5 times
+    }
+
+    // 👉 5. Function Declaration and Call
+    function greet(userName) {
+      // Function to greet user
+      console.log("Hello, " + userName + "!");
+    }
+
+    greet(name); // Call the function with 'name' variable
+
+    // 👉 6. Array Example
+    let fruits = ["Apple", "Banana", "Orange"]; // Array with 3 elements
+
+    // Access and loop through array
+    for (let i = 0; i < fruits.length; i++) {
+      console.log("Fruit:", fruits[i]);     // Print each fruit
+    }
+
+    // 👉 7. Object Example
+    let student = {
+      firstName: "Prashanshi",      // Key-value pairs
+      lastName: "Yadav",
+      rollNo: 12205821,
+      course: "B.Tech",
+      isPassed: true
+    };
+
+    // Access object properties
+    console.log("Full Name:", student.firstName + " " + student.lastName);
+    console.log("Roll No:", student.rollNo);
+    console.log("Course:", student.course);
+    console.log("Result:", student.isPassed ? "Passed" : "Failed");
+
+    // 👉 8. Simple User Input (prompt works in browser only)
+    // let userCity = prompt("Enter your city:"); // Ask user to type their city
+    // console.log("You live in:", userCity);     // Display entered city
+
+  </script>
+</body>
+</html>

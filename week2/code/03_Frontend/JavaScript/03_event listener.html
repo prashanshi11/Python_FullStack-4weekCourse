@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Click Example</title>
+  <style>
+    /* Simple styling for button and output */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    #button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 👉 Button element -->
+  <button id="button">Click Me!</button>
+
+  <!-- 👉 Output text area -->
+  <p id="output"></p>
+
+  <!-- 👉 JavaScript to handle button click -->
+  <script>
+    const button = document.getElementById("button");  // Get the button element
+    const output = document.getElementById("output");  // Get the output paragraph
+
+    button.addEventListener("click", () => {
+      // When button is clicked, update the text content
+      output.textContent = "Button Clicked!";
+    });
+  </script>
+
+</body>
+</html>

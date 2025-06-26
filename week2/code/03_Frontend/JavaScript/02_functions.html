@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Functions Demo</title>
+</head>
+<body>
+  <h2>Check the Console (Right Click → Inspect → Console)</h2>
+
+  <script>
+    // Function Declaration (Named Function)
+    // This function prints a greeting message
+    function greet() {
+      console.log("Hello from greet function!");
+    }
+
+    // Calling the greet function
+    greet();
+
+    // Function with Parameters
+    // This function accepts a name and prints a personalized greeting
+    function greetUser(name) {
+      console.log("Hello, " + name + "! Welcome!");
+    }
+
+    // Calling greetUser with the argument "Prashanshi"
+    greetUser("Prashanshi");
+
+    // Function with Return Value
+    // This function adds two numbers and returns the result
+    function add(a, b) {
+      return a + b;
+    }
+
+    // Calling add and storing result in a variable
+    let result = add(5, 3);
+
+    // Printing the returned result
+    console.log("Sum is:", result);
+
+    // Function Expression
+    // This is an anonymous function stored in a variable
+    const multiply = function(x, y) {
+      return x * y;
+    };
+
+    // Calling the function stored in variable 'multiply'
+    console.log("Multiplication:", multiply(4, 6));
+
+    // Arrow Function (ES6+)
+    // Shorter syntax using => to define a function
+    const divide = (num1, num2) => {
+      return num1 / num2;
+    };
+
+    // Calling the arrow function
+    console.log("Division:", divide(10, 2));
+
+    // Anonymous Function used as a Callback
+    // setTimeout runs the function after 2 seconds
+    setTimeout(function() {
+      console.log("This message is delayed by 2 seconds.");
+    }, 2000);
+
+    // Immediately Invoked Function Expression (IIFE)
+    // This function runs immediately after being defined
+    (function() {
+      console.log("IIFE executed immediately!");
+    })();
+
+  </script>
+</body>
+</html>
+```
+
+---
