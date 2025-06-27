@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript Array Complete Guide</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    h2 {
+      color: #333;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Arrays: Full Coding Guide</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById("output");
+
+    function log(message) {
+      output.textContent += message + '\n';
+    }
+
+    // ------------------------------
+    // 1. Array Declaration
+    // ------------------------------
+    let fruits = ["apple", "banana", "cherry"];
+    log("// 1. Array Declaration");
+    log(fruits);
+
+    // ------------------------------
+    // 2. Access Elements by Index
+    // ------------------------------
+    log("\n// 2. Access by Index");
+    log(fruits[0]); // apple
+    log(fruits[2]); // cherry
+
+    // ------------------------------
+    // 3. Modify Elements
+    // ------------------------------
+    log("\n// 3. Modify Elements");
+    fruits[1] = "blueberry"; // changing banana to blueberry
+    log(fruits);
+
+    // ------------------------------
+    // 4. Array Length
+    // ------------------------------
+    log("\n// 4. Length of Array");
+    log(fruits.length);
+
+    // ------------------------------
+    // 5. Add Elements (push, unshift)
+    // ------------------------------
+    log("\n// 5. Add Elements");
+    fruits.push("date"); // adds to end
+    fruits.unshift("avocado"); // adds to start
+    log(fruits);
+
+    // ------------------------------
+    // 6. Remove Elements (pop, shift)
+    // ------------------------------
+    log("\n// 6. Remove Elements");
+    fruits.pop(); // removes last
+    fruits.shift(); // removes first
+    log(fruits);
+
+    // ------------------------------
+    // 7. Looping through Arrays
+    // ------------------------------
+    log("\n// 7. Looping: for loop");
+    for (let i = 0; i < fruits.length; i++) {
+      log(`Index ${i}: ${fruits[i]}`);
+    }
+
+    log("\n// 8. Looping: forEach");
+    fruits.forEach((item, index) => {
+      log(`forEach - ${index}: ${item}`);
+    });
+
+    // ------------------------------
+    // 9. Array Methods: map, filter, reduce
+    // ------------------------------
+    log("\n// 9. map - create new array");
+    let lengths = fruits.map(fruit => fruit.length);
+    log(lengths); // [lengths of each fruit name]
+
+    log("\n// 10. filter - get elements with condition");
+    let shortNames = fruits.filter(fruit => fruit.length <= 5);
+    log(shortNames);
+
+    log("\n// 11. reduce - sum of lengths");
+    let totalLength = fruits.reduce((sum, fruit) => sum + fruit.length, 0);
+    log(totalLength);
+
+    // ------------------------------
+    // 12. Array Methods: includes, indexOf
+    // ------------------------------
+    log("\n// 12. includes & indexOf");
+    log(fruits.includes("apple")); // true/false
+    log(fruits.indexOf("apple"));  // index or -1
+
+    // ------------------------------
+    // 13. Sorting & Reversing
+    // ------------------------------
+    log("\n// 13. Sorting & Reversing");
+    let numbers = [3, 1, 5, 2, 4];
+    log("Original: " + numbers);
+    numbers.sort((a, b) => a - b); // ascending
+    log("Sorted: " + numbers);
+    numbers.reverse(); // descending
+    log("Reversed: " + numbers);
+
+    // ------------------------------
+    // 14. Spread Operator & Destructuring
+    // ------------------------------
+    log("\n// 14. Spread Operator");
+    let newFruits = [...fruits, "kiwi"];
+    log(newFruits);
+
+    log("\n// 15. Destructuring");
+    let [first, second] = fruits;
+    log(`First: ${first}, Second: ${second}`);
+
+    // ------------------------------
+    // 16. Multidimensional Arrays
+    // ------------------------------
+    log("\n// 16. Multidimensional Array");
+    let matrix = [
+      [1, 2],
+      [3, 4]
+    ];
+    log(matrix[1][0]); // 3
+
+    // ------------------------------
+    // 17. Concat & Join
+    // ------------------------------
+    log("\n// 17. Concat & Join");
+    let moreFruits = ["grape", "pear"];
+    let allFruits = fruits.concat(moreFruits);
+    log(allFruits);
+    log(allFruits.join(" | ")); // string of all items
+
+    // ------------------------------
+    // 18. Slice & Splice
+    // ------------------------------
+    log("\n// 18. slice & splice");
+    let sliced = allFruits.slice(1, 3); // doesn't change original
+    log(sliced);
+
+    allFruits.splice(2, 1, "lemon"); // replace index 2 with lemon
+    log(allFruits);
+
+    // ------------------------------
+    // 19. Checking if Variable is an Array
+    // ------------------------------
+    log("\n// 19. isArray Check");
+    log(Array.isArray(fruits)); // true
+    log(Array.isArray("hello")); // false
+
+    // ------------------------------
+    // 20. Empty Array & Clearing
+    // ------------------------------
+    log("\n// 20. Empty/Clear Array");
+    let temp = [1, 2, 3];
+    temp.length = 0; // clear the array
+    log(temp);
+
+  </script>
+</body>
+</html>

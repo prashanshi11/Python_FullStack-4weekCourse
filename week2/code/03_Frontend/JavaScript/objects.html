@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Objects - Full Guide</title>
+</head>
+<body>
+  <h1>Open the Console (Right Click → Inspect → Console)</h1>
+
+  <script>
+    // ============================================================
+    // 1. What is an Object?
+    // An object is a collection of key-value pairs.
+    // ============================================================
+
+    let person = {
+      name: "Alice",
+      age: 25,
+      isStudent: true
+    };
+    console.log("1. Object definition:", person);
+
+
+    // ============================================================
+    // 2. Accessing Properties (dot and bracket notation)
+    // ============================================================
+
+    console.log("2. Dot Notation:", person.name);      // Alice
+    console.log("2. Bracket Notation:", person["age"]); // 25
+
+
+    // ============================================================
+    // 3. Modifying, Adding, Deleting Properties
+    // ============================================================
+
+    person.age = 26;                  // Modify
+    person.city = "Delhi";           // Add
+    delete person.isStudent;         // Delete
+    console.log("3. Modified Object:", person);
+
+
+    // ============================================================
+    // 4. Object with Method (function inside object)
+    // ============================================================
+
+    let user = {
+      name: "Bob",
+      greet: function() {
+        console.log("4. Hello, I'm " + this.name);
+      }
+    };
+    user.greet();
+
+
+    // ============================================================
+    // 5. Looping Through Object Properties
+    // ============================================================
+
+    for (let key in person) {
+      console.log("5. Key:", key, "Value:", person[key]);
+    }
+
+
+    // ============================================================
+    // 6. Nested Objects
+    // ============================================================
+
+    let student = {
+      name: "Riya",
+      marks: {
+        math: 90,
+        science: 85
+      }
+    };
+    console.log("6. Nested Object Access:", student.marks.math); // 90
+
+
+    // ============================================================
+    // 7. Constructor Function (Object Blueprint - older method)
+    // ============================================================
+
+    function Car(brand, year) {
+      this.brand = brand;
+      this.year = year;
+    }
+    let car1 = new Car("Toyota", 2020);
+    console.log("7. Constructor Function Object:", car1);
+
+
+    // ============================================================
+    // 8. Object.create() (Prototypal Inheritance)
+    // ============================================================
+
+    let parent = {
+      species: "Human"
+    };
+    let child = Object.create(parent);
+    child.name = "Jane";
+    console.log("8. Object.create():", child);
+    console.log("8. Inherited species:", child.species);
+
+
+    // ============================================================
+    // 9. ES6 Class Syntax (Modern Object Blueprint)
+    // ============================================================
+
+    class Animal {
+      constructor(type) {
+        this.type = type;
+      }
+
+      speak() {
+        console.log("9. This animal is a", this.type);
+      }
+    }
+    let dog = new Animal("Dog");
+    dog.speak();
+
+
+    // ============================================================
+    // 10. Real-World Example: Bank Account Object
+    // ============================================================
+
+    let bankAccount = {
+      accountNumber: "123456",
+      balance: 5000,
+      deposit: function(amount) {
+        this.balance += amount;
+        console.log("10. Deposited:", amount);
+      },
+      getBalance: function() {
+        return this.balance;
+      }
+    };
+    bankAccount.deposit(1000);
+    console.log("10. Balance:", bankAccount.getBalance()); // 6000
+
+
+    // ============================================================
+    // 11. JSON - JavaScript Object Notation
+    // Used for storing and transferring object data
+    // ============================================================
+
+    let jsonData = JSON.stringify(bankAccount);
+    console.log("11. JSON String:", jsonData);
+    let parsedData = JSON.parse(jsonData);
+    console.log("11. Parsed JSON:", parsedData);
+
+
+    // ============================================================
+    // 12. 'this' Keyword
+    // Refers to the current object context
+    // ============================================================
+
+    let teacher = {
+      name: "Mr. Sharma",
+      subject: "Math",
+      intro: function() {
+        console.log("12. Hello, I teach", this.subject);
+      }
+    };
+    teacher.intro();
+
+  </script>
+</body>
+</html>

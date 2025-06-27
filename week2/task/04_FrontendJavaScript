@@ -634,3 +634,386 @@ document.body.style.backgroundColor = "lightblue";
 ```
 
 ---
+
+---
+
+## 🔍 1. What is an Object in JavaScript?
+
+An **object** in JavaScript is a **collection of key-value pairs**. It allows you to store multiple related values (properties and methods) under a single name.
+
+> ✅ **Definition:**
+> A JavaScript object is a standalone entity, with properties and type. It is similar to real-life objects like a car (which has properties like color and methods like drive()).
+
+---
+
+## 📌 2. Why Use Objects?
+
+- To represent real-world entities
+- To group data and behavior together
+- To enable dynamic property access
+- To support object-oriented programming
+
+---
+
+## 🧠 3. Object Basics
+
+### 🔧 Syntax:
+
+```javascript
+let person = {
+  name: "Alice",
+  age: 25,
+  greet: function () {
+    console.log("Hello!");
+  },
+};
+```
+
+### ➕ Accessing Properties:
+
+```javascript
+console.log(person.name); // Dot notation
+console.log(person["age"]); // Bracket notation
+```
+
+### ✏️ Modifying:
+
+```javascript
+person.age = 26;
+```
+
+### ➕ Adding:
+
+```javascript
+person.city = "Delhi";
+```
+
+### ❌ Deleting:
+
+```javascript
+delete person.city;
+```
+
+---
+
+## 🧱 4. Object Components
+
+| Part         | Description                                          | Example                |
+| ------------ | ---------------------------------------------------- | ---------------------- |
+| **Key**      | Name of the property (always a string)               | `"name"`               |
+| **Value**    | Any JS data (string, number, object, function, etc.) | `"Alice"` or `25`      |
+| **Method**   | Function defined inside an object                    | `greet: function() {}` |
+| **Property** | Key + value pair                                     | `name: "Alice"`        |
+
+---
+
+## 🗂️ 5. Object Types (Ways to Create)
+
+### 1. **Object Literal** ✅
+
+```javascript
+let car = { brand: "Toyota", year: 2020 };
+```
+
+### 2. **Constructor Function**
+
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+let p1 = new Person("John", 30);
+```
+
+### 3. **Class Syntax (ES6)**
+
+```javascript
+class Animal {
+  constructor(type) {
+    this.type = type;
+  }
+}
+let dog = new Animal("Dog");
+```
+
+### 4. **Object.create()**
+
+```javascript
+let parent = { species: "human" };
+let child = Object.create(parent);
+child.name = "Jane";
+```
+
+---
+
+## 🔄 6. Looping Through Objects
+
+### `for...in` loop:
+
+```javascript
+for (let key in person) {
+  console.log(key, person[key]);
+}
+```
+
+---
+
+## 🧪 7. Methods in Objects
+
+Objects can have **functions as methods**:
+
+```javascript
+let user = {
+  name: "Mark",
+  greet() {
+    console.log("Hi, I'm " + this.name);
+  },
+};
+user.greet(); // Hi, I'm Mark
+```
+
+---
+
+## 🌳 8. JavaScript Object Diagram
+
+```
+person = {
+  name: "Alice",       // property
+  age: 25,             // property
+  greet: function() {  // method
+    console.log("Hello");
+  }
+}
+```
+
+```
+        +--------------------+
+        |      Object        |
+        +--------------------+
+        | name: "Alice"      |
+        | age: 25            |
+        | greet: function()  |
+        +--------------------+
+```
+
+---
+
+## 📊 9. Chart: Object vs Array vs Class
+
+| Feature          | Object               | Array                   | Class                  |
+| ---------------- | -------------------- | ----------------------- | ---------------------- |
+| Key type         | String (or symbol)   | Numeric indices (0,1,2) | Class members          |
+| Use case         | Group related values | Ordered list of items   | Blueprints for objects |
+| Methods included | Yes                  | Yes (array methods)     | Yes                    |
+
+---
+
+## 📌 10. Special Object Features
+
+- **Nested Objects**:
+
+```javascript
+let student = {
+  name: "Riya",
+  marks: {
+    math: 90,
+    science: 85,
+  },
+};
+```
+
+- **this Keyword**: Refers to the current object
+- **JSON**: JavaScript Object Notation (used for storing & transferring data)
+- **Prototypes**: Allow inheritance of properties/methods
+
+---
+
+## ✅ 11. Real-World Example
+
+```javascript
+let bankAccount = {
+  accountNumber: "123456",
+  balance: 5000,
+  deposit(amount) {
+    this.balance += amount;
+    console.log("Deposited:", amount);
+  },
+  getBalance() {
+    return this.balance;
+  },
+};
+bankAccount.deposit(1000);
+console.log(bankAccount.getBalance()); // 6000
+```
+
+---
+
+## 🧠 12. Summary Points
+
+- Objects hold key-value pairs
+- Properties can be any type
+- Can contain methods (functions)
+- Support inheritance via prototypes
+- Are the foundation of OOP in JavaScript
+
+---
+
+---
+
+## 📘 **What is an Array in JavaScript?**
+
+An **Array** is a **data structure** used to **store multiple values in a single variable**. It's an **ordered collection** of items, where each item has an **index** starting from `0`.
+
+```javascript
+let fruits = ["Apple", "Banana", "Mango"];
+```
+
+---
+
+## 📚 **Why Use Arrays?**
+
+- To **store related data** (e.g., list of names, scores, products).
+- To perform **iteration** over items.
+- To perform **bulk operations** like filtering, sorting, mapping.
+
+---
+
+## 🧠 **Array Concepts and Theory**
+
+### ✅ 1. **Array Declaration**
+
+```javascript
+let arr = []; // Empty array
+let numbers = [1, 2, 3]; // Array of numbers
+let mixed = [1, "hello", true]; // Mixed types
+```
+
+### ✅ 2. **Accessing Elements**
+
+```javascript
+let colors = ["Red", "Green", "Blue"];
+console.log(colors[0]); // "Red"
+console.log(colors[2]); // "Blue"
+```
+
+### ✅ 3. **Modifying Elements**
+
+```javascript
+colors[1] = "Yellow"; // Changes "Green" to "Yellow"
+```
+
+### ✅ 4. **Array Length**
+
+```javascript
+console.log(colors.length); // 3
+```
+
+### ✅ 5. **Adding and Removing Elements**
+
+```javascript
+// Add
+arr.push("New"); // Add to end
+arr.unshift("First"); // Add to beginning
+
+// Remove
+arr.pop(); // Remove last
+arr.shift(); // Remove first
+```
+
+---
+
+## 🧾 **Array Methods (with chart)**
+
+| Method       | Description                 | Example                      |
+| ------------ | --------------------------- | ---------------------------- |
+| `push()`     | Adds to end                 | `arr.push(10)`               |
+| `pop()`      | Removes from end            | `arr.pop()`                  |
+| `shift()`    | Removes from start          | `arr.shift()`                |
+| `unshift()`  | Adds to start               | `arr.unshift(5)`             |
+| `slice()`    | Returns a portion           | `arr.slice(1, 3)`            |
+| `splice()`   | Adds/removes items anywhere | `arr.splice(1, 2, "a", "b")` |
+| `forEach()`  | Runs function on each item  | `arr.forEach(fn)`            |
+| `map()`      | Transforms each item        | `arr.map(x => x * 2)`        |
+| `filter()`   | Filters items               | `arr.filter(x => x > 10)`    |
+| `reduce()`   | Reduces to single value     | `arr.reduce((a,b) => a + b)` |
+| `indexOf()`  | Finds index of item         | `arr.indexOf("item")`        |
+| `includes()` | Checks if value exists      | `arr.includes("item")`       |
+| `sort()`     | Sorts array                 | `arr.sort()`                 |
+| `reverse()`  | Reverses array              | `arr.reverse()`              |
+
+---
+
+## 🧮 **Looping Through Arrays**
+
+### `for` loop
+
+```javascript
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+```
+
+### `forEach()`
+
+```javascript
+arr.forEach(function (item) {
+  console.log(item);
+});
+```
+
+### `for...of`
+
+```javascript
+for (let item of arr) {
+  console.log(item);
+}
+```
+
+---
+
+## 📊 **Visual Representation (Chart)**
+
+```
+let cars = ["BMW", "Audi", "Tata"];
+              ↓      ↓       ↓
+Index:        0      1       2
+```
+
+---
+
+## 📝 **Key Points**
+
+- Arrays in JavaScript can store **mixed data types**.
+- JavaScript arrays are **dynamic** (they grow/shrink).
+- Arrays are **zero-indexed** (start from 0).
+- Arrays are **mutable** (can be changed after creation).
+- Common use cases: **loops**, **sorting**, **searching**, **filtering**.
+
+---
+
+## 🚀 **Advanced Topics (Short Overview)**
+
+### Multidimensional Arrays:
+
+```javascript
+let matrix = [
+  [1, 2],
+  [3, 4],
+];
+console.log(matrix[1][1]); // 4
+```
+
+### Array Destructuring:
+
+```javascript
+let [a, b] = [10, 20];
+console.log(a); // 10
+```
+
+### Spread Operator:
+
+```javascript
+let newArr = [...arr1, ...arr2];
+```
+
+---
