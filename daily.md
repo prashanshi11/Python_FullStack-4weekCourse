@@ -16,12 +16,13 @@
 
 ### 📅 **Week 2: June 23–June 26, 2025**
 
-| Day      | Topics Covered                                                                               | Files Updated                                                                                                                                                                   |
-| -------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Mon (23) | File Handling, Exception Handling, Mini Project                                              | `01_fileHandling.py`, `02_exception_handling.py`, `expense_tracker.py`                                                                                                          |
-| Tue (24) | HTML Basics: Intro, Formatting, Images, Lists, Navbar, Profile Project                       | `01_intro.html`, `02_formatting_tags.html`, `03_quotation_tags.html`, `04_image.html`, `05_background.html`, `06_list.html`, `07_navbar.html`, `My Profile project`, `eye3.jpg` |
-| Wed (25) | Semantic HTML5, Forms, CSS Flexbox/Grid/Animations, Responsive Design, Landing Page Project  | `08_semantic.html`, `09_form.html`, `10_css_flexbox.html`, `My Profile project/index.html`, `Landing Page Project`                                                              |
-| Thu (26) | **JavaScript Basics**: Variables, Functions, DOM, Arrays/Objects, Event Listeners, To-Do App | `01_js_basics.js`, `02_dom.js`, `03_todo_app.html`, `04_debugging_notes.txt`                                                                                                    |
+| Day      | Topics Covered                                                                              | Files Updated                                                                                                                                                                   |
+| -------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mon (23) | File Handling, Exception Handling, Mini Project                                             | `01_fileHandling.py`, `02_exception_handling.py`, `expense_tracker.py`                                                                                                          |
+| Tue (24) | HTML Basics: Intro, Formatting, Images, Lists, Navbar, Profile Project                      | `01_intro.html`, `02_formatting_tags.html`, `03_quotation_tags.html`, `04_image.html`, `05_background.html`, `06_list.html`, `07_navbar.html`, `My Profile project`, `eye3.jpg` |
+| Wed (25) | Semantic HTML5, Forms, CSS Flexbox/Grid/Animations, Responsive Design, Landing Page Project | `08_semantic.html`, `09_form.html`, `10_css_flexbox.html`, `My Profile project/index.html`, `Landing Page Project`                                                              |
+| Thu (26) | JavaScript Basics: Variables, Functions, DOM, Arrays/Objects, Event Listeners, To-Do App    | `01_js_basics.js`, `02_dom.js`, `03_todo_app.html`, `04_debugging_notes.txt`                                                                                                    |
+| Fri (27) | JavaScript Intermediate: ES6 (Arrow Functions, Promises, Modules), Async/Await, Fetch API   | `05_es6_features.js`, `06_async_await.js`, `07_fetch_api.js`, `08_api_project.html`, `public_api_sample.json`                                                                   |
 
 ---
 
