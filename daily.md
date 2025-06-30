@@ -24,6 +24,12 @@
 | Thu (26) | JavaScript Basics: Variables, Functions, DOM, Arrays/Objects, Event Listeners, To-Do App    | `01_js_basics.js`, `02_dom.js`, `03_todo_app.html`, `04_debugging_notes.txt`                                                                                                    |
 | Fri (27) | JavaScript Intermediate: ES6 (Arrow Functions, Promises, Modules), Async/Await, Fetch API   | `05_es6_features.js`, `06_async_await.js`, `07_fetch_api.js`, `08_api_project.html`, `public_api_sample.json`                                                                   |
 
+
+###📅** Week 3: June 30–July 4, 2025**
+| Day      | Topics Covered                                                                                                                                                             | Files Updated                                                                                                |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Mon (30) | Frontend Frameworks:<br>• Intro to Bootstrap and Tailwind CSS<br>• Building Responsive Layouts<br>• Customizing Components<br>• Practice: Enhance a Webpage with Bootstrap | `01_bootstrap_intro.html`, `02_tailwind_intro.html`, `03_responsive_layout.html`, `04_bootstrap_custom.html` |
+
 ---
 
 ## 🌐 **GitHubBox: Live Preview for GitHub Projects**
