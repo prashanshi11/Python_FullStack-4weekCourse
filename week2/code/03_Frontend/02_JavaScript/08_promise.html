@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JavaScript Promises Demo</title>
+</head>
+<body>
+  <h1>🔁 JavaScript Promise Playground</h1>
+  <pre id="output"></pre>
+
+  <script>
+    const log = (text) => {
+      document.getElementById("output").textContent += text + "\n";
+    };
+
+    // ✅ 1. Creating a basic promise
+    const simplePromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("✅ Simple Promise resolved after 1 second");
+      }, 1000);
+    });
+
+    simplePromise.then(result => {
+      log(result);
+    });
+
+    // ❌ 2. Rejected promise with catch and finally
+    const rejectedPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject("❌ Rejected Promise after 1.5 seconds");
+      }, 1500);
+    });
+
+    rejectedPromise
+      .then(res => log(res))
+      .catch(err => log(err))
+      .finally(() => log("🟡 Finished rejectedPromise"));
+
+    // 🔁 3. Promise chaining
+    new Promise((resolve) => {
+      resolve(5);
+    })
+    .then((num) => {
+      log("1️⃣ First value: " + num);
+      return num * 2;
+    })
+    .then((num) => {
+      log("2️⃣ Second value: " + num);
+      return num + 10;
+    })
+    .then((result) => {
+      log("3️⃣ Final chained result: " + result);
+    });
+
+    // 📦 4. Promise.all – waits for all to resolve
+    const p1 = new Promise(resolve => setTimeout(() => resolve("🍎 Apple"), 1000));
+    const p2 = new Promise(resolve => setTimeout(() => resolve("🍌 Banana"), 1500));
+    const p3 = new Promise(resolve => setTimeout(() => resolve("🍇 Grape"), 500));
+
+    Promise.all([p1, p2, p3]).then(values => {
+      log("✅ Promise.all: " + values.join(", "));
+    });
+
+    // ⚡ 5. Promise.race – returns first settled result
+    Promise.race([p1, p2, p3]).then(value => {
+      log("⚡ Promise.race winner: " + value);
+    });
+
+    // 🟣 6. Promise.allSettled – waits for all to settle
+    const p4 = new Promise((_, reject) => setTimeout(() => reject("💥 Error in p4"), 800));
+
+    Promise.allSettled([p1, p4]).then(results => {
+      log("🟣 Promise.allSettled:");
+      results.forEach(r => log(JSON.stringify(r)));
+    });
+
+    // 🟢 7. Promise.any – first successful
+    const fail1 = new Promise((_, reject) => setTimeout(() => reject("❌ Fail 1"), 400));
+    const pass1 = new Promise(resolve => setTimeout(() => resolve("✅ Success!"), 1000));
+
+    Promise.any([fail1, pass1]).then(result => {
+      log("🟢 Promise.any: " + result);
+    });
+
+    // 🌙 8. async/await example with error handling
+    async function asyncExample() {
+      try {
+        log("🌙 Starting async/await example...");
+        const data = await new Promise((resolve) =>
+          setTimeout(() => resolve("🎉 Async result after 2 sec"), 2000)
+        );
+        log(data);
+      } catch (err) {
+        log("⚠️ Error in async function: " + err);
+      } finally {
+        log("✨ Async function complete");
+      }
+    }
+
+    
+
+    asyncExample();
+  </script>
+</body>
+</html>
