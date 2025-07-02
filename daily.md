@@ -32,6 +32,7 @@
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | Mon (30) | Frontend Frameworks:<br>• Intro to Bootstrap and Tailwind CSS<br>• Building Responsive Layouts<br>• Customizing Components<br>• Practice: Enhance a Webpage with Bootstrap       | `01_bootstrap_intro.html`, `02_tailwind_intro.html`, `03_responsive_layout.html`, `04_bootstrap_custom.html` |
 | Tue (1)  | Backend – Databases:<br>• Introduction to Relational Databases<br>• Setting up MySQL/PostgreSQL<br>• SQL Queries (CRUD, Joins)<br>• Hands-On: Create and Query a Sample Database | `05_mysql_setup.py`, `06_postgresql_setup.sql`, `07_crud_queries.sql`, `08_sample_db_queries.py`             |
+| Wed (2)  | Python + Database Integration:<br>• Connecting Python to MySQL/PostgreSQL using `mysql-connector` and `psycopg2`<br>• Performing CRUD Operations<br>• Database Design & Normalization<br>• Practice: Build a Database-Driven Python Script | `09_python_mysql_connection.py`, `10_python_postgres_connection.py`, `11_crud_script.py`, `12_db_design_notes.txt` |
 
 ---
 
