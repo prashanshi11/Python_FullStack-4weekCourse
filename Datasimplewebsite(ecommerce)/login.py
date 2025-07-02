@@ -1,5 +1,7 @@
 import mysql.connector
+import bcrypt
 
+# Connect to MySQL
 con = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -13,13 +15,15 @@ print("🔐 Login")
 email = input("Enter email: ")
 password = input("Enter password: ")
 
-cur.execute("SELECT * FROM users WHERE email=%s AND password=%s", (email, password))
-user = cur.fetchone()
+# Get the hashed password from DB for the given email
+cur.execute("SELECT password FROM users WHERE email = %s", (email,))
+result = cur.fetchone()
 
-if user:
-    print(f"✅ Welcome, {user[1]}!")
+if result:
+    stored_hash = result[0].encode('utf-8')  # Convert to bytes
+    if bcrypt.checkpw(password.encode('utf-8'), stored_hash):
+        print(f"✅ Welcome, {email}!")
+    else:
+        print("❌ Incorrect password.")
 else:
-    print("❌ Invalid credentials")
-
-cur.close()
-con.close()
+    print("❌ Email not found.")
