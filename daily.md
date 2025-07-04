@@ -27,6 +27,7 @@
 | Wed (25) | **JavaScript Basics**<br>• Variables, Functions<br>• DOM, Events<br>• Arrays, Objects<br>• To-Do List Project                          | `01_basics.html`, `02_functions.html`, `03_event listener.html`, `04_dom manipulation.html`, `05_objects.html`, `06_array.html`, `To-Do-List/`                    |
 | Thu (26) | **JavaScript Intermediate**<br>• ES6 Features<br>• Promises, Modules<br>• Async/Await<br>• Fetch API & API Integration                 | `07_async await.html`, `08_promise.html`, `script.js`                                                                                                             |
 | Fri (27) | **Mini Integration Project**<br>• Use JS Fetch + HTML/CSS<br>• Design output interface for data                                        | *(Part of existing To-Do & JS fetch projects)*                                                                                                                    |
+| Bonus    | **Static eCommerce Website**<br>• Basic HTML/CSS-based eCommerce site                                                                  | `simple website(eCommerce)/` folder (`index.html`, `cart.html`, `checkout.html`, `login.html`, `signup.html`, `products.html`, etc.)                             |
 
 ---
 
@@ -39,8 +40,9 @@
 | Mon (30) | **Frontend Frameworks**<br>• Bootstrap & Tailwind Intro<br>• Layouts, Components<br>• Responsive Page Creation Practice                    | `01_Bootstrap/`, `02_Tailwindcss/`                                                             |
 | Tue (1)  | **MySQL Basics**<br>• RDBMS Concepts<br>• Setup & Config<br>• CRUD Operations<br>• Joins and Filtering Data                                | `01_intro.py`, `02_join.py`                                                                    |
 | Wed (2)  | **CRUD Projects**<br>• Inventory Task<br>• Student Grade Management App                                                                    | `inventarytask.py`, `student_grade_system.py`                                                  |
-| Thu (3)  | **Python for Backend – Flask Basics**<br>• Flask Setup<br>• Routing, Templates, Static<br>• GET/POST Handling<br>• Simple Flask App        | `login system.py`, `CustomerOrderSystem/order_system.py`, Flask code starts                    |
+| Thu (3)  | **Python for Backend – Flask Basics**<br>• Flask Setup<br>• Routing, Templates, Static<br>• GET/POST Handling<br>• Simple Flask App        | `login system.py`, `CustomerOrderSystem/order_system.py`                                       |
 | Fri (4)  | **Flask with Frontend Integration**<br>• Render Dynamic Templates<br>• Form Validation<br>• CSS/JS Integration<br>• Flask Registration App | `studentdataTask/` folder (`01_connect_mysql.py` to `10_calculate_averages.py`, `shoptask.py`) |
+| Bonus    | **Flask eCommerce Project**<br>• Fullstack Flask + MySQL Cart System with Auth and Admin Dashboard                                        | `Datasimplewebsite(ecommerce)/` folder:<br>▪ `login.py`, `signup.py`, `add_to_cart.py`, `view_cart.py`, `checkout.py`, `admin.py`, `show_products.py`, `contact.py`, `ecommerce_setup.py`, `login.html`, `signup.html` |
 
 
 
