@@ -1,0 +1,1078 @@
+## 🔷 1. What is MySQL?
+
+**MySQL** is an open-source **Relational Database Management System (RDBMS)** that uses **Structured Query Language (SQL)** to manage and manipulate data stored in tables.
+
+---
+
+## 🔷 2. Key Concepts in MySQL
+
+| Concept          | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| Database         | Collection of related tables and objects         |
+| Table            | Structure that holds data in rows and columns    |
+| Row (Record)     | A single entry in a table                        |
+| Column (Field)   | A property or attribute of the data              |
+| Primary Key      | Uniquely identifies each row in a table          |
+| Foreign Key      | Links one table to another                       |
+| Index            | Speeds up searches and queries                   |
+| View             | Virtual table based on SQL SELECT                |
+| Stored Procedure | A saved SQL code that performs a task            |
+| Trigger          | Automatically executes code on certain DB events |
+
+---
+
+## 🔷 3. Basic SQL Syntax
+
+```sql
+-- Create a database
+CREATE DATABASE mydb;
+
+-- Use a database
+USE mydb;
+
+-- Create a table
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE
+);
+
+-- Insert data
+INSERT INTO users (name, email) VALUES ('Alice', 'alice@email.com');
+
+-- Select data
+SELECT * FROM users;
+
+-- Update data
+UPDATE users SET name = 'Alicia' WHERE id = 1;
+
+-- Delete data
+DELETE FROM users WHERE id = 1;
+```
+
+---
+
+## 🔷 4. Data Types
+
+| Category    | Data Types                  |
+| ----------- | --------------------------- |
+| Numeric     | INT, FLOAT, DOUBLE, DECIMAL |
+| Date/Time   | DATE, DATETIME, TIMESTAMP   |
+| String/Text | CHAR, VARCHAR, TEXT, ENUM   |
+| Boolean     | BOOLEAN, TINYINT(1)         |
+
+---
+
+## 🔷 5. Constraints
+
+| Constraint  | Description                                   |
+| ----------- | --------------------------------------------- |
+| PRIMARY KEY | Unique identifier for a row                   |
+| FOREIGN KEY | Enforces referential integrity between tables |
+| NOT NULL    | Field must have a value                       |
+| UNIQUE      | Prevents duplicate values                     |
+| DEFAULT     | Provides default value                        |
+| CHECK       | Restricts value based on condition (MySQL 8+) |
+
+---
+
+## 🔷 6. CRUD Operations (Full Example)
+
+```sql
+-- Create table
+CREATE TABLE products (
+  product_id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  price DECIMAL(10,2),
+  stock INT
+);
+
+-- Insert
+INSERT INTO products (name, price, stock) VALUES
+('Laptop', 50000, 10),
+('Mouse', 500, 100);
+
+-- Read
+SELECT * FROM products WHERE price > 1000;
+
+-- Update
+UPDATE products SET stock = stock - 1 WHERE product_id = 1;
+
+-- Delete
+DELETE FROM products WHERE name = 'Mouse';
+```
+
+---
+
+## 🔷 7. Joins (Types & Examples)
+
+| Type        | Description                             | Example                                              |
+| ----------- | --------------------------------------- | ---------------------------------------------------- |
+| INNER JOIN  | Matches rows in both tables             | `SELECT * FROM A INNER JOIN B ON A.id = B.id;`       |
+| LEFT JOIN   | All rows from left + matched from right | `SELECT * FROM A LEFT JOIN B ON A.id = B.id;`        |
+| RIGHT JOIN  | All rows from right + matched from left | `SELECT * FROM A RIGHT JOIN B ON A.id = B.id;`       |
+| FULL JOIN\* | All matched + unmatched from both       | Not directly supported in MySQL — emulate with UNION |
+
+```sql
+-- Example: Customers and Orders
+SELECT c.name, o.order_id
+FROM customers c
+INNER JOIN orders o ON c.customer_id = o.customer_id;
+```
+
+---
+
+## 🔷 8. Aggregate Functions
+
+| Function | Description    |
+| -------- | -------------- |
+| COUNT()  | Number of rows |
+| SUM()    | Sum of values  |
+| AVG()    | Average value  |
+| MAX()    | Maximum value  |
+| MIN()    | Minimum value  |
+
+```sql
+SELECT COUNT(*) FROM users;
+SELECT AVG(price) FROM products;
+```
+
+---
+
+## 🔷 9. Grouping & Filtering
+
+```sql
+-- GROUP BY with COUNT
+SELECT category, COUNT(*) AS total
+FROM products
+GROUP BY category;
+
+-- HAVING to filter groups
+SELECT category, AVG(price) AS avg_price
+FROM products
+GROUP BY category
+HAVING avg_price > 1000;
+```
+
+---
+
+## 🔷 10. Subqueries
+
+```sql
+-- Get products more expensive than average
+SELECT * FROM products
+WHERE price > (SELECT AVG(price) FROM products);
+```
+
+---
+
+## 🔷 11. Indexing
+
+```sql
+CREATE INDEX idx_email ON users(email);
+```
+
+---
+
+## 🔷 12. Views
+
+```sql
+-- Create a view
+CREATE VIEW high_value_orders AS
+SELECT * FROM orders WHERE amount > 10000;
+
+-- Use a view
+SELECT * FROM high_value_orders;
+```
+
+---
+
+## 🔷 13. Stored Procedures
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE GetUsers()
+BEGIN
+  SELECT * FROM users;
+END //
+
+DELIMITER ;
+
+CALL GetUsers();
+```
+
+---
+
+## 🔷 14. Triggers
+
+```sql
+CREATE TRIGGER before_insert_user
+BEFORE INSERT ON users
+FOR EACH ROW
+SET NEW.name = UPPER(NEW.name);
+```
+
+---
+
+## 🔷 15. Real-Life Use Cases
+
+1. **User authentication**
+2. **Shopping cart system**
+3. **Admin dashboards**
+4. **Order management**
+5. **Inventory control**
+
+---
+
+## 🔷 16. Common MySQL Commands
+
+```bash
+-- Login to MySQL
+mysql -u root -p
+
+-- Show databases
+SHOW DATABASES;
+
+-- Show tables
+SHOW TABLES;
+
+-- Describe table structure
+DESCRIBE users;
+```
+
+---
+
+## 🔷 17. Important Interview Questions & Answers
+
+### Q1: What is the difference between `WHERE` and `HAVING`?
+
+**A**: `WHERE` filters rows **before** grouping. `HAVING` filters **after** grouping.
+
+### Q2: What is normalization?
+
+**A**: Process of structuring a database to reduce redundancy and improve integrity.
+
+### Q3: Difference between `INNER JOIN` and `LEFT JOIN`?
+
+**A**: `INNER JOIN` returns matching records only, while `LEFT JOIN` returns all from the left table even if no match in the right.
+
+### Q4: What is indexing? When should it be used?
+
+**A**: Indexing speeds up searches on large datasets. Use on frequently searched or JOINed columns.
+
+### Q5: What is a foreign key?
+
+**A**: A constraint that links a column to a primary key of another table, ensuring referential integrity.
+
+---
+
+## 🔷 18. Advanced Topics
+
+* Replication
+* Partitioning
+* Query Optimization
+* Stored Functions
+* Transactions (`START TRANSACTION`, `COMMIT`, `ROLLBACK`)
+* JSON in MySQL
+* Full-Text Search
+
+---
+
+## 📝 Summary Sheet (Quick Recap)
+
+| Task         | Syntax Example                        |
+| ------------ | ------------------------------------- |
+| Create DB    | `CREATE DATABASE mydb;`               |
+| Create Table | `CREATE TABLE ...`                    |
+| Insert       | `INSERT INTO ... VALUES (...);`       |
+| Read         | `SELECT * FROM ...;`                  |
+| Update       | `UPDATE ... SET ... WHERE ...;`       |
+| Delete       | `DELETE FROM ... WHERE ...;`          |
+| Join         | `SELECT ... FROM A JOIN B ON ...;`    |
+| Aggregate    | `SELECT COUNT(*), AVG(price) ...;`    |
+| Grouping     | `GROUP BY ... HAVING ...;`            |
+| View         | `CREATE VIEW ... AS SELECT ...;`      |
+| Procedure    | `CREATE PROCEDURE ... BEGIN ... END;` |
+
+---
+
+
+
+## 🔷 1. What is MySQL?
+
+**MySQL** is an open-source **Relational Database Management System (RDBMS)** that uses **Structured Query Language (SQL)** to manage and manipulate data stored in tables.
+
+---
+
+## 🔷 2. Key Concepts in MySQL
+
+| Concept          | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| Database         | Collection of related tables and objects         |
+| Table            | Structure that holds data in rows and columns    |
+| Row (Record)     | A single entry in a table                        |
+| Column (Field)   | A property or attribute of the data              |
+| Primary Key      | Uniquely identifies each row in a table          |
+| Foreign Key      | Links one table to another                       |
+| Index            | Speeds up searches and queries                   |
+| View             | Virtual table based on SQL SELECT                |
+| Stored Procedure | A saved SQL code that performs a task            |
+| Trigger          | Automatically executes code on certain DB events |
+
+---
+
+## 🔷 3. Basic SQL Syntax
+
+```sql
+-- Create a database
+CREATE DATABASE mydb;
+
+-- Use a database
+USE mydb;
+
+-- Create a table
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE
+);
+
+-- Insert data
+INSERT INTO users (name, email) VALUES ('Alice', 'alice@email.com');
+
+-- Select data
+SELECT * FROM users;
+
+-- Update data
+UPDATE users SET name = 'Alicia' WHERE id = 1;
+
+-- Delete data
+DELETE FROM users WHERE id = 1;
+```
+
+---
+
+## 🔷 4. Data Types
+
+| Category    | Data Types                  |
+| ----------- | --------------------------- |
+| Numeric     | INT, FLOAT, DOUBLE, DECIMAL |
+| Date/Time   | DATE, DATETIME, TIMESTAMP   |
+| String/Text | CHAR, VARCHAR, TEXT, ENUM   |
+| Boolean     | BOOLEAN, TINYINT(1)         |
+
+---
+
+## 🔷 5. Constraints
+
+| Constraint  | Description                                   |
+| ----------- | --------------------------------------------- |
+| PRIMARY KEY | Unique identifier for a row                   |
+| FOREIGN KEY | Enforces referential integrity between tables |
+| NOT NULL    | Field must have a value                       |
+| UNIQUE      | Prevents duplicate values                     |
+| DEFAULT     | Provides default value                        |
+| CHECK       | Restricts value based on condition (MySQL 8+) |
+
+---
+
+## 🔷 6. CRUD Operations (Full Example)
+
+```sql
+-- Create table
+CREATE TABLE products (
+  product_id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  price DECIMAL(10,2),
+  stock INT
+);
+
+-- Insert
+INSERT INTO products (name, price, stock) VALUES
+('Laptop', 50000, 10),
+('Mouse', 500, 100);
+
+-- Read
+SELECT * FROM products WHERE price > 1000;
+
+-- Update
+UPDATE products SET stock = stock - 1 WHERE product_id = 1;
+
+-- Delete
+DELETE FROM products WHERE name = 'Mouse';
+```
+
+---
+
+## 🔷 7. Joins (Types & Examples)
+
+| Type        | Description                             | Example                                              |
+| ----------- | --------------------------------------- | ---------------------------------------------------- |
+| INNER JOIN  | Matches rows in both tables             | `SELECT * FROM A INNER JOIN B ON A.id = B.id;`       |
+| LEFT JOIN   | All rows from left + matched from right | `SELECT * FROM A LEFT JOIN B ON A.id = B.id;`        |
+| RIGHT JOIN  | All rows from right + matched from left | `SELECT * FROM A RIGHT JOIN B ON A.id = B.id;`       |
+| FULL JOIN\* | All matched + unmatched from both       | Not directly supported in MySQL — emulate with UNION |
+
+```sql
+-- Example: Customers and Orders
+SELECT c.name, o.order_id
+FROM customers c
+INNER JOIN orders o ON c.customer_id = o.customer_id;
+```
+
+---
+
+## 🔷 8. Aggregate Functions
+
+| Function | Description    |
+| -------- | -------------- |
+| COUNT()  | Number of rows |
+| SUM()    | Sum of values  |
+| AVG()    | Average value  |
+| MAX()    | Maximum value  |
+| MIN()    | Minimum value  |
+
+```sql
+SELECT COUNT(*) FROM users;
+SELECT AVG(price) FROM products;
+```
+
+---
+
+## 🔷 9. Grouping & Filtering
+
+```sql
+-- GROUP BY with COUNT
+SELECT category, COUNT(*) AS total
+FROM products
+GROUP BY category;
+
+-- HAVING to filter groups
+SELECT category, AVG(price) AS avg_price
+FROM products
+GROUP BY category
+HAVING avg_price > 1000;
+```
+
+---
+
+## 🔷 10. Subqueries
+
+```sql
+-- Get products more expensive than average
+SELECT * FROM products
+WHERE price > (SELECT AVG(price) FROM products);
+```
+
+---
+
+## 🔷 11. Indexing
+
+```sql
+CREATE INDEX idx_email ON users(email);
+```
+
+---
+
+## 🔷 12. Views
+
+```sql
+-- Create a view
+CREATE VIEW high_value_orders AS
+SELECT * FROM orders WHERE amount > 10000;
+
+-- Use a view
+SELECT * FROM high_value_orders;
+```
+
+---
+
+## 🔷 13. Stored Procedures
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE GetUsers()
+BEGIN
+  SELECT * FROM users;
+END //
+
+DELIMITER ;
+
+CALL GetUsers();
+```
+
+---
+
+## 🔷 14. Triggers
+
+```sql
+CREATE TRIGGER before_insert_user
+BEFORE INSERT ON users
+FOR EACH ROW
+SET NEW.name = UPPER(NEW.name);
+```
+
+---
+
+## 🔷 15. Real-Life Use Cases
+
+1. **User authentication**
+2. **Shopping cart system**
+3. **Admin dashboards**
+4. **Order management**
+5. **Inventory control**
+
+---
+
+## 🔷 16. Common MySQL Commands
+
+```bash
+-- Login to MySQL
+mysql -u root -p
+
+-- Show databases
+SHOW DATABASES;
+
+-- Show tables
+SHOW TABLES;
+
+-- Describe table structure
+DESCRIBE users;
+```
+
+---
+
+## 🔷 17. Important Interview Questions & Answers
+
+### Q1: What is the difference between `WHERE` and `HAVING`?
+
+**A**: `WHERE` filters rows **before** grouping. `HAVING` filters **after** grouping.
+
+### Q2: What is normalization?
+
+**A**: Process of structuring a database to reduce redundancy and improve integrity.
+
+### Q3: Difference between `INNER JOIN` and `LEFT JOIN`?
+
+**A**: `INNER JOIN` returns matching records only, while `LEFT JOIN` returns all from the left table even if no match in the right.
+
+### Q4: What is indexing? When should it be used?
+
+**A**: Indexing speeds up searches on large datasets. Use on frequently searched or JOINed columns.
+
+### Q5: What is a foreign key?
+
+**A**: A constraint that links a column to a primary key of another table, ensuring referential integrity.
+
+---
+
+## 🔷 18. Advanced Topics
+
+* Replication
+* Partitioning
+* Query Optimization
+* Stored Functions
+* Transactions (`START TRANSACTION`, `COMMIT`, `ROLLBACK`)
+* JSON in MySQL
+* Full-Text Search
+
+---
+
+## 📝 Summary Sheet (Quick Recap)
+
+| Task         | Syntax Example                        |
+| ------------ | ------------------------------------- |
+| Create DB    | `CREATE DATABASE mydb;`               |
+| Create Table | `CREATE TABLE ...`                    |
+| Insert       | `INSERT INTO ... VALUES (...);`       |
+| Read         | `SELECT * FROM ...;`                  |
+| Update       | `UPDATE ... SET ... WHERE ...;`       |
+| Delete       | `DELETE FROM ... WHERE ...;`          |
+| Join         | `SELECT ... FROM A JOIN B ON ...;`    |
+| Aggregate    | `SELECT COUNT(*), AVG(price) ...;`    |
+| Grouping     | `GROUP BY ... HAVING ...;`            |
+| View         | `CREATE VIEW ... AS SELECT ...;`      |
+| Procedure    | `CREATE PROCEDURE ... BEGIN ... END;` |
+
+---
+
+Would you like a **PDF/Markdown version** of this content, a **MySQL cheat sheet**, or a **practice question bank with answers** (MCQs + SQL output-based)?
+
+
+Here's an in-depth guide to the **Advanced Topics in MySQL** mentioned in section 18:
+
+---
+
+## 🔷 1. **Replication in MySQL**
+
+### ✅ **Definition:**
+
+Replication allows data from one MySQL database server (**master**) to be **copied automatically** to one or more **slave/replica** servers.
+
+### ✅ **Types of Replication:**
+
+* **Asynchronous** (default): Master doesn't wait for slave.
+* **Semi-synchronous**: Master waits for at least one slave acknowledgment.
+* **Group replication**: For high availability using multiple servers.
+
+### ✅ **Why Use Replication?**
+
+* Load balancing
+* High availability/failover
+* Backup without impacting primary DB
+
+### ✅ **Key Commands:**
+
+```sql
+-- On Master
+SHOW MASTER STATUS;
+
+-- On Slave
+CHANGE MASTER TO
+  MASTER_HOST='master_ip',
+  MASTER_USER='repl_user',
+  MASTER_PASSWORD='password',
+  MASTER_LOG_FILE='mysql-bin.000001',
+  MASTER_LOG_POS=  154;
+
+START SLAVE;
+SHOW SLAVE STATUS\G
+```
+
+---
+
+## 🔷 2. **Partitioning in MySQL**
+
+### ✅ **Definition:**
+
+Partitioning allows you to divide a large table into smaller, manageable **pieces (partitions)**, improving **performance** and **maintenance**.
+
+### ✅ **Types of Partitioning:**
+
+* **RANGE** – based on ranges of values
+* **LIST** – specific values
+* **HASH** – even distribution
+* **KEY** – automatic hash using MySQL's internal functions
+
+### ✅ **Example:**
+
+```sql
+CREATE TABLE sales (
+  id INT,
+  sale_date DATE
+)
+PARTITION BY RANGE (YEAR(sale_date)) (
+  PARTITION p2023 VALUES LESS THAN (2024),
+  PARTITION p2024 VALUES LESS THAN (2025)
+);
+```
+
+---
+
+## 🔷 3. **Query Optimization**
+
+### ✅ **Purpose:**
+
+Improve **query performance** by:
+
+* Reducing unnecessary work
+* Using indexes
+* Avoiding full table scans
+
+### ✅ **Tools:**
+
+* `EXPLAIN` or `EXPLAIN ANALYZE`
+* `SHOW PROFILE`
+
+### ✅ **Example:**
+
+```sql
+EXPLAIN SELECT * FROM users WHERE email = 'user@example.com';
+```
+
+### ✅ **Tips:**
+
+* Use proper **indexes**
+* Avoid `SELECT *`
+* Normalize data
+* Limit use of subqueries in WHERE
+* Use `JOIN` efficiently
+* Use caching where possible
+
+---
+
+## 🔷 4. **Stored Functions**
+
+### ✅ **Definition:**
+
+A stored **function** is similar to a stored procedure but **returns a single value**.
+
+### ✅ **Syntax:**
+
+```sql
+DELIMITER $$
+
+CREATE FUNCTION getDiscount(price DECIMAL(10,2))
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+  RETURN price * 0.90;
+END $$
+
+DELIMITER ;
+
+-- Call it
+SELECT getDiscount(1000);  -- Output: 900
+```
+
+---
+
+## 🔷 5. **Transactions**
+
+### ✅ **Definition:**
+
+A **transaction** is a group of operations that execute together as a single unit.
+
+### ✅ **Commands:**
+
+```sql
+START TRANSACTION;
+
+UPDATE accounts SET balance = balance - 500 WHERE id = 1;
+UPDATE accounts SET balance = balance + 500 WHERE id = 2;
+
+COMMIT;  -- Saves changes
+ROLLBACK; -- Cancels all changes if something goes wrong
+```
+
+### ✅ **ACID Properties:**
+
+* **Atomicity** – All or none
+* **Consistency** – DB always in valid state
+* **Isolation** – Transactions don’t interfere
+* **Durability** – Once committed, changes stay
+
+---
+
+## 🔷 6. **JSON in MySQL**
+
+### ✅ **Definition:**
+
+MySQL supports a native **JSON data type** for storing structured data.
+
+### ✅ **Syntax & Functions:**
+
+```sql
+-- Create table
+CREATE TABLE employees (
+  id INT,
+  data JSON
+);
+
+-- Insert JSON data
+INSERT INTO employees VALUES (1, '{"name": "John", "skills": ["Python", "MySQL"]}');
+
+-- Access JSON values
+SELECT JSON_EXTRACT(data, '$.name') FROM employees;
+
+-- Search in JSON
+SELECT * FROM employees WHERE JSON_CONTAINS(data, '["Python"]', '$.skills');
+```
+
+---
+
+## 🔷 7. **Full-Text Search**
+
+### ✅ **Definition:**
+
+Used for **text search** within large textual data fields like blog posts, articles, etc.
+
+### ✅ **Supported in:**
+
+* `CHAR`, `VARCHAR`, `TEXT`
+
+### ✅ **Steps:**
+
+1. Create full-text index
+2. Use `MATCH() ... AGAINST()` for searching
+
+### ✅ **Example:**
+
+```sql
+-- Create table with full-text index
+CREATE TABLE articles (
+  id INT,
+  title TEXT,
+  body TEXT,
+  FULLTEXT(title, body)
+);
+
+-- Search
+SELECT * FROM articles
+WHERE MATCH(title, body) AGAINST('MySQL optimization' IN NATURAL LANGUAGE MODE);
+```
+
+### ✅ **Modes:**
+
+* **Natural Language**
+* **Boolean**
+* **Query Expansion**
+
+---
+
+**MySQL Cheat Sheet + MCQs + Output-Based + Interview Q\&A**
+
+---
+
+## 🔹 MySQL Cheat Sheet
+
+### ✏️ Basic Commands
+
+```sql
+-- Login
+mysql -u root -p
+
+-- Create Database
+CREATE DATABASE dbname;
+
+-- Use Database
+USE dbname;
+
+-- Show Databases
+SHOW DATABASES;
+
+-- Show Tables
+SHOW TABLES;
+
+-- Describe Table
+DESCRIBE tablename;
+```
+
+### ✏️ Table Operations
+
+```sql
+-- Create Table
+CREATE TABLE users (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE
+);
+
+-- Drop Table
+DROP TABLE users;
+
+-- Alter Table (add column)
+ALTER TABLE users ADD age INT;
+
+-- Rename Table
+RENAME TABLE users TO members;
+```
+
+### ✏️ CRUD Operations
+
+```sql
+-- Insert
+INSERT INTO users (name, email) VALUES ('Alice', 'alice@email.com');
+
+-- Read
+SELECT * FROM users;
+
+-- Update
+UPDATE users SET name = 'Alicia' WHERE id = 1;
+
+-- Delete
+DELETE FROM users WHERE id = 1;
+```
+
+### ✏️ Constraints
+
+```sql
+-- NOT NULL
+CREATE TABLE test (id INT NOT NULL);
+
+-- DEFAULT
+CREATE TABLE test (status VARCHAR(20) DEFAULT 'active');
+
+-- CHECK
+CREATE TABLE test (age INT CHECK(age > 18));
+```
+
+### ✏️ Joins
+
+```sql
+-- Inner Join
+SELECT * FROM A INNER JOIN B ON A.id = B.id;
+
+-- Left Join
+SELECT * FROM A LEFT JOIN B ON A.id = B.id;
+```
+
+### ✏️ Aggregate Functions
+
+```sql
+SELECT COUNT(*), AVG(salary), SUM(score), MAX(age), MIN(age)
+FROM employees;
+```
+
+### ✏️ Grouping and Filtering
+
+```sql
+SELECT department, COUNT(*)
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 5;
+```
+
+### ✏️ Subquery
+
+```sql
+SELECT name FROM users
+WHERE id IN (SELECT user_id FROM orders WHERE amount > 1000);
+```
+
+### ✏️ Transactions
+
+```sql
+START TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE id = 2;
+COMMIT;  -- or ROLLBACK;
+```
+
+### ✏️ JSON
+
+```sql
+SELECT JSON_EXTRACT(data, '$.name') FROM users;
+```
+
+---
+
+## 🎮 MCQs (with answers)
+
+**1. Which keyword is used to remove all rows from a table without logging individual row deletions?**
+
+* A) DELETE
+* B) DROP
+* C) TRUNCATE ✔️
+* D) REMOVE
+
+**2. Which function returns the current date and time?**
+
+* A) GETDATE
+* B) SYSDATE()
+* C) NOW() ✔️
+* D) CURRENT()
+
+**3. What will the following query output?**
+
+```sql
+SELECT LENGTH('MySQL');
+```
+
+* A) 4
+* B) 5 ✔️
+* C) 6
+* D) Error
+
+**4. What does the following command do?**
+
+```sql
+ALTER TABLE users ADD age INT;
+```
+
+* A) Deletes age column
+* B) Updates age values
+* C) Adds new column 'age' ✔️
+* D) Alters user data
+
+**5. Which clause is used to filter groups?**
+
+* A) WHERE
+* B) HAVING ✔️
+* C) GROUP BY
+* D) ORDER BY
+
+**6. What is the default port number for MySQL?**
+
+* A) 3306 ✔️
+* B) 8080
+* C) 1521
+* D) 1433
+
+---
+
+## 💡 Output-Based Questions
+
+**Q1:** What is the output of this query?
+
+```sql
+SELECT UPPER('mysql');
+```
+
+**Answer:** `MYSQL`
+
+**Q2:** What does this return?
+
+```sql
+SELECT MOD(10, 3);
+```
+
+**Answer:** `1`
+
+**Q3:**
+
+```sql
+SELECT ROUND(10.567, 2);
+```
+
+**Answer:** `10.57`
+
+---
+
+## 🤓 Interview-Style Questions with Answers
+
+**1. What is the difference between CHAR and VARCHAR?**
+
+* `CHAR` is fixed-length, `VARCHAR` is variable-length. Use `CHAR` for fixed-size values like status flags.
+
+**2. Explain the difference between DELETE, TRUNCATE, and DROP.**
+
+* `DELETE`: removes selected rows, can rollback.
+* `TRUNCATE`: removes all rows, faster, can't rollback in some engines.
+* `DROP`: removes entire table.
+
+**3. What is indexing? Why is it important?**
+
+* Indexing improves search speed on large tables. Without it, MySQL performs a full scan.
+
+**4. What is the use of FOREIGN KEY?**
+
+* Ensures data integrity by linking one table’s column to another’s primary key.
+
+**5. Difference between UNION and UNION ALL?**
+
+* `UNION` removes duplicates; `UNION ALL` includes duplicates.
+
+**6. Explain ACID properties.**
+
+* **Atomicity**, **Consistency**, **Isolation**, **Durability** – guarantees reliable transactions.
+
+**7. What is the purpose of a trigger?**
+
+* Executes code automatically in response to INSERT/UPDATE/DELETE actions.
+
+**8. What is a stored procedure?**
+
+* A saved SQL code block that can be executed to perform operations.
+
+**9. What are views?**
+
+* Virtual tables created by a SELECT query for simplification or security.
+
+**10. When would you use a subquery over a JOIN?**
+
+* When filtering with aggregated or derived data or for readability in some cases.
+
+---

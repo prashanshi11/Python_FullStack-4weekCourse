@@ -1,0 +1,300 @@
+## 📘 FLASK BACKEND FULL NOTES
+
+---
+
+### 🧠 **Definition**
+
+> **Flask** is a **lightweight and flexible Python web framework** used for building web applications and APIs. It is based on the **Werkzeug WSGI toolkit** and the **Jinja2 template engine**.
+
+---
+
+### 🧩 **Core Concepts**
+
+| Concept               | Description                                                                |
+| --------------------- | -------------------------------------------------------------------------- |
+| **WSGI**              | Web Server Gateway Interface – interface between web server and Python app |
+| **Routing**           | Map URLs to functions using `@app.route()`                                 |
+| **Views**             | Python functions that return HTML or JSON responses                        |
+| **Templates**         | HTML files using **Jinja2** to render dynamic content                      |
+| **Forms**             | User input handling via HTML forms and Flask processing                    |
+| **Flask-WTF**         | Extension for form validation                                              |
+| **Flask-SQLAlchemy**  | ORM for database integration                                               |
+| **Blueprints**        | Modularize a Flask app into components                                     |
+| **Session & Cookies** | Track user data across requests                                            |
+| **REST APIs**         | JSON-based APIs using Flask for backend communication                      |
+
+---
+
+### 📊 **Architecture Diagram**
+
+```text
+[Browser]
+   |
+   v
+[Flask Route: @app.route()]
+   |
+   v
+[View Function (Python)]
+   |
+   |---> Database via SQLAlchemy/MySQL
+   |
+   |---> Renders Template (HTML) with Jinja2
+   |
+   v
+[HTTP Response sent back]
+```
+
+---
+
+### 📋 **Cheat Sheet**
+
+| Task         | Code                            |
+| ------------ | ------------------------------- |
+| Basic app    | `app = Flask(__name__)`         |
+| Run app      | `app.run(debug=True)`           |
+| Route        | `@app.route('/home')`           |
+| Template     | `render_template("index.html")` |
+| Form data    | `request.form['name']`          |
+| Redirect     | `redirect(url_for('home'))`     |
+| Flash msg    | `flash("Login Successful")`     |
+| Session      | `session['user'] = 'admin'`     |
+| SQLAlchemy   | `db = SQLAlchemy(app)`          |
+| API response | `return jsonify(data)`          |
+
+---
+
+### 🔧 **Setup & Installation**
+
+```bash
+pip install flask
+```
+
+📄 **app.py**
+
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Flask!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+---
+
+### 🧪 **Flask Form Handling Example**
+
+📄 **form.html**
+
+```html
+<form method="POST">
+  <input type="text" name="username" />
+  <input type="submit" value="Submit" />
+</form>
+```
+
+📄 **app.py**
+
+```python
+from flask import Flask, request, render_template
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def form():
+    if request.method == 'POST':
+        user = request.form['username']
+        return f"Hello {user}"
+    return render_template("form.html")
+```
+
+---
+
+### 🗃️ **Connecting to MySQL**
+
+```bash
+pip install flask-mysql
+```
+
+📄 **app.py**
+
+```python
+from flask import Flask
+from flask_mysqldb import MySQL
+
+app = Flask(__name__)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '123456789'
+app.config['MYSQL_DB'] = 'ecommerce_website'
+
+mysql = MySQL(app)
+
+@app.route('/')
+def index():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM users")
+    data = cur.fetchall()
+    return str(data)
+```
+
+---
+
+### 🌐 **Creating a REST API**
+
+```python
+from flask import Flask, jsonify, request
+app = Flask(__name__)
+
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    return jsonify({'name': 'StackAndCode', 'lang': 'Python'})
+```
+
+---
+
+### 📁 **Directory Structure (Best Practice)**
+
+```text
+myapp/
+│
+├── app.py
+├── templates/
+│   └── index.html
+├── static/
+│   ├── css/
+│   └── js/
+├── models/
+│   └── user.py
+├── routes/
+│   └── auth.py
+└── config.py
+```
+
+---
+
+### 💡 **Important Points**
+
+- Flask is ideal for **small to medium-scale projects**.
+- Use **Blueprints** for modular design.
+- Combine with **Jinja2** for rendering templates.
+- Ideal for **API development**, easily connects to frontend via JSON.
+- Use **Flask extensions**: Flask-WTF, Flask-Mail, Flask-Login, Flask-SQLAlchemy.
+- Secure app with **`SECRET_KEY`** and CSRF protection.
+
+---
+
+### 📚 **Important Questions with Answers**
+
+#### Q1: What is Flask and why is it used?
+
+**A:** Flask is a micro web framework used for developing web applications and APIs in Python. It's lightweight, flexible, and easy to integrate with databases and frontend frameworks.
+
+---
+
+#### Q2: What are some important Flask extensions?
+
+**A:** Flask-WTF (forms), Flask-SQLAlchemy (ORM), Flask-Login (authentication), Flask-Mail (emails), Flask-Migrate (database migration).
+
+---
+
+#### Q3: What is the difference between Flask and Django?
+
+**A:**
+
+| Flask            | Django                 |
+| ---------------- | ---------------------- |
+| Micro framework  | Full-stack             |
+| More flexibility | More built-in features |
+| Lightweight      | Heavy and structured   |
+
+---
+
+#### Q4: What is a Flask Blueprint?
+
+**A:** Blueprint helps organize Flask apps into modules. Example:
+
+```python
+auth = Blueprint('auth', __name__)
+
+@auth.route('/login')
+def login():
+    return "Login Page"
+```
+
+---
+
+#### Q5: How to connect Flask with MySQL?
+
+**A:** Use `flask-mysqldb` or `Flask SQLAlchemy`. Configure DB in `app.config`, and use cursor to execute queries.
+
+---
+
+#### Q6: How do you secure a Flask app?
+
+**A:**
+
+- Use `SECRET_KEY`
+- Use Flask-WTF for CSRF protection
+- Validate all inputs
+- Sanitize database queries (avoid SQL Injection)
+
+---
+
+### 🧰 **Types of Flask Code Examples**
+
+#### 🔹 Hello World
+
+```python
+@app.route('/')
+def home():
+    return "Hello Flask!"
+```
+
+#### 🔹 Dynamic Routes
+
+```python
+@app.route('/user/<name>')
+def user(name):
+    return f"Hi {name}"
+```
+
+#### 🔹 JSON API
+
+```python
+@app.route('/api', methods=['GET'])
+def api():
+    return jsonify({"id": 1, "name": "Flask"})
+```
+
+#### 🔹 Sessions
+
+```python
+app.secret_key = 'secret123'
+session['user'] = 'admin'
+```
+
+#### 🔹 File Upload
+
+```python
+@app.route('/upload', methods=['POST'])
+def upload():
+    f = request.files['file']
+    f.save(f.filename)
+    return "Uploaded"
+```
+
+#### 🔹 Login Example
+
+```python
+@app.route('/login', methods=['POST'])
+def login():
+    email = request.form['email']
+    password = request.form['password']
+    # validate from DB
+    return "Logged In"
+```
+
+---

@@ -1,0 +1,36 @@
+<!-- templates/welcome.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f7f7f7;
+        }
+        .card {
+            background-color: white;
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .card h1 {
+            color: #333;
+        }
+        .card p {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Welcome, {{ user.name }}!</h1>
+        <p><strong>Role:</strong> {{ user.role }}</p>
+        <p>We're excited to have you on board. 🎉</p>
+    </div>
+</body>
+</html>

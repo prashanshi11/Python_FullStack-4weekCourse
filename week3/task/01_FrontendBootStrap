@@ -1,0 +1,401 @@
+# 🧱 **Bootstrap – Complete Guide (v5.3)**
+
+## 🔹 **What is Bootstrap?**
+
+> Bootstrap is a **free, open-source front-end framework** for developing responsive and mobile-first websites using HTML, CSS, and JavaScript components.
+
+- Created by Twitter developers (Mark Otto and Jacob Thornton).
+- Latest stable version: **Bootstrap 5.3** (No dependency on jQuery anymore).
+
+---
+
+## 🔹 **Why Use Bootstrap?**
+
+✅ Mobile-first
+✅ Prebuilt components
+✅ Responsive Grid
+✅ Customizable themes
+✅ Fast development
+✅ Browser compatible
+
+---
+
+## 📁 **CDN Setup (Include in HTML)**
+
+```html
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+---
+
+## 📐 **1. Bootstrap Grid System (12-Column Layout)**
+
+Bootstrap's grid is responsive and uses Flexbox.
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">Column 1</div>
+    <div class="col-md-6">Column 2</div>
+  </div>
+</div>
+```
+
+### ✅ Grid Classes:
+
+| Class        | Description                   |
+| ------------ | ----------------------------- |
+| `.container` | Fixed-width container         |
+| `.row`       | Row wrapper for columns       |
+| `.col-*`     | Columns (`col-1` to `col-12`) |
+| `.col-md-*`  | Medium and up (≥768px)        |
+| `.col-lg-*`  | Large and up (≥992px)         |
+| `.col-auto`  | Auto width                    |
+
+---
+
+## 🎨 **2. Bootstrap Typography**
+
+```html
+<h1 class="display-1">Heading 1</h1>
+<p class="lead">This is a lead paragraph.</p>
+<p class="text-muted">Muted text</p>
+<p class="text-danger">Danger text</p>
+<p class="text-center">Center text</p>
+```
+
+---
+
+## 🎨 **3. Bootstrap Colors**
+
+```html
+<p class="text-primary">Primary</p>
+<p class="bg-success text-white">Success Background</p>
+```
+
+---
+
+## 🎨 **4. Bootstrap Buttons**
+
+```html
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-outline-danger">Outline Danger</button>
+```
+
+### ✅ Button Types:
+
+- `btn-primary`, `btn-secondary`, `btn-success`, `btn-danger`, `btn-warning`, `btn-info`, `btn-light`, `btn-dark`, `btn-link`
+- Use `btn-lg`, `btn-sm` for sizes
+
+---
+
+## 🧱 **5. Forms in Bootstrap**
+
+```html
+<form>
+  <div class="mb-3">
+    <label class="form-label">Email address</label>
+    <input type="email" class="form-control" placeholder="name@example.com" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Example textarea</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>
+```
+
+---
+
+## 🧩 **6. Bootstrap Components**
+
+### 🔘 Alerts
+
+```html
+<div class="alert alert-warning" role="alert">A simple warning alert!</div>
+```
+
+---
+
+### 🗃 Cards
+
+```html
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" />
+  <div class="card-body">
+    <h5 class="card-title">Card Title</h5>
+    <p class="card-text">Some quick text</p>
+    <a href="#" class="btn btn-primary">Go</a>
+  </div>
+</div>
+```
+
+---
+
+### 🎛 Navbar
+
+```html
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MySite</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+```
+
+---
+
+### 🧱 Modal
+
+```html
+<button data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-info">
+  Launch
+</button>
+
+<div class="modal fade" id="myModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">Modal title</div>
+      <div class="modal-body">Hello Modal</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+### 🧱 Carousel
+
+```html
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" />
+    </div>
+    <div class="carousel-item"><img src="..." class="d-block w-100" /></div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    data-bs-target="#carouselExample"
+    data-bs-slide="prev"
+  ></button>
+  <button
+    class="carousel-control-next"
+    data-bs-target="#carouselExample"
+    data-bs-slide="next"
+  ></button>
+</div>
+```
+
+---
+
+## 🔁 **7. Utilities (Classes for Spacing, Borders, Flex, etc.)**
+
+### 📏 Spacing
+
+```html
+<div class="m-3 p-2">Margin 3, Padding 2</div>
+```
+
+### 🎯 Flexbox
+
+```html
+<div class="d-flex justify-content-between">
+  <div>Left</div>
+  <div>Right</div>
+</div>
+```
+
+---
+
+## 🧠 **Important Interview Questions (with Answers)**
+
+### Q1: What is Bootstrap and why is it used?
+
+**A:** Bootstrap is a CSS framework for building responsive, mobile-first websites faster using pre-built UI components and utilities.
+
+---
+
+### Q2: What is the difference between `container` and `container-fluid`?
+
+**A:** `container` is fixed-width and adapts at breakpoints, while `container-fluid` spans the full width of the viewport.
+
+---
+
+### Q3: What are the breakpoints in Bootstrap 5?
+
+**A:**
+
+- `xs` <576px (no class)
+- `sm` ≥576px
+- `md` ≥768px
+- `lg` ≥992px
+- `xl` ≥1200px
+- `xxl` ≥1400px
+
+---
+
+### Q4: How do you make a form responsive in Bootstrap?
+
+**A:** Use `form-control` class for inputs and wrap in a `container` and `row`. Use grid layout to align elements properly.
+
+---
+
+### Q5: How is Bootstrap 5 different from Bootstrap 4?
+
+**A:** No jQuery dependency, improved grid, RTL support, enhanced utilities, new components like Accordion, Offcanvas, and better customization with CSS variables.
+
+---
+
+## 🧩 **Mini Projects/Code Ideas with Bootstrap**
+
+1. **Responsive Portfolio Site**
+2. **Product Landing Page**
+3. **Blog Layout**
+4. **To-do List UI**
+5. **E-commerce Card Grid**
+6. **Pricing Table with Modals**
+7. **Login/Register Modal Form**
+
+---
+
+<!-- 1. Responsive Portfolio Site -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img src="https://via.placeholder.com/150" class="rounded-circle img-fluid" alt="Profile">
+      <h2 class="mt-3">Your Name</h2>
+      <p class="text-muted">Full Stack Developer</p>
+    </div>
+    <div class="col-md-8">
+      <h3>About Me</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Product Landing Page -->
+<section class="container text-center my-5">
+  <h1 class="mb-4">Awesome Product</h1>
+  <p class="lead">This is a great product that solves your problems.</p>
+  <button class="btn btn-primary">Buy Now</button>
+</section>
+
+<!-- 3. Blog Layout -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Blog Title</h2>
+      <p>Post content goes here...</p>
+    </div>
+    <div class="col-md-4">
+      <h4>Sidebar</h4>
+      <ul class="list-group">
+        <li class="list-group-item">Category 1</li>
+        <li class="list-group-item">Category 2</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. To-do List UI -->
+<section class="container my-5">
+  <h2 class="mb-3">To-Do List</h2>
+  <input type="text" class="form-control mb-2" placeholder="Add task...">
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Task 1
+      <button class="btn btn-sm btn-danger">Delete</button>
+    </li>
+  </ul>
+</section>
+
+<!-- 5. E-commerce Card Grid -->
+<section class="container my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://via.placeholder.com/150" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Product 1</h5>
+          <p class="card-text">Description</p>
+          <a href="#" class="btn btn-success">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Pricing Table with Modals -->
+<section class="container text-center my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Basic Plan</h5>
+          <p class="card-text">$9.99/month</p>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricingModal">Choose</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="pricingModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Subscribe</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        Thank you for choosing a plan!
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Login/Register Modal Form -->
+<div class="container text-center my-5">
+  <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Password">
+          </div>
+          <button class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

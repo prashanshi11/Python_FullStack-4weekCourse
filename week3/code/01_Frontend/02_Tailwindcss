@@ -1,0 +1,135 @@
+<!-- Basic HTML structure with Tailwind CDN -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind CSS Examples</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <!-- Typography Example -->
+  <!-- Using Tailwind for text sizes, weight, color, alignment -->
+  <h1 class="text-4xl font-bold text-center text-blue-600">Tailwind CSS Typography</h1>
+  <p class="text-base text-gray-700 mt-4">Tailwind makes styling fast and efficient using utility-first classes.</p>
+
+  <!-- Layout: Flexbox -->
+  <!-- Centering using flexbox and gap utilities -->
+  <div class="flex justify-center items-center gap-4 mt-6">
+    <div class="bg-blue-500 text-white p-4 rounded-lg">Box 1</div>
+    <div class="bg-green-500 text-white p-4 rounded-lg">Box 2</div>
+  </div>
+
+  <!-- Layout: Grid -->
+  <!-- Responsive grid layout with 3 columns on large screens -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+    <div class="bg-white p-4 shadow rounded">Card 1</div>
+    <div class="bg-white p-4 shadow rounded">Card 2</div>
+    <div class="bg-white p-4 shadow rounded">Card 3</div>
+  </div>
+
+  <!-- Spacing (Margin & Padding) -->
+  <!-- Using m-*, p-* for margin and padding -->
+  <div class="mt-8 p-6 bg-yellow-200 rounded">
+    <p class="mb-4">This box uses margin and padding utilities.</p>
+    <button class="bg-yellow-500 px-4 py-2 rounded">Click</button>
+  </div>
+
+  <!-- Borders and Shadows -->
+  <!-- Styling elements with border, shadow, and rounded corners -->
+  <div class="border border-gray-400 rounded-xl shadow-lg p-4 mt-6">
+    <p>This box has a border, rounded corners, and a shadow.</p>
+  </div>
+
+  <!-- Backgrounds and Text Colors -->
+  <!-- Customizing background and text colors -->
+  <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-4 mt-6 rounded">
+    Gradient background using Tailwind!
+  </div>
+
+  <!-- Buttons -->
+  <!-- Styled button with hover, focus, and transition effects -->
+  <button class="mt-6 bg-blue-600 hover:bg-blue-700 focus:ring-2 focus:ring-blue-300 text-white font-medium py-2 px-4 rounded transition duration-300">
+    Tailwind Button
+  </button>
+
+  <!-- Forms -->
+  <!-- Input and button styled with Tailwind -->
+  <form class="mt-6 space-y-4">
+    <input type="text" placeholder="Your name" class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Submit</button>
+  </form>
+
+  <!-- Responsive Design -->
+  <!-- Element visible only on medium screens and up -->
+  <div class="hidden md:block mt-6 bg-gray-300 p-4">
+    Visible on medium (md) screens and larger
+  </div>
+
+  <!-- Responsive Typography and Spacing -->
+  <!-- Adjusting styles at different screen sizes -->
+  <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center mt-10 text-purple-700">
+    Responsive Heading
+  </h2>
+
+  <!-- Pseudo States -->
+  <!-- hover, focus, active, etc. -->
+  <a href="#" class="block mt-6 text-blue-500 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-300">
+    Hover or focus on me
+  </a>
+
+  <!-- Animation and Transition -->
+  <!-- Simple scale animation on hover -->
+  <div class="mt-6 w-32 h-32 bg-red-400 hover:scale-110 transition transform duration-300 ease-in-out rounded-lg">
+  </div>
+
+  <!-- Dark Mode Support -->
+  <!-- Class-based dark mode style -->
+  <div class="bg-white dark:bg-gray-800 text-black dark:text-white p-4 mt-6 rounded">
+    This box changes with dark mode
+  </div>
+
+  <!-- Custom Width, Height -->
+  <!-- Using w-*, h-* utilities -->
+  <div class="w-64 h-32 bg-blue-200 mt-6 rounded-lg flex items-center justify-center">
+    w-64, h-32 box
+  </div>
+
+  <!-- Overflow and Scroll -->
+  <!-- Scrollable content in fixed height div -->
+  <div class="h-32 overflow-y-scroll bg-gray-100 p-2 mt-6 border rounded">
+    <p>Scrollable line 1</p>
+    <p>Scrollable line 2</p>
+    <p>Scrollable line 3</p>
+    <p>Scrollable line 4</p>
+    <p>Scrollable line 5</p>
+    <p>Scrollable line 6</p>
+    <p>Scrollable line 7</p>
+    <p>Scrollable line 8</p>
+  </div>
+
+  <!-- Positioning -->
+  <!-- Absolute and relative example -->
+  <div class="relative mt-10 bg-gray-200 p-6 rounded">
+    <p>Parent Box</p>
+    <div class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 text-xs rounded-bl">New</div>
+  </div>
+
+  <!-- Z-Index -->
+  <!-- Using z-10, z-20 to layer elements -->
+  <div class="relative mt-10 h-32">
+    <div class="absolute z-10 bg-blue-300 w-24 h-24">Behind</div>
+    <div class="absolute z-20 bg-red-500 w-24 h-24 left-12 top-6">Front</div>
+  </div>
+
+  <!-- Visibility and Display -->
+  <!-- Show/hide and inline/block/flex/grid examples -->
+  <div class="mt-6 space-y-2">
+    <div class="block bg-green-300 p-2">Block</div>
+    <div class="inline bg-blue-300 p-2">Inline</div>
+    <div class="hidden md:block bg-yellow-300 p-2">Hidden on small screens</div>
+  </div>
+
+</body>
+</html>

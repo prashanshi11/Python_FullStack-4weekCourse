@@ -1,0 +1,133 @@
+### ✅ CSRF in Detail – **Cross-Site Request Forgery**
+
+---
+
+### 🔐 **What is CSRF?**
+
+**CSRF (Cross-Site Request Forgery)** is a **web security vulnerability** that allows an attacker to trick users into performing actions they didn’t intend—like submitting a form, changing a password, or transferring money—**without their consent**, by exploiting the trust a website has in the user’s session.
+
+---
+
+### 🧠 **Real-World Analogy**
+
+Imagine you are logged into your bank account in one browser tab, and in another tab you open a malicious website. That website secretly submits a **transfer money** request to your bank. Since you're already logged in, your bank accepts the request—**thinking you initiated it**.
+
+---
+
+### 🛠️ **How Does CSRF Work?**
+
+1. You log in to a **trusted site** (e.g., `example.com`) and your browser stores a **session cookie**.
+2. You visit a **malicious site**.
+3. That site sends a request (e.g., form submission or AJAX) to `example.com`.
+4. Your browser **automatically attaches your session cookie**, making the request look **authentic**.
+5. `example.com` accepts the request and performs the action, thinking it came from you.
+
+---
+
+### 🚨 Example of a Malicious CSRF Attack (Without Protection)
+
+```html
+<!-- This form runs without your knowledge -->
+<form action="https://bank.com/transfer" method="POST">
+  <input type="hidden" name="amount" value="10000" />
+  <input type="hidden" name="to" value="attacker_account" />
+  <input type="submit" />
+</form>
+
+<script>
+  document.forms[0].submit();
+</script>
+```
+
+---
+
+## ✅ Solution: CSRF Protection using Tokens
+
+### 🔑 What’s the Fix?
+
+A **CSRF token** is a **random string** generated per user session. It is:
+
+- Stored in the user’s session
+- Embedded into each form
+- Verified during form submission
+
+⚠️ If the form does **not** contain a **valid token**, the server **rejects** the request.
+
+---
+
+### 🔐 How Flask Handles CSRF
+
+#### Flask uses **`Flask-WTF`** + **`CSRFProtect`**:
+
+✅ Automatic CSRF token:
+
+- `form.hidden_tag()` injects the token
+- Flask checks it automatically on POST requests
+
+---
+
+### 🧪 Example in Flask
+
+#### `app.py`
+
+```python
+from flask import Flask, render_template
+from flask_wtf.csrf import CSRFProtect
+
+app = Flask(__name__)
+app.secret_key = 'super_secret_key'
+csrf = CSRFProtect(app)
+```
+
+#### `forms.py`
+
+```python
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+
+class MyForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+```
+
+#### `form.html`
+
+```html
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <!-- 🔐 CSRF Token inserted here -->
+  {{ form.name.label }} {{ form.name() }} {{ form.submit() }}
+</form>
+```
+
+---
+
+### ✅ Why CSRF Tokens Work
+
+| Mechanism            | Explanation                                            |
+| -------------------- | ------------------------------------------------------ |
+| Random per session   | Attackers can't guess the token                        |
+| Not stored in cookie | Can't be sent automatically by browser                 |
+| Verified by server   | Only trusted requests with matching tokens are allowed |
+
+---
+
+## 📌 Summary
+
+| 🔍 Feature       | ✅ CSRF Protection                |
+| ---------------- | --------------------------------- |
+| Prevents attacks | Yes                               |
+| Requires token   | Yes                               |
+| Framework        | Flask-WTF + CSRFProtect           |
+| Token check      | Automatic via `form.hidden_tag()` |
+
+---
+
+## ❓Interview Question Example
+
+> **Q:** What is CSRF and how do you prevent it in Flask?
+
+**A:** CSRF stands for Cross-Site Request Forgery. It occurs when unauthorized commands are transmitted from a user that a web application trusts. In Flask, we prevent it using CSRF tokens with `Flask-WTF`. Each form includes a token (via `form.hidden_tag()`), and Flask verifies this token on form submission. If the token is missing or invalid, the request is rejected.
+
+---

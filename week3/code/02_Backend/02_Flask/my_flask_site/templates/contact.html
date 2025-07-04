@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<h2>Contact Us</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.name.label }} {{ form.name(size=32) }}</p>
+    <p>{{ form.email.label }} {{ form.email(size=32) }}</p>
+    <p>{{ form.message.label }} {{ form.message(cols=30, rows=5) }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

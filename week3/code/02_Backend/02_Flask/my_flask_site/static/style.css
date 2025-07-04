@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.content {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.flash.success {
+    color: green;
+}

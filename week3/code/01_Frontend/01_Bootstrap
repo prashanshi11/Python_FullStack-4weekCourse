@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap Full Example</title>
+  <!-- ✅ Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ✅ Container and Grid System -->
+<div class="container mt-5">
+  <h2>Grid System</h2>
+  <div class="row">
+    <div class="col">Column 1</div>
+    <div class="col">Column 2</div>
+    <div class="col">Column 3</div>
+  </div>
+</div>
+
+<!-- ✅ Buttons -->
+<div class="container mt-5">
+  <h2>Buttons</h2>
+  <button class="btn btn-primary">Primary</button>
+  <button class="btn btn-secondary">Secondary</button>
+  <button class="btn btn-success">Success</button>
+  <button class="btn btn-danger">Danger</button>
+</div>
+
+<!-- ✅ Colors -->
+<div class="container mt-5">
+  <h2>Colors</h2>
+  <p class="text-primary bg-light">Primary Text</p>
+  <p class="text-success bg-warning">Success on Warning</p>
+</div>
+
+<!-- ✅ Form -->
+<div class="container mt-5">
+  <h2>Form</h2>
+  <form>
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input type="email" class="form-control" placeholder="Enter email">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" placeholder="Password">
+    </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!-- ✅ Form Grid -->
+<div class="container mt-5">
+  <h2>Form Grid</h2>
+  <form class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">First Name</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Last Name</label>
+      <input type="text" class="form-control">
+    </div>
+  </form>
+</div>
+
+<!-- ✅ Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Brand</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ Card -->
+<div class="container mt-5">
+  <h2>Card</h2>
+  <div class="card" style="width: 18rem;">
+    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card Title</h5>
+      <p class="card-text">Some quick content for the card.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Alerts -->
+<div class="container mt-5">
+  <h2>Alerts</h2>
+  <div class="alert alert-success" role="alert">
+    Success! You did it.
+  </div>
+  <div class="alert alert-danger" role="alert">
+    Error! Something went wrong.
+  </div>
+</div>
+
+<!-- ✅ Modal -->
+<div class="container mt-5">
+  <h2>Modal</h2>
+  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Open Modal</button>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal Title</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        This is a Bootstrap modal.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Table -->
+<div class="container mt-5">
+  <h2>Table</h2>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr><th>#</th><th>Name</th><th>Email</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Alice</td><td>alice@mail.com</td></tr>
+      <tr><td>2</td><td>Bob</td><td>bob@mail.com</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ✅ Image -->
+<div class="container mt-5">
+  <h2>Image</h2>
+  <img src="https://via.placeholder.com/150" class="img-fluid rounded-circle" alt="Rounded Circle Image">
+</div>
+
+<!-- ✅ Spacing -->
+<div class="container mt-5">
+  <h2>Spacing</h2>
+  <div class="p-3 m-3 bg-secondary text-white">
+    Padding 3, Margin 3
+  </div>
+</div>
+
+<!-- ✅ Display Utility -->
+<div class="container mt-5">
+  <h2>Responsive Display</h2>
+  <p class="d-none d-md-block">This is visible only on md and above.</p>
+</div>
+
+<!-- ✅ Flexbox -->
+<div class="container mt-5">
+  <h2>Flexbox</h2>
+  <div class="d-flex justify-content-between align-items-center">
+    <div>Flex Start</div>
+    <div>Flex End</div>
+  </div>
+</div>
+
+<!-- ✅ Badges -->
+<div class="container mt-5">
+  <h2>Badges</h2>
+  <span class="badge bg-success">New</span>
+</div>
+
+<!-- ✅ Progress Bar -->
+<div class="container mt-5">
+  <h2>Progress Bar</h2>
+  <div class="progress">
+    <div class="progress-bar w-50" role="progressbar">50%</div>
+  </div>
+</div>
+
+<!-- ✅ List Group -->
+<div class="container mt-5">
+  <h2>List Group</h2>
+  <ul class="list-group">
+    <li class="list-group-item active">Active item</li>
+    <li class="list-group-item">Second item</li>
+    <li class="list-group-item">Third item</li>
+  </ul>
+</div>
+
+<!-- ✅ Accordion -->
+<div class="container mt-5">
+  <h2>Accordion</h2>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          Accordion Item #1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          This is the content inside the accordion.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Tooltip -->
+<div class="container mt-5 mb-5">
+  <h2>Tooltip</h2>
+  <button class="btn btn-info" data-bs-toggle="tooltip" title="Tooltip text">
+    Hover me
+  </button>
+</div>
+
+<!-- ✅ Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ✅ Initialize tooltips -->
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+</script>
+
+</body>
+</html>
