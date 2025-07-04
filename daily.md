@@ -4,38 +4,43 @@
 
 ### 📅 **Week 1: June 16–June 20, 2025**
 
-| Day      | Topics Covered                                  | Files Updated                                                         |
-| -------- | ----------------------------------------------- | --------------------------------------------------------------------- |
-| Mon (16) | Intro, Comments, Datatypes, Operators           | `01_intro.py`, `02_comments.py`, `03_datatypes.py`, `04_operators.py` |
-| Tue (17) | Conditions, Variables, Modules                  | `05_conditions&statements.py`, `06_variables.py`, `07_modules.py`     |
-| Wed (18) | Functions, Loops, Lists                         | `08_functions.py`, `09_loops.py`, `10_list.py`                        |
-| Thu (19) | Tuples, Sets, Dictionaries                      | `11_tuples.py`, `12_sets.py`, `13_dictionaries.py`                    |
-| Fri (20) | OOP Concepts (Class, Object, Inheritance, etc.) | `14_oop_basics.py`, `15_oop_problems.py`                              |
+📍 *Python Fundamentals and Web Basics*
+
+| Day      | Topics Covered                                                                                                                                  | Files Updated                                                                                   |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Mon (16) | **Introduction to Python**<br>• Overview of Python<br>• Environment Setup (Python, PIP, VS Code)<br>• First Script<br>• Simple Python Exercises | `01_intro.py`, `02_comments.py`, `03_datatypes.py`, `04_operators.py`                           |
+| Tue (17) | **Python Basics**<br>• Variables, Data Types, Operators<br>• Control Structures<br>• Functions, Scope, Modules<br>• Number Guessing Game        | `05_conditions&statements.py`, `06_variables.py`, `07_modules.py`                               |
+| Wed (18) | **Python Data Structures**<br>• Lists, Tuples, Dictionaries<br>• Sets, String Ops, Comprehensions<br>• Nested Data Structures                   | `08_functions.py`, `09_loops.py`, `10_list.py`, `11_tuples.py`, `12_set.py`, `13_dictionary.py` |
+| Thu (19) | **Object-Oriented Programming (OOP)**<br>• Classes, Objects<br>• Inheritance, Polymorphism, Encapsulation<br>• Library System Mini-Project      | `14_opps.py`                                                                                    |
+| Fri (20) | **File & Exception Handling**<br>• Read/Write Files<br>• Try-Except-Finally, Custom Errors<br>• File-Based Data Processing                      | `filehandling`, `exception handling`, `expense tracker.py`                                      |
 
 ---
 
 ### 📅 **Week 2: June 23–June 27, 2025**
 
-| Day      | Topics Covered                                                                              | Files Updated                                                                                                                                                                   |
-| -------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Mon (23) | File Handling, Exception Handling, Mini Project                                             | `01_fileHandling.py`, `02_exception_handling.py`, `expense_tracker.py`                                                                                                          |
-| Tue (24) | HTML Basics: Intro, Formatting, Images, Lists, Navbar, Profile Project                      | `01_intro.html`, `02_formatting_tags.html`, `03_quotation_tags.html`, `04_image.html`, `05_background.html`, `06_list.html`, `07_navbar.html`, `My Profile project`, `eye3.jpg` |
-| Wed (25) | Semantic HTML5, Forms, CSS Flexbox/Grid/Animations, Responsive Design, Landing Page Project | `08_semantic.html`, `09_form.html`, `10_css_flexbox.html`, `My Profile project/index.html`, `Landing Page Project`                                                              |
-| Thu (26) | JavaScript Basics: Variables, Functions, DOM, Arrays/Objects, Event Listeners, To-Do App    | `01_js_basics.js`, `02_dom.js`, `03_todo_app.html`, `04_debugging_notes.txt`                                                                                                    |
-| Fri (27) | JavaScript Intermediate: ES6 (Arrow Functions, Promises, Modules), Async/Await, Fetch API   | `05_es6_features.js`, `06_async_await.js`, `07_fetch_api.js`, `08_api_project.html`, `public_api_sample.json`                                                                   |
+📍 *Frontend Development*
 
+| Day      | Topics Covered                                                                                                                         | Files Updated                                                                                                                                                     |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mon (23) | **HTML + CSS Intro**<br>• Basics of HTTP & Web<br>• HTML Tags, Lists, Images<br>• CSS Styling & Layouts<br>• Build Static Profile Page | `01_intro.html`, `02_formating tags.html`, `03_quotation tags.html`, `04_image.html`, `05_background.html`, `06_list.html`, `07_navbar.html`, `08_semantic.html`  |
+| Tue (24) | **Advanced HTML & CSS**<br>• Forms, Flexbox, Grid, Animations<br>• Responsive Design<br>• Landing Page Project                         | `09_form.html`, `10_css flexbox.html`, `11_css grid.html`, `12_css animation.html`, `13_responsive.html`, `portfolio.css`, `My Profile project/`, `Landing Page/` |
+| Wed (25) | **JavaScript Basics**<br>• Variables, Functions<br>• DOM, Events<br>• Arrays, Objects<br>• To-Do List Project                          | `01_basics.html`, `02_functions.html`, `03_event listener.html`, `04_dom manipulation.html`, `05_objects.html`, `06_array.html`, `To-Do-List/`                    |
+| Thu (26) | **JavaScript Intermediate**<br>• ES6 Features<br>• Promises, Modules<br>• Async/Await<br>• Fetch API & API Integration                 | `07_async await.html`, `08_promise.html`, `script.js`                                                                                                             |
+| Fri (27) | **Mini Integration Project**<br>• Use JS Fetch + HTML/CSS<br>• Design output interface for data                                        | *(Part of existing To-Do & JS fetch projects)*                                                                                                                    |
 
 ---
 
 ### 📅 **Week 3: June 30–July 4, 2025**
 
-| Day      | Topics Covered                                                                                                                                                                                                                             | Files Updated                                                                                                      |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| Mon (30) | Frontend Frameworks:<br>• Intro to Bootstrap and Tailwind CSS<br>• Building Responsive Layouts<br>• Customizing Components<br>• Practice: Enhance a Webpage with Bootstrap                                                                 | `01_bootstrap_intro.html`, `02_tailwind_intro.html`, `03_responsive_layout.html`, `04_bootstrap_custom.html`       |
-| Tue (1)  | Backend – Databases:<br>• Introduction to Relational Databases<br>• Setting up MySQL/PostgreSQL<br>• SQL Queries (CRUD, Joins)<br>• Hands-On: Create and Query a Sample Database                                                           | `05_mysql_setup.py`, `06_postgresql_setup.sql`, `07_crud_queries.sql`, `08_sample_db_queries.py`                   |
-| Wed (2)  | Python + Database Integration:<br>• Connecting Python to MySQL/PostgreSQL using `mysql-connector` and `psycopg2`<br>• Performing CRUD Operations<br>• Database Design & Normalization<br>• Practice: Build a Database-Driven Python Script | `09_python_mysql_connection.py`, `10_python_postgres_connection.py`, `11_crud_script.py`, `12_db_design_notes.txt` |
-| Thu (3)  | **Python for Backend – Flask Basics**:<br>• Setting up Flask Environment<br>• Routing, Templates, and Static Files<br>• Handling GET/POST Requests<br>• Hands-On: Simple Flask App with Form Submission                                    | `13_flask_setup.py`, `14_basic_routing.py`, `15_flask_templates/`, `16_flask_form_app.py`                          |
-| Fri (4)  | **Flask with Frontend Integration**:<br>• Rendering Dynamic HTML Templates<br>• Form Validation and User Input Handling<br>• Connecting CSS/JavaScript to Flask<br>• Practice: Build a Dynamic User Registration Page                      | `17_dynamic_templates.html`, `18_form_validation.py`, `19_flask_static/`, `20_user_registration_app.py`            |
+📍 *Frontend Frameworks & Python-MySQL Integration*
+
+| Day      | Topics Covered                                                                                                                             | Files Updated                                                                                  |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| Mon (30) | **Frontend Frameworks**<br>• Bootstrap & Tailwind Intro<br>• Layouts, Components<br>• Responsive Page Creation Practice                    | `01_Bootstrap/`, `02_Tailwindcss/`                                                             |
+| Tue (1)  | **MySQL Basics**<br>• RDBMS Concepts<br>• Setup & Config<br>• CRUD Operations<br>• Joins and Filtering Data                                | `01_intro.py`, `02_join.py`                                                                    |
+| Wed (2)  | **CRUD Projects**<br>• Inventory Task<br>• Student Grade Management App                                                                    | `inventarytask.py`, `student_grade_system.py`                                                  |
+| Thu (3)  | **Python for Backend – Flask Basics**<br>• Flask Setup<br>• Routing, Templates, Static<br>• GET/POST Handling<br>• Simple Flask App        | `login system.py`, `CustomerOrderSystem/order_system.py`, Flask code starts                    |
+| Fri (4)  | **Flask with Frontend Integration**<br>• Render Dynamic Templates<br>• Form Validation<br>• CSS/JS Integration<br>• Flask Registration App | `studentdataTask/` folder (`01_connect_mysql.py` to `10_calculate_averages.py`, `shoptask.py`) |
 
 
 
